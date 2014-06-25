@@ -1,0 +1,1 @@
+<span class="author">by <a href="<?php get_template_part('partials/content', 'author-permalink'); ?>"><?php get_template_part('partials/content', 'author-full-name'); ?></a></span>

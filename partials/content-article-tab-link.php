@@ -1,0 +1,1 @@
+<a href="<?php the_permalink() ?>" class="full-post-tab-link" title="View post"><span class="icon-Share"></span></a>
