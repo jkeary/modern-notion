@@ -204,24 +204,6 @@ input, textarea  {
 		}
 	}
 }
-.author-header  {
-	@include clearfix;
-	> img  {
-		float: left;
-	}
-	.text-wrapper  {
-		margin-left: $image-small-d + $grid-gutter-width;
-	}
-}
-.small-post  {
-	@include clearfix;
-	> img  {
-		float: left;
-	}
-	.text-wrapper  {
-		margin-left: $image-thumbnail-d + $grid-gutter-width;
-	}
-}
 .header-logo  {
 	display: inline-block;
 	color: #000;
@@ -594,6 +576,7 @@ input, textarea  {
 }
 .children-with-dividers  {
 	@include clearfix;
+	display: block;
 	p  {
 		display: inline-block;
 	}
@@ -773,11 +756,6 @@ input, textarea  {
 	margin-bottom: $grid-gutter-width;
 	@include respond(md)  {
 		margin-bottom: $md-gutter;
-	}
-}
-span.author  {
-	a  {
-		@include line-hover;
 	}
 }
 #infinite-handle  {
@@ -1039,7 +1017,7 @@ a.menu-trigger  {
 		padding-top: 46px;
 	}
 }
-.article-meta  {
+.meta-block  {
 	text-transform: uppercase;
 	font-size: 12px;
 	line-height: 20px;
@@ -1049,23 +1027,18 @@ a.menu-trigger  {
 		font-size: 16px;
 		@include line-hover;
 	}
-	.vcard  {
-		.updated  {
-			
-		}
-	}
 	.author  {
 		padding-right: 10px;
-		+ a  {
-			text-decoration: none;
-		}	
 	}	
+	a  {
+		@include line-hover;
+	}
 }
 .article-header  {
 	margin-bottom: 40px;
 }
 .article-content-row  {
-	@include clearfix;
+	@include clearfix2;
 	&.top  {
 		@include respond(xs)  {
 			> .side  {
@@ -1362,5 +1335,97 @@ div.ssba img  {
 		display: block;
 		margin-bottom: 36px;
 	}
-
+}
+.author-header  {
+	@include clearfix;
+	> img  {
+		float: left;
+	}
+	.text-wrapper  {
+		margin-left: $image-small-d + 29px;
+		margin-top: 4px;
+	}
+	.position  {
+		text-transform: uppercase;
+		color: #96a732;
+		font-weight: bold;
+		font-size: 18px;
+		display: block;
+	}
+	h1  {
+		@include s1m;
+		font-size: 40px;
+		margin-bottom: 3px;
+	}
+}
+.small-post  {
+	@include clearfix;	
+	position: relative;
+	&:before  {
+		content: " ";		
+		@include short_hr;
+		margin: 42px 0 52px;
+	}
+	> img  {
+		float: left;
+	}
+	.article-header  {
+		margin-bottom: 15px;
+	}
+	.text-wrapper  {
+		margin-left: $image-thumbnail-d + $grid-gutter-width;
+		overflow: hidden;
+	}
+	.entry-content  {
+		margin-bottom: 30px;
+	}
+	.meta-block  {
+		margin: 0;
+		position: absolute;
+		bottom: 0;
+	}
+	h3  {
+		@include s1m;
+		font-size: 24px;
+	}
+}
+.with-divider  {
+	padding-bottom: 31px;
+	border-bottom: 3px solid #000;
+	margin-bottom: 35px;
+}
+.author-bio  {
+	margin-bottom: 45px;
+}
+.author-posts  {
+	h2  {
+		@include s1m;
+		font-size: 32px;		
+	}	
+}
+.pagination  {
+	margin-top: 30px;
+	text-align: center;
+	ul.page-numbers  {
+		display: inline-block;
+		@include clearfix;
+		li  {
+			float: left;
+		}
+	}
+	a, span  {
+		display: block;
+		padding: 10px;		
+		text-decoration: none;
+	}
+	a  {
+		&:hover  {
+			background: rgba(0, 0, 0, 0.6);	
+			color: #fff;
+		}
+	}
+	span  {
+		background: #000;
+		color: #fff;
+	}
 }

@@ -6,10 +6,8 @@
             </div>
         	<div class="main article-header-text-wrapper">        		
             	<?php $author_id = get_the_author_meta( 'ID' ); ?>
-            	<ul class="article-meta children-with-dividers">
-            		<li>
-            			<?php get_template_part('partials/content', 'top-tag'); ?>
-            		</li>
+            	<ul class="meta-block children-with-dividers">
+            		<?php get_template_part('partials/content', 'top-tag-li'); ?>
             		<li>
             			<?php get_template_part('partials/content', 'post-date-long'); ?>	
             		</li>

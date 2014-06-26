@@ -11,5 +11,7 @@ if(!empty($tags_objects))  {
 	$top_tag_object_id = current(array_keys($tags));
 	$top_tag_object = $tags_objects[$top_tag_object_id];
 ?>
+<li>
 	<a href="<?php home_url(); ?>/tag/<?php echo $top_tag_object->slug; ?>" class="top-tag <?php echo top_category_slug(); ?>-colored"><?php echo $top_tag_object->name; ?></a>
+</li>	
 <?php } ?>

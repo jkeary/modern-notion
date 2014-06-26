@@ -272,4 +272,26 @@ function get_responsive_iframe_bottom_pad($source)  {
 
 require_once('library/shortcode-gallery.php');
 
+
+function new_excerpt_more( $more ) {
+  return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+add_filter( 'wp_trim_excerpt', 'my_custom_excerpt', 10, 2 );
+function my_custom_excerpt($text, $raw_excerpt) {
+    if( ! $raw_excerpt ) {
+        $content = apply_filters( 'the_content', get_the_content() );
+        $text = substr( $content, 0, strpos( $content, '</p>' ) + 4 );
+    }
+    return $text;
+}
+
+function remove_empty_paragraph_tags($str)  {
+  $str = preg_replace('#<p[^>]*>(\s|&nbsp;?)*</p>#', '', $str);
+  return $str;
+}
+add_filter('the_content', 'remove_empty_paragraph_tags' ,99999);
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
