@@ -62,6 +62,7 @@
 				) ); ?>
 				<?php if ( $format_query->have_posts() ) : ?>
 				<ul class="three-col full-site-width">
+					<?php $i = 1; ?>
 				<?php while ( $format_query->have_posts() ) : ?>
 					<li>
 						<div class="archive-post-tile">
@@ -90,6 +91,10 @@
 						</div>
 						<?php get_template_part('partials/content', 'article-excerpt'); ?>
 					</li>
+					<?php if($i % 3 == 0) ?>
+						<li class="clear"></li>
+					<?php endif; ?>
+					<?php $i++; ?>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 				</ul>
