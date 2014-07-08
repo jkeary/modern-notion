@@ -4918,19 +4918,27 @@ div.jPanelMenu-panel {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
+/* line 1522, ../scss/partials/_custom.scss */
+.three-col > *.clear {
+  width: auto !important;
+  display: block;
+  float: none;
+  clear: both;
+  padding: 0 !important;
+}
 
-/* line 1525, ../scss/partials/_custom.scss */
+/* line 1532, ../scss/partials/_custom.scss */
 .archive-post-tile .format-icon {
   background: #000 !important;
   margin-bottom: -1px;
 }
-/* line 1529, ../scss/partials/_custom.scss */
+/* line 1536, ../scss/partials/_custom.scss */
 .archive-post-tile .header {
   display: block;
   border-bottom: 1px solid #bcbec0;
   margin: 10px 0 10px;
 }
-/* line 1534, ../scss/partials/_custom.scss */
+/* line 1541, ../scss/partials/_custom.scss */
 .archive-post-tile .meta {
   font-family: 'stratum1bold';
   font-size: 20px;

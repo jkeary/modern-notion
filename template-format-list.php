@@ -92,7 +92,10 @@
 						<?php get_template_part('partials/content', 'article-excerpt'); ?>
 					</li>
 					<?php if($i % 3 == 0):  ?>
-						<li class="clear"></li>
+						<li class="clear visible-lg"></li>
+					<?php endif; ?>
+					<?php if($i % 2 == 0):  ?>
+						<li class="clear visible-md"></li>
 					<?php endif; ?>
 					<?php $i++; ?>
 				<?php endwhile; ?>

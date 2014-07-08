@@ -1513,12 +1513,19 @@ $black_btn_h: 46px;
 $three_col_gutter: ($full_content_w - $med_w*3)/2;
 .three-col  {
 	@include clearfix;
-	margin: 0 $three_col_gutter/-2;
+	margin: 0 $three_col_gutter/-2;	
 	> *  {
 		width: $med_w;
 		padding: 0 $three_col_gutter/2 $three_col_gutter;
 		float: left;
 		@include box-sizing(content-box);
+		&.clear  {
+			width: auto !important;
+			display: block;
+			float: none;
+			clear: both;
+			padding: 0 !important;
+		}
 	}
 }
 .archive-post-tile  {
