@@ -91,7 +91,7 @@
 						</div>
 						<?php get_template_part('partials/content', 'article-excerpt'); ?>
 					</li>
-					<?php if($i % 3 == 0) ?>
+					<?php if($i % 3 == 0):  ?>
 						<li class="clear"></li>
 					<?php endif; ?>
 					<?php $i++; ?>
