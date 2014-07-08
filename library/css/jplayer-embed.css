@@ -1,0 +1,67 @@
+/* line 3, ../scss/jplayer-embed.scss */
+.jp-interface {
+  overflow: hidden;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #000;
+  margin: 15px 0 30px;
+}
+
+/* line 9, ../scss/jplayer-embed.scss */
+.jp-controls {
+  float: left;
+}
+/* line 11, ../scss/jplayer-embed.scss */
+.jp-controls > li {
+  float: left;
+}
+/* line 14, ../scss/jplayer-embed.scss */
+.jp-controls a {
+  background: #000;
+  color: #fff;
+  display: block;
+  margin-right: 15px;
+  font-size: 0;
+}
+/* line 20, ../scss/jplayer-embed.scss */
+.jp-controls a > span {
+  width: 44px;
+  height: 44px;
+}
+/* line 25, ../scss/jplayer-embed.scss */
+.jp-controls a.jp-play .icon {
+  border: 13px solid transparent;
+  left: 8px;
+  border-left-color: #fff;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  position: relative;
+}
+/* line 38, ../scss/jplayer-embed.scss */
+.jp-controls a.jp-pause .icon {
+  height: 16px;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 0 5px;
+  width: 16px;
+  display: inline-block;
+}
+/* line 48, ../scss/jplayer-embed.scss */
+.jp-controls a.jp-stop .icon {
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  background: #fff;
+}
+
+/* line 57, ../scss/jplayer-embed.scss */
+.jp-progress {
+  display: block;
+  margin-left: 118px;
+  background: #d7d7d7;
+}
+/* line 64, ../scss/jplayer-embed.scss */
+.jp-progress .jp-play-bar {
+  background: #000;
+  height: 44px;
+}

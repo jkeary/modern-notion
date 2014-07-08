@@ -37,6 +37,12 @@
 			<?php // drop Google Analytics Here ?>
 			<?php // end analytics ?>
 
+<script type='text/javascript'>
+/* <![CDATA[ */
+var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\/milt-rosenberg"};
+/* ]]> */
+</script>
+
 		</head>
 
 		<body <?php body_class(); ?>>

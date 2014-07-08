@@ -126,4 +126,30 @@ $(window).resize(function () {
 	}, timeToWaitForLast, "resize-functions");
 });
 
+
+  /* ------------------------------------------------
+  Podcast - embed link
+  ------------------------------------------------ */
+		$('.embed_link_txt')
+			.focus(function() {$(this).select();})
+			.mouseup(function(e) {e.preventDefault();});
+
+		var out = false;
+		$('.links .embed').click(function() {
+			if (!out) {
+				$(this).siblings('.embed_wrap').find('.embed_link').animate(
+					{left : 0},
+					400
+				);
+				out = true;
+			} else {
+				$(this).siblings('.embed_wrap').find('.embed_link').animate(
+					{left : '-485px'},
+					400
+				);
+				out = false;
+			}
+			return false;
+		});
+
 }); /* end of as page load scripts */

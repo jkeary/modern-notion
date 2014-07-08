@@ -1,0 +1,68 @@
+$jplayer-gutter: 15px;
+$jplayer-control-d: 44px;
+.jp-interface  {
+	overflow: hidden;
+	padding-bottom: 30px;
+	border-bottom: 3px solid #000;
+	margin: 15px 0 30px;
+}
+.jp-controls  {
+	float: left;
+	> li  {
+		float: left;		
+	}
+	a  {
+		background: #000;
+		color: #fff;		
+		display: block;
+		margin-right: $jplayer-gutter;	
+		font-size: 0;
+		> span  {
+			width: $jplayer-control-d;
+			height: $jplayer-control-d;
+		}
+		&.jp-play  {
+			.icon  {
+				border: 13px solid transparent;
+				left: 8px;
+				border-left-color: #fff;
+				width: 0;
+				height: 0;
+				display: inline-block;
+				position: relative;
+			}
+		}
+		$stop_h: 16px;
+		$pause_border_w: 5px;
+		&.jp-pause  {
+			.icon  {
+				height: $stop_h;
+				border-style: solid;
+				border-color: #fff;
+				border-width: 0 $pause_border_w;
+				width: $pause_border_w*2 + 6px;
+				display: inline-block;
+			}
+		}
+		&.jp-stop  {
+			.icon  {
+				height: $stop_h;
+				width: $stop_h;
+				display: inline-block;
+				background: #fff;
+			}
+		}
+	}
+}
+.jp-progress  {
+	display: block;
+	margin-left: $jplayer-control-d*2 + $jplayer-gutter*2;	
+	background: #d7d7d7;
+	.jp-seek-bar  {
+			
+	}
+	.jp-play-bar  {
+		background: #000;
+		height: $jplayer-control-d;
+	}
+}

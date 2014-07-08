@@ -29,7 +29,7 @@
                 <?php echo do_shortcode('[ssba]'); ?>                
                 <?php if(get_field('dek')): ?>    
                     <hr class="short">
-                    <div class="prose dek category-styled <?php echo top_category_slug(); ?>-styled">
+                    <div class="prose dek category-prose <?php echo top_category_slug(); ?>-styled">
                         <?php the_field('dek'); ?>
                     </div>
                 <?php endif; ?>
@@ -64,33 +64,42 @@
                 </div>
             </div>
             <div class="main">
-                <?php if(get_the_content()): ?>
-                    <div class="prose standard-content category-styled <?php echo top_category_slug(); ?>-styled">
-                        <?php the_content(); ?>
+                <?php if ( has_post_format( 'list' )): ?>
+                    <?php $values = get_field('list_items'); ?>
+                    <?php if($values): ?>
+                        <?php $list_num = count($values); ?>
+                        <ol class="article-list-items category-prose <?php echo top_category_slug(); ?>-styled">
+                        <?php foreach($values as $value): ?>
+                            <li>
+                                <h2><span class="num"><?php echo $list_num; ?>.</span> <?php echo $value['title']; ?></h2>
+                                <?php $image = $value['image']; // only for image info outputted as an object 
+                                if($image):  ?>                                
+                                    <img src="<?php echo $image['sizes']['article-main']; ?>" class="section-image" alt="<?php echo $image['alt']; ?>" />
+                                <?php endif; ?>
+                                <div class="prose">
+                                    <?php echo $value['content']; ?>
+                                </div>                            
+                            </li>
+                            <?php $list_num--; ?>                                                                        
+                        <?php endforeach; ?>
+                        </ol>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <?php if ( has_post_format( 'audio' )): ?>
+                    <div class="podcast-content">
+                        <?php get_template_part('partials/content', 'podcast-image'); ?>                    
+                        <?php get_template_part('partials/content', 'podcast-player'); ?>                                            
                     </div>
                 <?php endif; ?>
-                <?php $values = get_field('list_items'); ?>
-                <?php if($values): ?>
-                    <?php $list_num = count($values); ?>
-                    <ol class="article-list-items category-styled <?php echo top_category_slug(); ?>-styled">
-                    <?php foreach($values as $value): ?>
-                        <li>
-                            <h2><span class="num"><?php echo $list_num; ?>.</span> <?php echo $value['title']; ?></h2>
-                            <?php $image = $value['image']; // only for image info outputted as an object 
-                            if($image):  ?>                                
-                                <img src="<?php echo $image['sizes']['article-main']; ?>" class="section-image" alt="<?php echo $image['alt']; ?>" />
-                            <?php endif; ?>
-                            <div class="prose">
-                                <?php echo $value['content']; ?>
-                            </div>                            
-                        </li>
-                        <?php $list_num--; ?>                                                                        
-                    <?php endforeach; ?>
-                    </ol>
+                <?php if(get_the_content()): ?>
+                    <div class="prose standard-content category-prose <?php echo top_category_slug(); ?>-styled">
+                        <?php the_content(); ?>
+                    </div>
                 <?php endif; ?>
                 <div class="article-footer">
                     <?php the_tags( '<div class="article-tags">', ' ', '</div>' ); ?>
                 </div> <?php // end article footer ?>
+                <?php /*
                 <section class="comments-wrapper">
                     <div class="comments-toggle-wrapper">
                         <button type="button" data-toggle="collapse" data-target="#comments-<?php echo get_the_slug(); ?>" class="comments-toggle">View Comments</button>
@@ -99,6 +108,7 @@
                         <?php comments_template(); ?>
                     </div>
                 </section>
+                */ ?>
                  <?php $related_query = new WP_Query( array(
                     'post_type' => 'post',
                     'posts_per_page' => 3

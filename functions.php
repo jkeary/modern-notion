@@ -70,13 +70,14 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-// add_image_size( 'bones-thumb-600', 600, 150, true );
-// add_image_size( 'bones-thumb-300', 300, 100, true );
+// thumbnail: 185 x 185
+// medium:  391 x 9999
+// large:  808 x 455
 add_image_size( 'small-square', 93, 93, true );
 add_image_size( 'smaller-square', 69, 69, true );
 add_image_size( 'medium-square', 391, 391, true );
-add_image_size( 'medium-rectangle', 391, 139, true );
-add_image_size( 'article-main', 700, 9999, false );
+add_image_size( 'medium-rectangle', 391, 220, true );
+add_image_size( 'article-main', 700, 393, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -271,6 +272,7 @@ function get_responsive_iframe_bottom_pad($source)  {
 }
 
 require_once('library/shortcode-gallery.php');
+require_once('library/acf-fields.php');
 
 
 function new_excerpt_more( $more ) {
@@ -293,5 +295,45 @@ function remove_empty_paragraph_tags($str)  {
 }
 add_filter('the_content', 'remove_empty_paragraph_tags' ,99999);
 
+// Add RSS Feed for podcast posts
+add_action('init', 'podcastsRSS');
+function podcastsRSS(){
+  add_feed('podcast-feed', 'podcastsRSSFunc');
+  global $wp_rewrite;
+  $wp_rewrite->flush_rules();
+}
+function podcastsRSSFunc(){
+  get_template_part('partials/rss', 'podcasts');
+}
+
+function stripInvalidXml($value)
+{
+    $ret = "";
+    $current;
+    if (empty($value)) 
+    {
+        return $ret;
+    }
+
+    $length = strlen($value);
+    for ($i=0; $i < $length; $i++)
+    {
+        $current = ord($value{$i});
+        if (($current == 0x9) ||
+            ($current == 0xA) ||
+            ($current == 0xD) ||
+            (($current >= 0x20) && ($current <= 0xD7FF)) ||
+            (($current >= 0xE000) && ($current <= 0xFFFD)) ||
+            (($current >= 0x10000) && ($current <= 0x10FFFF)))
+        {
+            $ret .= chr($current);
+        }
+        else
+        {
+            $ret .= " ";
+        }
+    }
+    return $ret;
+}
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

@@ -9,11 +9,13 @@ $author_ref = 'user_'. $author_id;
 <div class="row default-layout">
 	<div id="main" role="main" class="main">
 
-<div class="author-header with-divider">
-	<?php $image = get_field('headshot', $author_ref); // only for image info outputted as an object ?>
-	<?php if($image): ?>
-		<img src="<?php echo $image['sizes']['small-square']; ?>" alt="<?php echo $image['alt']; ?>" />	
-	<?php endif; ?>
+<div class="centered-image-text-header valign author-header with-divider">
+	<div>
+		<?php $image = get_field('headshot', $author_ref); // only for image info outputted as an object ?>
+		<?php if($image): ?>
+			<img src="<?php echo $image['sizes']['small-square']; ?>" alt="<?php echo $image['alt']; ?>" />	
+		<?php endif; ?>
+	</div>	
 	<div class="text-wrapper">
 		<?php if(get_field('position', $author_ref)): ?>	
 			<div class="position"><?php the_field('position', $author_ref); ?></div>

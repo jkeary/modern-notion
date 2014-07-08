@@ -138,6 +138,7 @@ a  {
 }
 .valign  {
 	display: table;
+	width: 100%;
 	> *  {
 		display: table-cell;
 		vertical-align: middle;
@@ -338,11 +339,13 @@ input, textarea  {
 }
 
 .post-icon  {
-	&:hover  {
-		@include opacity(0.6);
-	}
 	.icon-font  {
 		display: block;
+	}
+}
+a.post-icon  {
+	&:hover  {
+		@include opacity(0.6);
 	}
 }
 @mixin post-icon-wrapper-dimensions($d, $font-size, $text-gap)  {
@@ -397,87 +400,16 @@ input, textarea  {
 			@include post-icon-wrapper-dimensions($article-content-row-side-w-xs, $article-content-row-side-w-xs - 15px, 15px);
 		}
 	}
-}
-.innovation-colored  {
-	color: $purple;
-}
-.science-colored  {
-	color: $orange;
-}
-.history-colored  {
-	color: $yellow;
-}
-.life-colored  {
-	color: $green;
-}
-.category-styled  {
-	a  {
-		font-weight: bold;
-		@include line-hover;
-	}
-}
-.innovation-styled  {
-	a  {
-		color: $purple;	
-	}	
-}
-.science-styled  {
-	a  {
-		color: $orange;
-	}	
-}
-.history-styled  {
-	a  {
-		color: $yellow;
-	}	
-}
-.life-styled  {
-	a  {
-		color: $green;
-	}	
-}
-
-.innovation-bgcolored  {
-	background-color: $purple;
-}
-.science-bgcolored  {
-	background-color: $orange;
-}
-.history-bgcolored  {
-	background-color: $yellow;
-}
-.life-bgcolored  {
-	background-color: $green;
-}
-.category-icon  {	
-	text-decoration: none;	
-	&.innovation  {
-		background: $purple;
-		.icon-font:before  {
-			@extend .icon-Innovation:before;
-		}
-	}		
-	&.science  {
-		background: $orange;
-		.icon-font:before  {
-			@extend .icon-Science:before;
-		}
-	}		
-	&.history  {
-		background: $yellow;
-		.icon-font:before  {
-			@extend .icon-History:before;
-		}
-	}		
-	&.life  {
-		background: $green;
-		.icon-font:before  {
-			@extend .icon-Life:before;
+	&.post-icon-wrapper-largest  {
+		@include post-icon-wrapper-dimensions(93px, 60px, 15px);
+		@include respond(xs)  {
+			@include post-icon-wrapper-dimensions($article-content-row-side-w-xs, $article-content-row-side-w-xs - 15px, 15px);
 		}
 	}
 }
 .format-icon  {
 	text-decoration: none;
+	background: #000;
 	.icon-font  {
 		color: #fff;
 		&:before  {
@@ -502,6 +434,80 @@ input, textarea  {
 	&.slideshow  {
 		.icon-font:before  {
 			@extend .icon-Slideshow:before;
+		}
+	}
+}
+.innovation-colored  {
+	color: $purple;
+}
+.science-colored  {
+	color: $orange;
+}
+.history-colored  {
+	color: $yellow;
+}
+.life-colored  {
+	color: $green;
+}
+.category-prose  {
+	a  {
+		font-weight: bold;
+		@include line-hover;
+	}
+}
+.innovation-prose  {
+	a  {
+		color: $purple;	
+	}	
+}
+.science-prose  {
+	a  {
+		color: $orange;
+	}	
+}
+.history-prose  {
+	a  {
+		color: $yellow;
+	}	
+}
+.life-prose  {
+	a  {
+		color: $green;
+	}
+}
+
+.innovation-bgcolored  {
+	background-color: $purple;
+}
+.science-bgcolored  {
+	background-color: $orange;
+}
+.history-bgcolored  {
+	background-color: $yellow;
+}
+.life-bgcolored  {
+	background-color: $green;
+}
+.category-icon  {	
+	text-decoration: none;	
+	&.innovation  {
+		.icon-font:before  {
+			@extend .icon-Innovation:before;
+		}
+	}		
+	&.science  {
+		.icon-font:before  {
+			@extend .icon-Science:before;
+		}
+	}		
+	&.history  {
+		.icon-font:before  {
+			@extend .icon-History:before;
+		}
+	}		
+	&.life  {
+		.icon-font:before  {
+			@extend .icon-Life:before;
 		}
 	}
 }
@@ -1336,15 +1342,24 @@ div.ssba img  {
 		margin-bottom: 36px;
 	}
 }
+.centered-image-text-header  {
+	margin-bottom: 40px;
+	> div:first-child  {
+		width: 93px;		
+		> *  {
+			display: block;
+		}
+		+ div  {
+			padding-left: 29px;
+		}
+	}	
+	h1  {
+		@include s1m;
+		font-size: 40px;
+		margin-bottom: 3px;
+	}
+}
 .author-header  {
-	@include clearfix;
-	> img  {
-		float: left;
-	}
-	.text-wrapper  {
-		margin-left: $image-small-d + 29px;
-		margin-top: 4px;
-	}
 	.position  {
 		text-transform: uppercase;
 		color: #96a732;
@@ -1352,10 +1367,8 @@ div.ssba img  {
 		font-size: 18px;
 		display: block;
 	}
-	h1  {
-		@include s1m;
-		font-size: 40px;
-		margin-bottom: 3px;
+	.meta-block  {
+		margin-bottom: 0;
 	}
 }
 .small-post  {
@@ -1427,5 +1440,66 @@ div.ssba img  {
 	span  {
 		background: #000;
 		color: #fff;
+	}
+}
+.podcast-image  {	
+	> span  {
+		@include background-image(radial-gradient(center center, transparent 100px, rgba(0, 0, 0, 0.15) 300px));
+	}
+	.icon  {
+		font-size: 90px;	
+	}
+	.text  {
+		display: block;
+		margin-top: 12px;
+		@include h;
+		font-size: 77px;
+		text-transform: uppercase;
+		letter-spacing: -2px;
+	}
+}
+.podcast-content  {
+	.podcast-image  {
+		height: 460px;
+	}
+}
+.btn-group  {
+	margin: 30px 0 20px;
+}
+$black_btn_h: 46px;
+.btn  {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	.btn-group &  {
+		margin: 0 10px 10px 0;
+		float: left;
+	}
+	&.black  {
+		background: #000;
+		color: #fff;
+		@include s2m;
+		font-size: 22px;
+		line-height: $black_btn_h;
+		height: $black_btn_h;
+		padding: 0 20px;
+	}
+	&.icon-btn  {
+		font-size: 0px;
+		padding: 10px 0;
+		width: $black_btn_h;
+		span  {
+			font-size: $black_btn_h - 20px;	
+		}		
+	}	
+}
+$three_col_gutter: 16px;
+.three-col  {
+	@include clearfix;
+	margin: 0 $three_col_gutter/-2;
+	> *  {
+		width: 33.333%;
+		padding: 0 $three_col_gutter/2 $three_col_gutter;
+		float: left;
 	}
 }
