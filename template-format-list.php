@@ -39,12 +39,31 @@
 				<ul class="three-col full-site-width">
 				<?php while ( $format_query->have_posts() ) : ?>
 					<li>
-					<?php $format_query->the_post(); ?>
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					<p class="byline vcard meta-block">
-						<?php printf(' <time class="updated" datetime="%1$s" pubdate><span>%2$s</span>', get_the_time('Y-m-j g:i A'), get_the_time(get_option('date_format'))); ?>
-					</p>
-					<?php the_post_thumbnail('medium-square'); ?>
+						<div class="archive-post-tile">
+							<?php $format_query->the_post(); ?>
+							<a href="<?php the_permalink(); ?>">							
+								<?php if('audio' == $post_format): ?>
+									<?php global $aspect_ratio; $aspect_ratio = 'square'; ?>
+									<?php get_template_part('partials/content', 'podcast-image'); ?>
+								<?php else: ?>
+									<?php the_post_thumbnail('medium-square'); ?>
+								<?php endif; ?>
+								<span class="header">
+									<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-medium">
+										<?php get_template_part('partials/content', 'post-format-icon'); ?>	
+										<span class="children-with-dividers text-wrapper meta">
+											<?php if('audio' != $post_format): ?>
+												<span><?php the_title(); ?></span>
+											<?php endif; ?>
+											<span class="byline vcard">
+												<?php printf(' <time class="updated" datetime="%1$s" pubdate><span>%2$s</span>', get_the_time('Y-m-j g:i A'), get_the_time(get_option('date_format'))); ?>
+											</span>
+										</span>
+									</span>
+								</span>														
+							</a>
+						</div>
+						<?php get_template_part('partials/content', 'article-excerpt'); ?>
 					</li>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

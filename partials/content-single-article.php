@@ -87,7 +87,8 @@
                 <?php endif; ?>
                 <?php if ( has_post_format( 'audio' )): ?>
                     <div class="podcast-content">
-                        <?php get_template_part('partials/content', 'podcast-image'); ?>                    
+                        <?php global $aspect_ratio; $aspect_ratio = 'letterbox'; ?>
+                        <?php get_template_part('partials/content', 'podcast-image'); ?>
                         <?php get_template_part('partials/content', 'podcast-player'); ?>                                            
                     </div>
                 <?php endif; ?>
