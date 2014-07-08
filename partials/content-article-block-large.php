@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( array('article-block', 'article-block-large') ); ?> role="article">
 	<div class="article-inner">
 		<?php if(get_the_post_thumbnail()): ?>
-			<?php the_post_thumbnail('large'); ?>
+			<?php the_post_thumbnail('home-main'); ?>
 		<?php else: ?>
 			<img src="http://placehold.it/808x500" alt="">
 		<?php endif; ?>

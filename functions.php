@@ -78,6 +78,7 @@ add_image_size( 'smaller-square', 69, 69, true );
 add_image_size( 'medium-square', 391, 391, true );
 add_image_size( 'medium-rectangle', 391, 220, true );
 add_image_size( 'article-main', 700, 393, true );
+add_image_size( 'home-main', 808, 455, true );
 
 /*
 to add more sizes, simply copy a line from above
