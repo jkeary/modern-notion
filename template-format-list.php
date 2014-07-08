@@ -23,17 +23,42 @@
 						<h1><?php the_title(); ?></h1>
 					</div>
 				</div>
-				<?php $format_query = new WP_Query( array(
-					'post_type' => 'post',
-					'post_status' => 'publish',
-				    'order' => 'DESC',
-				    'tax_query' => array(
+				<?php if($post_format == 'standard')  {
+					$tax_query = array(
+				        array(
+				            'taxonomy' => 'post_format',
+				            'field' => 'slug',
+				            'terms' => array( 
+				                'post-format-aside',
+				                'post-format-audio',
+				                'post-format-chat',
+				                'post-format-gallery',
+				                'post-format-image',
+				                'post-format-link',
+				                'post-format-quote',
+				                'post-format-status',
+				                'post-format-video'
+				            ),
+				            'operator' => 'NOT IN'
+					    )
+					);
+				}
+				else  {
+					$tax_query = array(
 				        array(
 				            'taxonomy' => 'post_format',
 				            'field' => 'slug',
 				            'terms' => array( 'post-format-'.$post_format )
 				        )
-				    )
+					);
+				} 
+
+				?>
+				<?php $format_query = new WP_Query( array(
+					'post_type' => 'post',
+					'post_status' => 'publish',
+				    'order' => 'DESC',
+				    'tax_query' => $tax_query
 				) ); ?>
 				<?php if ( $format_query->have_posts() ) : ?>
 				<ul class="three-col full-site-width">
