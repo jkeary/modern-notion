@@ -56,6 +56,8 @@ $hr-light: #ebebec;
 /*  ------------------------------------------------------------------------------------------------
 Dimension Variables
 ------------------------------------------------------------------------------------------------  */
+$med_w: 391px;
+
 $default-layout-main-cols: 8;
 $md-gutter: 15px;
 $xs-gutter: 10px;
@@ -1493,13 +1495,14 @@ $black_btn_h: 46px;
 		}		
 	}	
 }
-$three_col_gutter: 16px;
+$three_col_gutter: ($full_site_width - $med_w*3)/2;
 .three-col  {
 	@include clearfix;
 	margin: 0 $three_col_gutter/-2;
 	> *  {
-		width: 33.333%;
+		width: $med_w;
 		padding: 0 $three_col_gutter/2 $three_col_gutter;
 		float: left;
+		@include box-sizing(content-box);
 	}
 }

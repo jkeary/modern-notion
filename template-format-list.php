@@ -44,7 +44,7 @@
 					<p class="byline vcard meta-block">
 						<?php printf(' <time class="updated" datetime="%1$s" pubdate><span>%2$s</span>', get_the_time('Y-m-j g:i A'), get_the_time(get_option('date_format'))); ?>
 					</p>
-					<?php the_post_thumbnail(); ?>
+					<?php the_post_thumbnail('medium-square'); ?>
 					</li>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
