@@ -72,7 +72,9 @@
 										<?php global $aspect_ratio; $aspect_ratio = 'square'; ?>
 										<?php get_template_part('partials/content', 'podcast-image'); ?>
 									<?php else: ?>
-										<?php the_post_thumbnail('medium-square-no-sidebar'); ?>
+										<span class="img_wrapper">
+											<?php the_post_thumbnail('medium-square-no-sidebar'); ?>
+										</span>
 									<?php endif; ?>
 									<span class="header">
 										<span class="post-icon-wrapper post-icon-wrapper-medium">

@@ -2,8 +2,6 @@
 	<div class="img_wrapper">
 		<?php if(get_the_post_thumbnail()): ?>
 			<?php the_post_thumbnail('medium-square'); ?>
-		<?php else: ?>
-			<img src="http://placehold.it/391x391" alt="">
 		<?php endif; ?>
 		<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-medium">
 			<?php get_template_part('partials/content', 'post-category-icon'); ?>

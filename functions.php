@@ -75,10 +75,14 @@ if ( ! isset( $content_width ) ) {
 // large:  808 x 455
 add_image_size( 'small-square', 93, 93, true );
 add_image_size( 'smaller-square', 69, 69, true );
-add_image_size( 'medium-square', 356, 356, true );
 add_image_size( 'medium-square-no-sidebar', 343, 343, true );
-add_image_size( 'medium-rectangle', 356, 200, true );
 add_image_size( 'article-main', 737, 415, true );
+
+add_image_size( 'medium-square', 356, 356, true );
+add_image_size( 'medium-rectangle', 356, 200, true );
+
+add_image_size( 'side-square', 318, 318, true );
+add_image_size( 'side-rectangle', 318, 178, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -351,5 +355,64 @@ function stripInvalidXml($value)
     }
     return $ret;
 }
+
+function load_template_part($template_name, $part_name=null) {
+    ob_start();
+    get_template_part($template_name, $part_name);
+    $var = ob_get_contents();
+    ob_end_clean();
+    return $var;
+}
+
+/*
+ * Display a bigger thumbnail and the excerpt for the first post only, then do the regular output
+ *
+ * @param   array   $mostpopular
+ * @param   array   $instance
+ * @return  string
+ */
+function my_custom_popular_posts_html_list( $mostpopular, $instance ){
+    $counter = 0;
+
+    
+    if(is_front_page())  {
+      $image_size = 'side-square';
+    }
+    else  {
+      $image_size = 'small-square'; 
+    }
+
+    $output = '<ul class="sidebar-large-post-list page-block '.$image_size.'">';      
+
+    foreach( $mostpopular as $popular ) {        
+        if(get_the_post_thumbnail())  {          
+          $custom_thumbnail = get_the_post_thumbnail( $popular->id, $image_size, array('alt' => esc_attr($popular->title), 'title' => esc_attr($popular->title)) ); 
+        }        
+        else  {
+          $custom_thumbnail = '';
+        }
+        global $popular_id;
+        $post->ID = $popular_id;
+        $popular_id = $popular->id;
+        ob_start();
+        post_class('', $popular->id);
+        $post_class = ob_get_contents();
+        ob_end_clean();
+        $output .= "<li><article {$post_class}>";
+        $output .= '<a href="'.get_the_permalink($popular_id).'">' . $custom_thumbnail . '</a>';
+        $output .= '<div class="post-icon-wrapper post-icon-wrapper-medium-large">';
+        $output .= load_template_part('partials/content', 'post-category-icon');
+        $output .= '<div class="text-wrapper">';
+        $output .= load_template_part('partials/content', 'article-block-title-and-meta');
+        $output .= '</div>';
+        $output .= "</div></li></article>";
+        $counter++;
+    }
+
+    $output .= '</ul>';
+
+    return $output;
+}
+add_filter( 'wpp_custom_html', 'my_custom_popular_posts_html_list', 10, 2 );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

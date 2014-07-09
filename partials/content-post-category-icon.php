@@ -1,6 +1,13 @@
 <?php
-if(get_the_category()): 
-$category = get_the_category(); 
+global $popular_id;
+if(!empty($popular_id))  {
+	$post_id = $popular_id;
+}
+else  {
+	$post_id = $post->ID;	
+}
+if(get_the_category($post_id)): 
+$category = get_the_category($post_id); 
 $cat_name = $category[0]->cat_name;
 $cat_id = $category[0]->term_id;
 $cat_url = get_category_link($cat_id);

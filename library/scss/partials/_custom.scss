@@ -35,13 +35,13 @@ http://www.evotech.net/articles/testjsentities.html
 /*  ------------------------------------------------------------------------------------------------
 compass sprites
 ------------------------------------------------------------------------------------------------  */
-// $experimental-support-for-svg: true;
+$experimental-support-for-svg: true;
 
-// $icons-spacing: 2px;
-// $icons-sprite-dimensions: true;
-// @import "icons/*.png";              
-// /**/
-// @include all-icons-sprites;
+$icons-spacing: 2px;
+$icons-sprite-dimensions: true;
+@import "icons/*.png";              
+/**/
+@include all-icons-sprites;
 
 /*  ------------------------------------------------------------------------------------------------
 Color Variables
@@ -493,28 +493,28 @@ a.post-icon  {
 		}
 	}
 }
-.category-innovation  {
+article.category-innovation  {
 	h1, h2, h3  {
 		a:hover  {
 			color: $purple;	
 		}	
 	}
 }
-.category-science  {
+article.category-science  {
 	h1, h2, h3  {
 		a:hover  {
 			color: $orange;
 		}	
 	}
 }
-.category-history  {
+article.category-history  {
 	h1, h2, h3  {
 		a:hover  {
 			color: $yellow;
 		}	
 	}
 }
-.category-life  {
+article.category-life  {
 	h1, h2, h3  {
 		a:hover  {
 			color: $green;
@@ -939,8 +939,28 @@ a.post-icon  {
 .sidebar-large-post-list  {		
 	text-align: center;
 	margin-bottom: 25px;
+	&.side-square  {
+		img  {
+			float: none;
+		}
+		.post-icon-wrapper  {
+			margin-left: 0;
+		}
+		.post-icon  {
+			margin: 5px 0;
+			float: left;
+		}
+	}
+	&.small-square  {
+		.post-icon-wrapper.post-icon-wrapper-medium-large .post-icon + .text-wrapper  {
+			margin-left: 0;
+		}
+		.meta.children-with-dividers  {
+			display: none;
+		}
+	}
 	li  {
-		display: inline-block;
+		display: block;
 		text-align: left;
 		+ li  {
 			margin-top: 20px;
@@ -951,10 +971,15 @@ a.post-icon  {
 	}
 	img  {
 		display: block;
+		float: left;
 		margin-bottom: 9px;
 	}
+	.post-icon-wrapper  {
+		margin-left: $image-small-d + 10px;
+	}
 	.post-icon  {
-		margin: 5px 0;
+		margin: 0;
+		float: none;
 	}
 	.entry-title  {
 		@include s1m;
@@ -988,8 +1013,8 @@ $newsletter_form_header_icon_d: 60px;
 		position: relative;
 		border-bottom: 3px solid #000;
 		text-align: center;
-		padding: 12px;
-		padding-left: 12px + $newsletter_form_header_icon_d;
+		padding: 12px 0;
+		padding-left: $newsletter_form_header_icon_d;
 		text-transform: uppercase;
 		@include respond(xs)  {
 			font-size: 19px;
@@ -1622,8 +1647,32 @@ $three_col_gutter: ($full_content_w - $desktop-1-3-col-px*3)/2;
 			padding: 0 !important;
 		}
 	}
+
 }
 .archive-post-tile  {
+	&.format-video  {
+		.img_wrapper  {
+			position: relative;
+			display: block;
+			&:before  {
+				content: " ";
+				display: block;
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				@extend .icons-video_play;
+			}
+		}
+	}
+	h2  {
+		a  {
+			display: block;
+		}
+	}
 	.format-icon  {
 		background: #000 !important;
 		margin-bottom: -1px;
