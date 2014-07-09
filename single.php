@@ -5,7 +5,7 @@
 				<div id="main" class="m-all t-2of3 d-5of7 cf main" role="main">							
 					<div id="infinite-scroll-wrapper">								
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>							
-							<?php get_template_part( 'partials/content', 'single-article'); ?>									
+							<?php get_template_part( 'partials/content', 'single-article'); ?>
 						<?php endwhile; ?>
 						<?php endif; ?>															
 					</div>

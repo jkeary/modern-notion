@@ -20,7 +20,7 @@
 
 	<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png?v1">
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 			<![endif]-->
@@ -94,7 +94,7 @@ var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\
             	<div class="collapse container" id="search-form-wrapper">
             		<form role="search" method="get" id="header-searchform" action="<?php echo home_url( '/' ); ?>">
             			<label class="sr-only" for="s">Search for:</label>
-            			<input type="text" value="" name="s" id="s" placeholder="Search" />
+            			<input type="text" value="<?php if($_GET['s']) echo $_GET['s']; ?>" name="s" id="s" placeholder="Search" />
             			<a href="" class="clear-field">&times;</a>
             		</form>
             	</div>

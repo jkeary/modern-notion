@@ -6,8 +6,8 @@
 		<ul class="sidebar-small-post-list page-block">					
 	<?php while ( $recent_posts_query->have_posts() ) : ?>
 		<?php $recent_posts_query->the_post(); ?>
-		<li>	
-			<article>
+		<li>
+			<article <?php post_class(); ?>>
 				<div class="post-icon-wrapper post-icon-wrapper-medium-large">				
 					<?php get_template_part('partials/content', 'post-category-icon'); ?>
 					<div class="text-wrapper">

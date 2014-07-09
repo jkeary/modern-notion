@@ -7,7 +7,10 @@
 		<?php endif; ?>
 		<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-medium">
 			<?php get_template_part('partials/content', 'post-category-icon'); ?>
-			<?php get_template_part('partials/content', 'post-format-icon'); ?>	
+			<?php
+				global $format; $format = get_post_format_string(get_post_format());
+				get_template_part('partials/content', 'post-format-icon'); 
+			?>			
 		</span>
 		<?php get_template_part('partials/content', 'article-tab-link'); ?>
 	</div>

@@ -75,10 +75,10 @@ if ( ! isset( $content_width ) ) {
 // large:  808 x 455
 add_image_size( 'small-square', 93, 93, true );
 add_image_size( 'smaller-square', 69, 69, true );
-add_image_size( 'medium-square', 391, 391, true );
-add_image_size( 'medium-rectangle', 391, 220, true );
-add_image_size( 'article-main', 700, 393, true );
-add_image_size( 'home-main', 808, 455, true );
+add_image_size( 'medium-square', 356, 356, true );
+add_image_size( 'medium-square-no-sidebar', 343, 343, true );
+add_image_size( 'medium-rectangle', 356, 200, true );
+add_image_size( 'article-main', 737, 415, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -306,7 +306,22 @@ function podcastsRSS(){
 function podcastsRSSFunc(){
   get_template_part('partials/rss', 'podcasts');
 }
-
+function format_frontend($format){
+  switch ($format) {
+    case 'audio':
+      return 'podcast';
+      break;    
+    case 'aside':
+      return 'list';
+      break;    
+    case 'photo':
+      return 'slideshow';
+      break;    
+    default:
+      return $format;
+      break;
+  }
+}
 function stripInvalidXml($value)
 {
     $ret = "";

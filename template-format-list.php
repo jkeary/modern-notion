@@ -8,19 +8,18 @@
 				<?php $post_format = get_field('format'); ?>			
 				<div class="centered-image-text-header valign">
 					<div>
-						<?php $format = get_post_format_string($post_format); ?>
-						<?php $format_slug = strtolower($format); ?>
 						<div class="post-icon-wrapper post-icon-wrapper-largest">
-							<span class="valign halign post-icon format-icon <?php echo $format_slug; ?>">
-								<span>
-									<span class="icon-font"></span>
-									<span class="sr-only">View all <?php echo $format_slug; ?> posts</span>
-								</span>		
-							</span>
+							<?php global $format; $format = format_frontend($post_format); ?>
+							<?php get_template_part('partials/content', 'post-format-icon');  ?>													
 						</div>
 					</div>
 					<div>
 						<h1><?php the_title(); ?></h1>
+					</div>
+					<div>
+						<div class="pull-right">
+							<img src="http://placehold.it/683x94&text=Advertisement" alt="">
+						</div>
 					</div>
 				</div>
 				<?php if($post_format == 'standard')  {
@@ -65,29 +64,31 @@
 					<?php $i = 1; ?>
 				<?php while ( $format_query->have_posts() ) : ?>
 					<li>
-						<div class="archive-post-tile">
-							<?php $format_query->the_post(); ?>
-							<a href="<?php the_permalink(); ?>">							
-								<?php if('audio' == $post_format): ?>
-									<?php global $aspect_ratio; $aspect_ratio = 'square'; ?>
-									<?php get_template_part('partials/content', 'podcast-image'); ?>
-								<?php else: ?>
-									<?php the_post_thumbnail('medium-square'); ?>
-								<?php endif; ?>
-								<span class="header">
-									<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-medium">
-										<?php get_template_part('partials/content', 'post-format-icon'); ?>	
-										<span class="children-with-dividers text-wrapper meta">
-											<?php if('audio' != $post_format): ?>
-												<span><?php the_title(); ?></span>
-											<?php endif; ?>
-											<span class="byline vcard">
-												<?php printf(' <time class="updated" datetime="%1$s" pubdate><span>%2$s</span>', get_the_time('Y-m-j g:i A'), get_the_time(get_option('date_format'))); ?>
+						<?php $format_query->the_post(); ?>
+						<div <?php post_class( 'archive-post-tile' ); ?>>
+							<h2>
+								<a href="<?php the_permalink(); ?>">							
+									<?php if('audio' == $post_format): ?>
+										<?php global $aspect_ratio; $aspect_ratio = 'square'; ?>
+										<?php get_template_part('partials/content', 'podcast-image'); ?>
+									<?php else: ?>
+										<?php the_post_thumbnail('medium-square-no-sidebar'); ?>
+									<?php endif; ?>
+									<span class="header">
+										<span class="post-icon-wrapper post-icon-wrapper-medium">
+											<?php get_template_part('partials/content', 'post-format-icon'); ?>	
+											<span class="children-with-dividers text-wrapper meta">
+												<?php if('audio' != $post_format): ?>
+													<span><?php the_title(); ?></span>
+												<?php endif; ?>
+												<span class="byline vcard">
+													<?php printf(' <time class="updated" datetime="%1$s" pubdate><span>%2$s</span>', get_the_time('Y-m-j g:i A'), get_the_time(get_option('date_format'))); ?>
+												</span>
 											</span>
 										</span>
-									</span>
-								</span>														
-							</a>
+									</span>														
+								</a>
+							</h2>
 						</div>
 						<?php get_template_part('partials/content', 'article-excerpt'); ?>
 					</li>

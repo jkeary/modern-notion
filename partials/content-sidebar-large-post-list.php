@@ -7,7 +7,7 @@
 	<?php while ( $recent_posts_query->have_posts() ) : ?>
 		<?php $recent_posts_query->the_post(); ?>
 		<li>	
-			<article>
+			<article <?php post_class(); ?>>
 				<?php if(get_the_post_thumbnail()): ?>
 					<?php the_post_thumbnail('medium-rectangle'); ?>
 				<?php else: ?>

@@ -185,6 +185,15 @@ if(function_exists("register_field_group"))
 					'group_no' => 0,
 				),
 			),
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
 		),
 		'options' => array (
 			'position' => 'acf_after_title',
@@ -235,6 +244,20 @@ if(function_exists("register_field_group"))
 		'id' => 'acf_list-post-fields',
 		'title' => 'List Post Fields',
 		'fields' => array (
+			array (
+				'key' => 'field_53bd4458f8992',
+				'label' => 'List Number Order',
+				'name' => 'list_number_order',
+				'type' => 'radio',
+				'choices' => array (
+					'increasing' => 'Increasing',
+					'decreasing' => 'Decreasing',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'increasing',
+				'layout' => 'vertical',
+			),
 			array (
 				'key' => 'field_53aacfbb928f6',
 				'label' => 'List Items',
