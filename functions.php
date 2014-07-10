@@ -385,7 +385,7 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
     $output = '<ul class="sidebar-large-post-list page-block '.$image_size.'">';      
 
     foreach( $mostpopular as $popular ) {        
-        if(get_the_post_thumbnail())  {          
+        if(get_the_post_thumbnail($popular->id, $image_size))  {          
           $custom_thumbnail = get_the_post_thumbnail( $popular->id, $image_size, array('alt' => esc_attr($popular->title), 'title' => esc_attr($popular->title)) ); 
         }        
         else  {

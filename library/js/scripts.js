@@ -75,6 +75,11 @@ var timeToWaitForLast = 100;
 jQuery(document).ready(function($) {
 
   /* ------------------------------------------------
+  Common Variables
+  ------------------------------------------------ */
+  var $body = $('body');
+
+  /* ------------------------------------------------
   Clear search form and focus
   ------------------------------------------------ */
 	$(".clear-field").click(function(evt){
@@ -96,15 +101,27 @@ jQuery(document).ready(function($) {
   /* ------------------------------------------------
   Sticky Elements
   ------------------------------------------------ */
-  	$(".share-panel").each(function() {  		
-  		var $this = $(this);
-  		var this_slug = $this.data('slug');
-  		$this.stick_in_parent({
-			offset_top: 20,
-			parent: '.article-text-wrapper[data-slug="'+this_slug+'"]'
+  	var sticky_offest_top = 100;
+  	$(window).load(function() {
+     	$(".share-panel").each(function() {  		
+	  		var $this = $(this);
+	  		var this_slug = $this.data('slug');
+	  		$this.stick_in_parent({
+				offset_top: sticky_offest_top,
+				parent: '.article-text-wrapper[data-slug="'+this_slug+'"]'
+			});
 		});
-  	});
+		if($('body.home').length == 0)  {
+		  	$('.sidebar-sticky-wrapper').stick_in_parent({
+				offset_top: sticky_offest_top,
+				inner_scrolling: false,
+				parent: '#inner-content'
+			});
+		}
+	});
+  	
 
+	  
   /* ------------------------------------------------
   Bxslider
   ------------------------------------------------ */
@@ -119,7 +136,7 @@ jQuery(document).ready(function($) {
 $(window).resize(function () {
 
 	waitForFinalEvent( function() {
-		if( viewport.width > 1250 ) {
+		if( viewport.width > 1080 ) {
 			jPM.close();
 		}
 		$(document.body).trigger("sticky_kit:recalc");
@@ -151,5 +168,6 @@ $(window).resize(function () {
 			}
 			return false;
 		});
+
 
 }); /* end of as page load scripts */

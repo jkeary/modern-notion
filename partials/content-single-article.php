@@ -34,7 +34,9 @@
 			<div class="main article-header-text-wrapper">
                 <?php if(is_single()): ?>
               		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>                                           
-                    <?php echo do_shortcode('[ssba]'); ?> 
+                    <div class="share-buttons inline-color-style">
+                        <?php get_template_part( 'partials/content', 'share-buttons'); ?>
+                    </div>
                     <?php /*
                     <?php if(get_field('dek')): ?>    
                         <hr class="short">
@@ -72,7 +74,9 @@
                     </a>
                     <div class="share-panel" data-slug="<?php echo get_the_slug(); ?>">
                         <h2>Share</h2>
-                        <?php echo do_shortcode('[ssba]'); ?>
+                        <div class="share-buttons black-style vertical">
+                            <?php get_template_part( 'partials/content', 'share-buttons'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="main">

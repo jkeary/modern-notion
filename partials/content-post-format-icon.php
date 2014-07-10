@@ -12,7 +12,7 @@ if($icon_element == 'a')  {
 	$href = 'href="'.home_url().'/'.$format_slug.'-list"';
 	$title_attr = 'title="View all '.$format_slug. ' posts';
 }
-if(get_the_category())  {
+if(get_the_category() && !is_search())  {
 	$category_colored_class = top_category_slug() . '-bgcolored';
 }
 ?>

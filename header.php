@@ -90,11 +90,11 @@ var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\
             				</ul>
                         </div>
                     </div>
-                </header>
-            	<div class="collapse container" id="search-form-wrapper">
-            		<form role="search" method="get" id="header-searchform" action="<?php echo home_url( '/' ); ?>">
-            			<label class="sr-only" for="s">Search for:</label>
-            			<input type="text" value="<?php if($_GET['s']) echo $_GET['s']; ?>" name="s" id="s" placeholder="Search" />
-            			<a href="" class="clear-field">&times;</a>
-            		</form>
-            	</div>
+                    <div class="collapse container" id="search-form-wrapper">
+                        <form role="search" method="get" id="header-searchform" action="<?php echo home_url( '/' ); ?>">
+                            <label class="sr-only" for="s">Search for:</label>
+                            <input type="text" value="<?php if(isset($_GET['s'])) echo $_GET['s']; ?>" name="s" id="s" placeholder="Search" />
+                            <a href="" class="clear-field">&times;</a>
+                        </form>
+                    </div>
+                </header>            	

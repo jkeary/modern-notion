@@ -1,1 +1,8 @@
-<a href="<?php the_permalink() ?>" class="full-post-tab-link" title="View post"><span class="icon-Share"></span></a>
+<div class="share-tab-wrapper">
+	<div class="share-tab">
+		<span class="icon-Share"></span>
+	</div>
+	<div class="share-buttons inline black-style">
+		<?php get_template_part( 'partials/content', 'share-buttons'); ?>
+	</div>
+</div>
