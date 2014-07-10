@@ -68,7 +68,7 @@
                     <?php $image = get_field('headshot', $author_ref); // only for image info outputted as an object ?>
                     <a href="<?php get_template_part('partials/content', 'author-permalink'); ?>" class="author">
                         <?php if($image): ?>
-                            <img src="<?php echo $image['sizes']['smaller-square']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <img src="<?php echo $image['sizes']['smaller-square']; ?>" alt="<?php echo $image['alt']; ?>" class="nopin" />
                         <?php endif; ?>
                         <span class="text"><?php get_template_part('partials/content', 'author-full-name'); ?></span>
                     </a>
@@ -121,6 +121,9 @@
                     <?php if(get_the_content()): ?>
                         <div class="prose standard-content category-prose <?php echo top_category_slug(); ?>-styled">
                             <?php the_content(); ?>
+                        </div>
+                        <div class="share-buttons inline-color-style">
+                            <?php get_template_part( 'partials/content', 'share-buttons'); ?>
                         </div>
                     <?php endif; ?>
                     <div class="article-footer">

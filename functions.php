@@ -377,12 +377,14 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
     
     if(is_front_page())  {
       $image_size = 'side-square';
+      $extra_class = '';
     }
     else  {
       $image_size = 'small-square'; 
+      $extra_class = 'nopin';
     }
 
-    $output = '<ul class="sidebar-large-post-list page-block '.$image_size.'">';      
+    $output = '<ul class="sidebar-large-post-list page-block '.$image_size.' '.$extra_class.'">';      
 
     foreach( $mostpopular as $popular ) {        
         if(get_the_post_thumbnail($popular->id, $image_size))  {          

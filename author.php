@@ -11,7 +11,7 @@ $author_ref = 'user_'. $author_id;
 					<div>
 						<?php $image = get_field('headshot', $author_ref); // only for image info outputted as an object ?>
 						<?php if($image): ?>
-							<img src="<?php echo $image['sizes']['small-square']; ?>" alt="<?php echo $image['alt']; ?>" />	
+							<img src="<?php echo $image['sizes']['small-square']; ?>" alt="<?php echo $image['alt']; ?>" class="nopin" />	
 						<?php endif; ?>
 					</div>	
 					<div class="text-wrapper">
@@ -29,12 +29,7 @@ $author_ref = 'user_'. $author_id;
 								<?php if(get_the_author_meta('user_email', $author_id)): ?>	
 									<a href="mailto:<?php the_author_meta('user_email', $author_id); ?>" target="_blank"><?php the_author_meta('user_email', $author_id); ?></a>
 								<?php endif; ?>
-							</li>
-							<li>
-								<?php if(get_the_author_meta('user_url', $author_id)): ?>	
-									<a href="<?php the_author_meta('user_url', $author_id); ?>" target="_blank"><?php the_author_meta('user_url', $author_id); ?></a>
-								<?php endif; ?>
-							</li>
+							</li>						
 						</ul>
 					</div>
 				</div>

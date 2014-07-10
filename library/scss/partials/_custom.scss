@@ -193,8 +193,11 @@ input, textarea  {
 .wrap  {
 	@extend .container;	
 }
+.site-header  {
+	background: url(../images/header-bg-noise.jpg) center top repeat;
+}
 .site-header, .site-footer  {
-	background: #9bdad0;
+	background-color: #9bdad0;
 }
 @mixin header_height_adjust($header_height)  {
 	#container  {
@@ -757,10 +760,10 @@ article.category-life  {
 	&.inline  {
 		padding: 13px;
 		border: 4px solid #000;
-		a {
-			+ a  {
-				margin-left: 10px;
-			}	
+		> span  {
+			+ span  {
+				padding-left: 10px;
+			}
 		}
 		span.text  {
 			@include sr-only;
@@ -1325,9 +1328,12 @@ a.menu-trigger  {
 	}
 	.prose  {
 		&.standard-content  {
-			margin-bottom: 103px;
+			margin-bottom: 30px;
 			@include pull-up-next-to-article-side;
 			@include respond(md)  {
+				margin-bottom: 20px;
+			}
+			+ .share-buttons  {
 				margin-bottom: 20px;
 			}
 		}

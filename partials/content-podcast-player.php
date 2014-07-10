@@ -43,7 +43,9 @@ jQuery(document).ready(function($) {
 	<a href="javascript:openShare('https://www.facebook.com/sharer.php?s=100&p[url]=http://miltrosenberg.com/show/the-ghastly-week-that-was/&p[title]=The Ghastly Week That Was');" class="btn social-share facebook-share" title="Share on Facebook">Share on Facebook</a>
 	<a href="javascript:openShare('http://twitter.com/share?url=http://miltrosenberg.com/show/the-ghastly-week-that-was/&text=The Ghastly Week That Was');" class="btn social-share twitter-share" title="Share on Twitter">Share on Twitter</a>
 */ ?>
+<?php /*
 	<a href="" class="btn black">Subscribe on iTunes</a>
+*/ ?>
 	<a href="<?php echo $audio['url']; ?>" class="btn black social-share download" title="Download Show" target="_blank" download="modern-notion-show-<?php echo get_the_time('m-j-Y'); ?>.mp3">Download</a>	
 	<a href="<?php home_url() ?>/feed/podcasts-feed" class="btn black icon-btn"><span class="icon-feed"></span><span class="sr-only">RSS Feed</span></a>
 	<?php /*
