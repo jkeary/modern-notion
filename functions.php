@@ -392,7 +392,6 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
           $custom_thumbnail = '';
         }
         global $popular_id;
-        $post->ID = $popular_id;
         $popular_id = $popular->id;
         ob_start();
         post_class('', $popular->id);
