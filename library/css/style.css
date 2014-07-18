@@ -2886,6 +2886,31 @@ input:focus, textarea:focus {
   background: url(../images/header-bg-noise.jpg) center top repeat;
 }
 
+.site-header.scroll {
+  height:44px;
+}
+.site-header.scroll .header-logo .logo-text{
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  opacity: 1;
+  text-transform: uppercase;
+  display: block;
+  float: left;
+  vertical-align: middle;
+  padding: 12.5px 38px;
+  text-decoration: none;
+  font-family: 'stratum1medium';
+  font-weight: bold;
+  font-weight: bold;
+}
+.site-header.scroll .icon-Full_Logo{
+  display:none !important;
+}
+.site-header.scroll #inner-header{
+  padding: 0; 
+}
+
 /* line 199, ../scss/partials/_custom.scss */
 .site-header, .site-footer {
   background-color: #9bdad0;
