@@ -4577,7 +4577,10 @@ body.category .article-header {
 }
 /* line 1278, ../scss/partials/_custom.scss */
 body.single .article-content-row > .main {
-
+  margin-left: 108px;
+}
+body.single .article-content-row .article-header-text-wrapper {
+  margin-left: 0;
 }
 @media (max-width: 1104px) {
   /* line 1278, ../scss/partials/_custom.scss */
