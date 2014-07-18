@@ -26,7 +26,7 @@
             </div>	
         </div>		
         <div class="article-content-row bottom"> 
-            <?php if(is_single()): ?>               	
+            <?php if(false): ?>               	
     			<div class="side post-icon-wrapper post-icon-wrapper-larger hidden-xs">
     				<?php get_template_part('partials/content', 'post-category-icon'); ?>
     			</div>	
