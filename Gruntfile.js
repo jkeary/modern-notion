@@ -14,9 +14,22 @@ module.exports = function(grunt) {
         src: 'library/js/plugins/*.js',
         dest: 'library/js/plugins.min.js'
       }
-    }
-});  
+    },
 
-  grunt.registerTask('default', ['uglify']);
+    sass: {
+      dev: {
+        options: {
+          style: "expanded"
+        }, 
+        files: {
+          "./library/css/style.css": "./library/scss/style.scss"
+        }
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-sass');
+
+  grunt.registerTask('default', ['uglify', 'sass:dev']);
 
 };
