@@ -1,12 +1,5 @@
 <div id="mc_embed_signup">
-	<form action="//modernnotion.us6.list-manage.com/subscribe/post?u=c825ea2e83&amp;id=005bfbdc33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-		
-	<div class="mc-field-group half-col">
-		<input type="text" value="" placeholder="First Name" name="FNAME" class="" id="mce-FNAME">
-	</div>
-	<div class="mc-field-group half-col">
-		<input type="text" value="" placeholder="Last Name" name="LNAME" class="" id="mce-LNAME">
-	</div>
+	<form action="//modernnotion.us6.list-manage.com/subscribe/post?u=c825ea2e83&amp;id=005bfbdc33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>		
 	<div class="mc-field-group">
 		<input type="email" value="" placeholder="Email" name="EMAIL" class="required email full-col" id="mce-EMAIL">
 	</div>
