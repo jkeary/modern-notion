@@ -42,18 +42,25 @@
 var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\/milt-rosenberg"};
 /* ]]> */
 </script>
+        <!-- Taboola -->
+        <script type="text/javascript">
+            window._taboola = window._taboola || [];
+            _taboola.push({article:'auto'});
+            !function (e, f, u) {
+            e.async = 1;
+            e.src = u;
+            f.parentNode.insertBefore(e, f);
+            }(document.createElement('script'),
+            document.getElementsByTagName('script')[0],
+            'http://cdn.taboola.com/libtrc/modernnotion/loader.js');
+        </script>
 
-<script type="text/javascript">
-window._taboola = window._taboola || [];
-_taboola.push({article:'auto'});
-!function (e, f, u) {
-e.async = 1;
-e.src = u;
-f.parentNode.insertBefore(e, f);
-}(document.createElement('script'),
-document.getElementsByTagName('script')[0],
-'http://cdn.taboola.com/libtrc/modernnotion/loader.js');
-</script>
+        <!-- Google ads -->
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>        
+        
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>        
 
 		</head>
 

@@ -1,5 +1,9 @@
 <div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
-	<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block">
+	<ins class="adsbygoogle"
+	style="display:inline-block;width:300px;height:250px"
+	data-ad-client="ca-pub-5436367174279870"
+	data-ad-slot="4829671748"></ins>	
+	<!-- <img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block"> -->
 	<div class="sidebar-sticky-wrapper">
 		<div class="page-block newsletter-signup">
 			<h2><span class="icon-Logo_Icon"></span>Get Our Newsletter</h2>
