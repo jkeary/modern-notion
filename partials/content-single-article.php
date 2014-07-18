@@ -143,6 +143,7 @@
                         'post_type' => 'post',
                         'posts_per_page' => 3
                     ) ); ?>
+                    
                     <?php if ( $related_query->have_posts() ) : ?>
                     <section class="suggested-posts">
                         <div class="row">
@@ -157,6 +158,9 @@
                             <?php endwhile; ?>
                         </div>
                     </section>
+                    
+                    <?php get_template_part("partials/content", "taboola-related"); ?>
+
                     <?php wp_reset_postdata(); ?>
                     <?php endif; ?>   
                     <img src="http://placehold.it/693x100&text=Advertisement" alt="" class="page-block">

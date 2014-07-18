@@ -54,6 +54,11 @@
     <?php // all js scripts are loaded in library/bones.php ?>
     <?php wp_footer(); ?>
 
+<script type="text/javascript">
+window._taboola = window._taboola || [];
+_taboola.push({flush: true});
+</script>    
+
 </body>
 
 </html> <!-- end of site. what a ride! -->
