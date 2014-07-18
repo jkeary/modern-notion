@@ -9,10 +9,10 @@
 		<li>	
 			<article <?php post_class(); ?>>
 				<?php if(get_the_post_thumbnail()): ?>
-					<?php the_post_thumbnail('side-square'); ?>
+					<?php the_post_thumbnail('side-rectangle'); ?>
 				<?php endif; ?>			
 				<div class="post-icon-wrapper post-icon-wrapper-medium-large">				
-					<?php get_template_part('partials/content', 'post-category-icon'); ?>
+					<?php //get_template_part('partials/content', 'post-category-icon'); ?>
 					<div class="text-wrapper">
 						<?php get_template_part('partials/content', 'article-block-title-and-meta'); ?>
 					</div>

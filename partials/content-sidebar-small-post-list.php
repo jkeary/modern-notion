@@ -13,7 +13,7 @@
 			<li>
 				<article <?php post_class(); ?>>
 					<div class="post-icon-wrapper post-icon-wrapper-medium-large">				
-						<?php get_template_part('partials/content', 'post-category-icon'); ?>
+						<?php //get_template_part('partials/content', 'post-category-icon'); ?>
 						<div class="text-wrapper">
 							<?php get_template_part('partials/content', 'article-block-title-and-meta'); ?>						
 						</div>

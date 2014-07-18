@@ -4202,7 +4202,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 }
 /* line 1016, ../scss/partials/_custom.scss */
 .sidebar-small-post-list .post-icon-wrapper.post-icon-wrapper-medium-large .text-wrapper {
-  margin-left: 68px;
+  /*margin-left: 68px;*/
 }
 @media (max-width: 1104px) {
   /* line 1016, ../scss/partials/_custom.scss */
@@ -4299,7 +4299,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 }
 /* line 1086, ../scss/partials/_custom.scss */
 .sidebar-large-post-list .post-icon-wrapper {
-  margin-left: 103px;
+  /*margin-left: 103px;*/
 }
 /* line 1089, ../scss/partials/_custom.scss */
 .sidebar-large-post-list .post-icon {
