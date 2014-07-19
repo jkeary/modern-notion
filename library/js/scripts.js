@@ -101,7 +101,7 @@ jQuery(document).ready(function($) {
   /* ------------------------------------------------
   Sticky Elements
   ------------------------------------------------ */
-  	var sticky_offest_top = 100;
+  	var sticky_offest_top = 70;
   	$(window).load(function() {
      	$(".share-panel").each(function() {  		
 	  		var $this = $(this);

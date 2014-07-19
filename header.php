@@ -62,22 +62,18 @@ var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>   
 
-        <!-- NAV BAR -->
+        <!-- jp -->
         <script>
+            var hasAlerted = false;
             jQuery(window).scroll(function(e) {
+
+                //Nav bar animation
                 var header = jQuery(".site-header");
                 if(header.width() < 1104) {
                     return; 
                 }
                 var height = header.height();
                 var scroll = jQuery(this).scrollTop(); 
-                console.log(height);
-                if(height > 44 && scroll < 44){
-                    //header.css("height", height - scroll); 
-                }
-                // else if(height < 87) {
-                //     header
-                // }
 
                 if(jQuery(this).scrollTop() > 44){
                     header.addClass("scroll"); 
@@ -86,6 +82,14 @@ var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\
                 else {
                     header.removeClass("scroll"); 
                     jQuery(".logo-text").addClass("sr-only");                    
+                }
+
+                //Alert box, for after articles
+                var contentHeight = jQuery(".standard-content").height();
+                var isSingle = "<?php echo is_single(); ?>";                
+                if(scroll > (contentHeight+800) && !hasAlerted && isSingle){
+                    hasAlerted = true;
+                    //alert("Like us!");
                 }
             });
         </script>
