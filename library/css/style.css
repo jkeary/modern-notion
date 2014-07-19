@@ -4719,6 +4719,12 @@ body.category .article-content-row .entry-title, body.category .article-content-
 .entry-content .article-top-panel img {
   display: block;
 }
+.entry-content .article-top-panel .photo-cite { 
+  float: right;
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 5px;  
+}
 /* line 1330, ../scss/partials/_custom.scss */
 .entry-content .prose.standard-content {
   margin-bottom: 30px;

@@ -58,7 +58,16 @@
                 </div> 
             <?php else: ?>
         	   <?php the_post_thumbnail('large'); ?>
-            <?php endif; ?>   
+               <?php
+                    $link = get_post_meta($post->ID, "cite_link", true);
+                    $text = get_post_meta($post->ID, "cite_text", true);
+
+                    if($link): 
+               ?>
+               <p class="photo-cite">
+                   <a href="<?php echo $link; ?>" target="_blank"><?php echo $text; ?></a>
+               </p>
+            <?php endif; endif; ?>   
         </div>       
         <?php if(is_single()): ?>
             <div class="article-content-row article-text-wrapper" data-slug="<?php echo get_the_slug(); ?>">
