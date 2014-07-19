@@ -60,7 +60,35 @@ var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\
         
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>        
+        </script>   
+
+        <!-- NAV BAR -->
+        <script>
+            jQuery(window).scroll(function(e) {
+                var header = jQuery(".site-header");
+                if(header.width() < 1104) {
+                    return; 
+                }
+                var height = header.height();
+                var scroll = jQuery(this).scrollTop(); 
+                console.log(height);
+                if(height > 44 && scroll < 44){
+                    //header.css("height", height - scroll); 
+                }
+                // else if(height < 87) {
+                //     header
+                // }
+
+                if(jQuery(this).scrollTop() > 44){
+                    header.addClass("scroll"); 
+                    jQuery(".logo-text").removeClass("sr-only");
+                }
+                else {
+                    header.removeClass("scroll"); 
+                    jQuery(".logo-text").addClass("sr-only");                    
+                }
+            });
+        </script>
 
 		</head>
 
