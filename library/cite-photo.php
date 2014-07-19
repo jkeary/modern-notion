@@ -102,24 +102,7 @@ class PhotoCite {
   
     // Add an nonce field so we can check for it later.
     wp_nonce_field( 'cite_featured_image', 'cite_featured_img_nonce' );
-
-    // Use get_post_meta to retrieve an existing value from the database.
-    $text = get_post_meta( $post->ID, 'cite_text', true );
-    $link = get_post_meta( $post->ID, 'cite_link', true );
-
     get_template_part("partials/admin", "cite-photo");
 
-    // Display the form, using the current value.
-    // echo '<label for="cite_text" style="width: 150px;">';
-    // _e( 'Author', 'bonestheme' );
-    // echo '</label> ';
-    // echo '<input type="text" id="cite_text" name="cite_text"';
-    // echo ' value="' . esc_attr( $text ) . '" size="25" />';
-    // echo "<br>";
-    // echo '<label for="cite_link" style="width: 150px;">';
-    // _e( 'Link', 'bonestheme' );
-    // echo '</label> ';
-    // echo '<input type="text" id="cite_link" name="cite_link"';
-    // echo ' value="' . esc_attr( $link ) . '" size="25" />';    
   }
 }
