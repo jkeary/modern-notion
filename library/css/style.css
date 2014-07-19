@@ -4669,6 +4669,9 @@ body.single .article-content-row .article-header-text-wrapper {
   body.single .article-content-row > .main {
     margin-left: 89px;
   }
+  body.single .article-content-row > .article-header-text-wrapper {
+    margin-left: 0px;
+  }  
 }
 /* line 1286, ../scss/partials/_custom.scss */
 body.category .article-content-row .entry-title, body.category .article-content-row .meta-block {
