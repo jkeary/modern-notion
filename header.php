@@ -62,7 +62,7 @@ var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>   
 
-        <!-- jp -->
+        <!-- On scroll -->
         <script>
             var hasAlerted = false;
             jQuery(window).scroll(function(e) {
@@ -75,7 +75,7 @@ var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\
                 var height = header.height();
                 var scroll = jQuery(this).scrollTop(); 
 
-                if(jQuery(this).scrollTop() > 44){
+                if(jQuery(this).scrollTop() > 250){
                     header.addClass("scroll"); 
                     jQuery(".logo-text").removeClass("sr-only");
                 }
