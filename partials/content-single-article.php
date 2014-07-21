@@ -179,3 +179,9 @@
     </section> <?php // end article section ?>
 
 </article> <?php // end article ?>
+
+
+<?php get_template_part("partials/modal", "slidein-recommended"); ?>
+
+
+

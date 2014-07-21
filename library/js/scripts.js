@@ -169,5 +169,56 @@ $(window).resize(function () {
 			return false;
 		});
 
+	//Window scroll event
+    var hasAlerted = false;
+    jQuery(window).scroll(function(e) {
+
+        //Nav bar animation
+        var header = jQuery(".site-header");
+        if(header.width() < 1104) {
+            return; 
+        }
+        var height = header.height();
+        var scroll = jQuery(this).scrollTop(); 
+
+        if(jQuery(this).scrollTop() > 250){
+            header.addClass("scroll"); 
+            jQuery(".logo-text").removeClass("sr-only");
+        }
+        else {
+            header.removeClass("scroll"); 
+            jQuery(".logo-text").addClass("sr-only");                    
+        }
+
+        //Alert box, for after articles
+        var contentHeight = jQuery(".standard-content").height();
+        if(scroll > (contentHeight) && !hasAlerted && isSingle){
+            hasAlerted = true;
+            jQuery("#slide-in").addClass("open");
+        }
+    });	
+
+	//Close recommended
+    jQuery(".slide-in .close").click(function(e) {
+        e.preventDefault();
+        jQuery("#slide-in").removeClass("open");
+    });	
+
+    //Modal fix
+    var checkeventcount = 1,prevTarget;
+    jQuery('.modal').on('show.bs.modal', function (e) {
+        if(typeof prevTarget == 'undefined' || (checkeventcount==1 && e.target!=prevTarget))
+        {  
+          prevTarget = e.target;
+          checkeventcount++;
+          e.preventDefault();
+          jQuery(e.target).appendTo('body').modal('show');
+        }
+        else if(e.target==prevTarget && checkeventcount==2)
+        {
+          checkeventcount--;
+        }
+     });    
+
 
 }); /* end of as page load scripts */

@@ -37,11 +37,16 @@
 			<?php // drop Google Analytics Here ?>
 			<?php // end analytics ?>
 
-<script type='text/javascript'>
-/* <![CDATA[ */
-var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\/milt-rosenberg"};
-/* ]]> */
-</script>
+        <script>
+            var isSingle = "<?php echo is_single(); ?>";
+        </script>
+
+        <script type='text/javascript'>
+        /* <![CDATA[ */
+        var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\/milt-rosenberg"};
+        /* ]]> */
+        </script>
+        
         <!-- Taboola -->
         <script type="text/javascript">
             window._taboola = window._taboola || [];
@@ -59,54 +64,35 @@ var page_info = {"template_url":"http:\/\/miltrosenberg.com\/wp-content\/themes\
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>        
         
         <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>   
-
-        <!-- On scroll -->
-        <script>
-            var hasAlerted = false;
-            jQuery(window).scroll(function(e) {
-
-                //Nav bar animation
-                var header = jQuery(".site-header");
-                if(header.width() < 1104) {
-                    return; 
-                }
-                var height = header.height();
-                var scroll = jQuery(this).scrollTop(); 
-
-                if(jQuery(this).scrollTop() > 250){
-                    header.addClass("scroll"); 
-                    jQuery(".logo-text").removeClass("sr-only");
-                }
-                else {
-                    header.removeClass("scroll"); 
-                    jQuery(".logo-text").addClass("sr-only");                    
-                }
-
-                //Alert box, for after articles
-                var contentHeight = jQuery(".standard-content").height();
-                var isSingle = "<?php echo is_single(); ?>";                
-                if(scroll > (contentHeight+800) && !hasAlerted && isSingle){
-                    hasAlerted = true;
-                    //alert("Like us!");
-                }
-            });
+            (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+
+        <!-- GA -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-48164405-5', 'auto');
+            ga('send', 'pageview');
+        </script>         
 
 		</head>
 
 		<body <?php body_class(); ?>>
-<?php /*  */ ?>          
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=181203951950224&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-			<div id="container">
+            
+            <?php /*  */ ?>          
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=181203951950224&version=v2.0";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+			
+            <div id="container">
 
 				<header class="header site-header" role="banner">
 

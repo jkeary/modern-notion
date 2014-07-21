@@ -1,0 +1,164 @@
+/*Slide in modal*/
+.slide-in {
+  position:fixed;
+  bottom: 42px;
+  right: -500px;
+  background-color: white;
+  width: 436px;
+  z-index: 10;
+  -webkit-transition: all 500ms ease-out;
+     -moz-transition: all 500ms ease-out;
+       -o-transition: all 500ms ease-out;
+          transition: all 500ms ease-out;  
+}
+
+.slide-in.open {
+  right: 65px;
+}
+
+.slide-in section{
+  border: 3px solid black;  
+}
+
+.slide-in section p {
+  float: left;
+  font-family: 'stratum2bold';
+  text-transform: uppercase;
+  font-size: 24px;
+  vertical-align: middle;
+  line-height: 54px;
+  padding-left: 16px;  
+}
+
+.slide-in article {
+  border: 3px;
+  border-width: 3px;
+  border-style: solid;
+  border-top: 0;
+  padding: 16px;  
+}
+
+#slide-in .icon {
+  float: right;
+  border-left: 3px solid black;  
+}
+
+#slide-in article img {
+  float: left;
+  margin-right: 16px;  
+}
+
+#slide-in article h4 {
+  margin: 8px 0; 
+}
+
+#slide-in article h4 a{
+  font-family: 'stratum2bold';
+  font-size: 18px; 
+}
+
+#slide-in article .meta{
+  text-transform: uppercase;
+  font-size: 13px;  
+}
+
+/* Modern Notion modal */
+.mn-modal {
+  margin-top: 67px;
+}
+.mn-modal .modal-content {
+  border-radius: 0;
+  padding: 16px;
+}
+.mn-modal .modal-lg {
+  width: 658px;
+}
+
+.mn-modal .modal-header img {
+  float:left;
+  margin-right: 24px;
+}
+
+.mn-modal .intro {
+  margin-top: 12px;
+}
+
+.mn-modal .modal-header {
+  padding: 0;
+  margin: 15px; 
+}
+.mn-modal .modal-header p {
+  color: #9bdad0;
+  text-transform: uppercase;
+  font-weight: bold;  
+  font-family: 'stratum1medium';
+  font-size: 18px;
+}
+
+.mn-modal .modal-header .modal-title {
+  font-weight: bold;  
+  font-family: 'stratum1medium';
+  font-size:36px;
+  line-height: 36px;
+}
+
+.mn-modal .close {
+  float:right;
+  font-size: 32px;
+  font-weight: 200;  
+}
+
+/* Newsletter modal */
+#newsletter-modal .modal-body p{
+  margin-bottom: 32px;  
+  font-size: 14px;
+  line-height: 26px; 
+}
+
+#newsletter-modal .modal-body input[type="email"]{
+  width: 100%;
+  background-color: #ebebeb;
+  border: 0;
+  padding: 16px;
+  font-size: 20px;  
+}
+
+#newsletter-modal .modal-footer {
+  margin: 16px 16px 0 16px;  
+}
+
+#newsletter-modal .modal-footer input[type="submit"] {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 32px;
+  vertical-align: middle;
+  float: right;
+}
+
+#newsletter-modal .modal-footer .social {
+  padding-right: 32px;
+  margin-right: 32px;
+  border-right: 1px solid #e5e5e5;
+  float: right;
+}
+
+#newsletter-modal .modal-footer .facebook {
+  background-color: #3e5e93;
+  padding: 8px 16px 8px 0;
+  display: inline-block;
+  color: white;
+  text-decoration: none;  
+}
+
+#newsletter-modal .modal-footer .facebook img {
+  vertical-align: middle;
+  padding: 4px 16px;
+  margin-right: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.53);  
+}
+
+/* Social Media modal */
+#social-modal .share-buttons {
+  float:left;
+  margin-left: 17%;
+}
