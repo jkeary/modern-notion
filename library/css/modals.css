@@ -1,3 +1,7 @@
+/* YARPP Fix */
+#related .yarpp-related {
+  margin: 0 !important;
+}
 /*Slide in modal*/
 .slide-in {
   position:fixed;

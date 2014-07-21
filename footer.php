@@ -78,7 +78,9 @@
     <?php get_template_part("partials/modal", "slidein-social"); ?>    
 
     <!-- Recommended slide in (YARPP) -->
-    <?php related_posts(); ?>
+    <div id="related">
+        <?php related_posts(); ?>
+    </div>
 
 
     <?php // all js scripts are loaded in library/bones.php ?>
