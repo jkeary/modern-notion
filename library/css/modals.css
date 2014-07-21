@@ -30,6 +30,14 @@
   padding-left: 16px;  
 }
 
+.slide-in section a > span {
+  width: 55px;
+  height: 55px;
+  float: right;
+  font-size: 25px; 
+  border-left: 3px solid black;   
+}
+
 .slide-in article {
   border: 3px;
   border-width: 3px;
@@ -55,6 +63,7 @@
 #slide-in article h4 a{
   font-family: 'stratum2bold';
   font-size: 18px; 
+  font-weight: normal !important;
 }
 
 #slide-in article .meta{

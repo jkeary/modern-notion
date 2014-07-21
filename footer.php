@@ -77,6 +77,9 @@
     <!-- Social media slide in -->
     <?php get_template_part("partials/modal", "slidein-social"); ?>    
 
+    <!-- Recommended slide in (YARPP) -->
+    <?php related_posts(); ?>
+
 
     <?php // all js scripts are loaded in library/bones.php ?>
     <?php wp_footer(); ?>
@@ -86,6 +89,13 @@
         window._taboola = window._taboola || [];
         _taboola.push({flush: true});
     </script>   
+    
+    <!-- Crowdskout -->
+    <script>(function(l,o,v,e) {
+        l.ownerid = 6
+        ;a=o.getElementsByTagName(v)[0];b=o.createElement(v);b.src=e;a.parentNode.insertBefore(b,a);
+        })(window, document, 'script', 'https://api.crowdskout.com/analytics.js');
+    </script>    
 
 </body>
 </html> <!-- end of site. what a ride! -->

@@ -377,17 +377,17 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
 
     
     if(is_front_page())  {
-      $image_size = 'side-square';
+      $image_size = 'side-rectangle';
       $extra_class = '';
     }
     else  {
-      $image_size = 'small-square'; 
+      $image_size = 'side-rectangle'; 
       $extra_class = 'nopin';
     }
 
-    $output = '<ul class="sidebar-large-post-list page-block '.$image_size.' '.$extra_class.'">';      
+      $output = '<ul class="sidebar-large-post-list page-block '.$image_size.' '.$extra_class.'">';      
 
-    foreach( $mostpopular as $popular ) {        
+      foreach( $mostpopular as $popular ) {        
         if(get_the_post_thumbnail($popular->id, $image_size))  {          
           $custom_thumbnail = get_the_post_thumbnail( $popular->id, $image_size, array('alt' => esc_attr($popular->title), 'title' => esc_attr($popular->title)) ); 
         }        
@@ -403,18 +403,19 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
         $output .= "<li><article {$post_class}>";
         $output .= '<a href="'.get_the_permalink($popular_id).'">' . $custom_thumbnail . '</a>';
         $output .= '<div class="post-icon-wrapper post-icon-wrapper-medium-large">';
-        $output .= load_template_part('partials/content', 'post-category-icon');
+        //$output .= load_template_part('partials/content', 'post-category-icon');
         $output .= '<div class="text-wrapper">';
         $output .= load_template_part('partials/content', 'article-block-title-and-meta');
         $output .= '</div>';
         $output .= "</div></li></article>";
         $counter++;
-    }
+      }
 
-    $output .= '</ul>';
+      $output .= '</ul>';
 
-    return $output;
+      return $output;
 }
+
 add_filter( 'wpp_custom_html', 'my_custom_popular_posts_html_list', 10, 2 );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
