@@ -61,3 +61,4 @@ temp/
 *.sublime-workspace
 
 node_modules/
+.elasticbeanstalk/
