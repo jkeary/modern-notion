@@ -1,0 +1,42 @@
+[global]
+ApplicationName=ModernNotion
+AwsCredentialFile=/Users/georgeyates/.elasticbeanstalk/aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.us-east-1.amazonaws.com
+EnvironmentName=ModernNotion-env
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=LoadBalanced
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=/Users/georgeyates/Projects/modern-notion/.elasticbeanstalk/optionsettings.ModernNotion-env
+RdsDeletionPolicy=Snapshot
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+Region=us-east-1
+ServiceEndpoint=https://elasticbeanstalk.us-east-1.amazonaws.com
+SolutionStack=64bit Amazon Linux 2014.03 v1.0.4 running PHP 5.5
+
+[branches]
+dev=ModernNotion-dev-env
+dev-wp=ModernNotion-dev-env
+
+[branch:dev]
+ApplicationVersionName=Sample Application
+EnvironmentName=ModernNotion-dev-env
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=LoadBalanced
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=/Users/georgeyates/Projects/modern-notion/.elasticbeanstalk/optionsettings.ModernNotion-dev-env
+RdsDeletionPolicy=Snapshot
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+
+[branch:dev-wp]
+ApplicationVersionName=Sample Application
+EnvironmentName=ModernNotion-dev-env
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=LoadBalanced
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=/Users/georgeyates/Projects/modern-notion/.elasticbeanstalk/optionsettings.ModernNotion-dev-env
+RdsDeletionPolicy=Snapshot
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+

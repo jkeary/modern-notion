@@ -1,0 +1,55 @@
+[aws:autoscaling:asg]
+Custom Availability Zones=
+MaxSize=4
+MinSize=1
+
+[aws:autoscaling:launchconfiguration]
+EC2KeyName=Production
+InstanceType=t2.micro
+
+[aws:autoscaling:updatepolicy:rollingupdate]
+RollingUpdateEnabled=false
+
+[aws:ec2:vpc]
+ELBScheme=public
+ELBSubnets=
+Subnets=
+VPCId=
+
+[aws:elasticbeanstalk:application]
+Application Healthcheck URL=/test.html
+
+[aws:elasticbeanstalk:application:environment]
+DB_NAME=staging_modernnotion
+DB_USER=modernnotion
+DB_PASSWORD=bz0D4DYwUGdaP&bL
+DB_HOST=aa10supgybpl3xm.c19e3uoyeb4v.us-east-1.rds.amazonaws.com:3306
+TABLE_PREFIX=staging_mdn_
+WP_DEBUG=true
+
+[aws:elasticbeanstalk:container:php:phpini]
+allow_url_fopen=On
+composer_options=
+display_errors=On
+document_root=
+max_execution_time=60
+memory_limit=256M
+zlib.output_compression=Off
+
+[aws:elasticbeanstalk:hostmanager]
+LogPublicationControl=false
+
+[aws:elasticbeanstalk:monitoring]
+Automatically Terminate Unhealthy Instances=true
+
+[aws:elasticbeanstalk:sns:topics]
+Notification Endpoint=george@crowdskout.com
+Notification Protocol=email
+
+[aws:rds:dbinstance]
+DBDeletionPolicy=Snapshot
+DBEngine=mysql
+DBInstanceClass=db.t1.micro
+DBSnapshotIdentifier=
+DBUser=modernnotion
+
