@@ -67,17 +67,13 @@
     	</footer>
 
     </div>
-    
-    <!-- Newsletter modal -->
-    <?php get_template_part("partials/modal", "newsletter-signup"); ?>
-    
-    <!-- Social Modal -->
-    <?php get_template_part("partials/modal", "social-media"); ?>
-    
-    <!-- Social media slide in -->
-    <?php get_template_part("partials/modal", "slidein-social"); ?>    
 
-    <!-- Recommended slide in (YARPP) -->
+    <?php 
+        get_template_part("partials/modal", "newsletter-signup");
+        get_template_part("partials/modal", "social-media"); 
+        get_template_part("partials/modal", "slidein-social");   
+    ?>
+
     <div id="related">
         <?php related_posts(); ?>
     </div>

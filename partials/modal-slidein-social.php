@@ -1,6 +1,9 @@
 <div id="slidein-social" class="slide-in">
 	<section class="clearfix">
 		<p>Follow Us</p>
+		<button class="close">
+			<span aria-hidden="true">×</span>
+		</button>
 	</section>
 	<article class="clearfix">
 		<div class="share-buttons inline-color-style">
