@@ -169,7 +169,7 @@ $(window).resize(function () {
 			return false;
 		});
 
-	//Window scroll event
+	  //Window scroll event
     var hasAlerted = false;
     jQuery(window).scroll(function(e) {
 
@@ -198,7 +198,7 @@ $(window).resize(function () {
         }
     });	
 
-	//Close recommended
+	  //Close recommended
     jQuery(".slide-in .close").click(function(e) {
         e.preventDefault();
         jQuery("#slide-in").removeClass("open");
