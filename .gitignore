@@ -38,6 +38,10 @@ nbproject/
 ## WP
 ############
 wp-content/uploads/
+wp-content/cache/
+
+
+
 
 ############
 ## Misc
