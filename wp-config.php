@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', getenv('DB_NAME') ?: 'modernnotion');
+define('DB_NAME', getenv('DB_NAME') ?: 'modern');
 
 /** MySQL database username */
-define('DB_USER', getenv('DB_USER') ?: 'modernnotion');
+define('DB_USER', getenv('DB_USER') ?: 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', getenv('DB_PASSWORD') ?: '');
+define('DB_PASSWORD', getenv('DB_PASSWORD') ?: 'root');
 
 /** MySQL hostname */
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
