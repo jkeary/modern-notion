@@ -37,9 +37,7 @@ nbproject/
 ############
 ## WP
 ############
-wp-content/plugins
 wp-content/uploads
-.htaccess
 
 ############
 ## Misc
