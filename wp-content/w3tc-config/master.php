@@ -281,7 +281,7 @@ return array(
 	'cdn.queue.interval' => 900,
 	'cdn.queue.limit' => 25,
 	'cdn.force.rewrite' => false,
-	'cdn.autoupload.enabled' => false,
+	'cdn.autoupload.enabled' => true,
 	'cdn.autoupload.interval' => 3600,
 	'cdn.canonical_header' => false,
 	'cdn.ftp.host' => '',
