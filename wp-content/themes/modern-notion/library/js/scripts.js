@@ -218,7 +218,74 @@ $(window).resize(function () {
         {
           checkeventcount--;
         }
-     });    
+     }); 
+
+    //Infinite scroll on homepage
+    if(isFront){
+      var wrapper = jQuery("#infinite-scroll-wrapper");
+      var loading = jQuery("#article-loading"); 
+      var content = jQuery("#main").height();
+      var source = jQuery("#entry-template").html(); 
+      var template = Handlebars.compile(source); 
+      var done = false;
+      var fetching = false;
+      var page = 2;
+      var pages = 2;
+      var row = null;  
+    }
+    
+    jQuery(window).scroll(function(e) {
+      if(!isFront){
+        return; 
+      }
+
+      var scroll = jQuery(this).scrollTop();
+      console.log(scroll); 
+      console.log(wrapper.height());
+
+      if(scroll < wrapper.height()){
+        return; 
+      }
+
+      if(done || fetching){ 
+        return; 
+      }
+
+      fetching = true;
+      
+      if(page <= pages)
+        loading.css("display", "block"); 
+
+      jQuery.ajax({
+        url: "/page/" + page + "?json=1",
+      }).success(function(data) {
+        console.log(data);
+        
+        //Update the total pages
+        pages = data.pages;  
+
+        if(data.status !== "error"){
+          page++;
+          data.posts.forEach(function(post, index) {
+            var isOdd = (index % 2) !== 0; 
+            if(!isOdd){
+              row = null; 
+              row = jQuery('<div/>', { "class": "row" }).append(template(post));
+            }
+            else {
+              row.append(template(post)); 
+              wrapper.append(row);
+            } 
+          });
+        }
+        else {
+          done = true; 
+        }
+
+        fetching = false;
+        loading.css("display", "none");  
+      });
+    });        
 
 
 }); /* end of as page load scripts */

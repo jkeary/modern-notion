@@ -39,6 +39,7 @@
 
         <script>
             var isSingle = "<?php echo is_single(); ?>";
+            var isFront  = "<?php echo is_front_page(); ?>";
         </script>
 
         <script type='text/javascript'>
