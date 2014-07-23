@@ -2,7 +2,12 @@
 	<ins class="adsbygoogle"
 	style="display:inline-block;width:300px;height:250px"
 	data-ad-client="ca-pub-5436367174279870"
-	data-ad-slot="4829671748"></ins>	
+	data-ad-slot="4829671748"></ins>
+
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    		
 	<!-- <img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block"> -->
 	<div class="sidebar-sticky-wrapper">
 		<div class="page-block newsletter-signup">
