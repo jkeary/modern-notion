@@ -240,8 +240,6 @@ $(window).resize(function () {
       }
 
       var scroll = jQuery(this).scrollTop();
-      console.log(scroll); 
-      console.log(wrapper.height());
 
       if(scroll < wrapper.height()){
         return; 
