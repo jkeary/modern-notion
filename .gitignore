@@ -39,6 +39,8 @@ nbproject/
 ############
 wp-content/uploads/
 wp-content/cache/
+wp-config.php
+wp-content/w3tc-config
 
 
 
@@ -70,4 +72,3 @@ temp/
 *.sublime-workspace
 
 node_modules/
-.elasticbeanstalk/
