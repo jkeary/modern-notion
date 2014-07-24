@@ -24,7 +24,7 @@
 						id="article-loading" 
 						src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" 
 						alt=""
-						style="display:none; position:absolute; bottom: 0" />				
+						style="display:block; position:absolute; bottom: 0" />				
 					<?php while (have_posts()) : the_post(); ?>
 						<div class="with-short-hr-dividers">
 							<?php get_template_part( 'partials/content', 'single-article'); ?>

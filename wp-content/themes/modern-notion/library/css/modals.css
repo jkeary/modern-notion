@@ -8,6 +8,10 @@
   display:none !important;
 }
 
+#inner-content #main {
+  position: relative;
+}
+
 /*Slide in modal*/
 .slide-in {
   position:fixed;

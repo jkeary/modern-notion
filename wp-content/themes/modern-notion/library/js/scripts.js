@@ -112,6 +112,7 @@ jQuery(document).ready(function($) {
 			});
 		});
 		if($('body.home').length == 0)  {
+      return;
 		  	$('.sidebar-sticky-wrapper').stick_in_parent({
 				offset_top: sticky_offest_top,
 				inner_scrolling: false,
@@ -317,7 +318,7 @@ $(window).resize(function () {
           }
 
           fetching = false;
-          loading.css("display", "none"); 
+          //loading.css("display", "none"); 
         });
       }
 
@@ -351,7 +352,7 @@ $(window).resize(function () {
             done = true; 
           }
           fetching = false;
-          loading.css("display", "none");          
+          //loading.css("display", "none");          
         }); 
       }
     });        
