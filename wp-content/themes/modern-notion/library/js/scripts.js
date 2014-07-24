@@ -334,6 +334,7 @@ $(window).resize(function () {
         jQuery.ajax({
           url: "/page/" + page + "?json=1"
         }).success(function(data) {
+          console.log(data); 
           pages = data.pages;
 
           if(data.status !== "error") {

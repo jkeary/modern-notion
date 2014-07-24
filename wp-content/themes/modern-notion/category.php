@@ -65,15 +65,23 @@
 	    </header>
     	<section class="entry-content single-entry-content" itemprop="articleBody">
        		<div class="article-top-panel">
-       			{{#if thumbnail_images.large }}
-                <img 
-                	width="{{ thumbnail_images.large.width }}" 
-                	height="{{ thumbnail_images.large.height }}" 
-                	src="{{ thumbnail_images.large.url }}" 
-                	data-lazy-type="image" 
-                	data-lazy-src="{{ thumbnail_images.large.url }}" 
-                	class="lazy attachment-large wp-post-image data-lazy-ready" 
-                	alt="{{{ title }}}" style="display: block;">
+       			{{#if custom_fields.video_embed_code }}
+       				{{#each custom_fields.video_embed_code }}
+					<div class="responsive-iframe" style="padding-bottom: 56.311881188119%">
+                    	{{{ this }}}
+                    </div>
+                    {{/each}}
+       			{{else}}
+	       			{{#if thumbnail_images.large }}
+	                <img 
+	                	width="{{ thumbnail_images.large.width }}" 
+	                	height="{{ thumbnail_images.large.height }}" 
+	                	src="{{ thumbnail_images.large.url }}" 
+	                	data-lazy-type="image" 
+	                	data-lazy-src="{{ thumbnail_images.large.url }}" 
+	                	class="lazy attachment-large wp-post-image data-lazy-ready" 
+	                	alt="{{{ title }}}" style="display: block;">
+	                {{/if}}
                 {{/if}}
         	</div>       
         </section> 
