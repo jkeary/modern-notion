@@ -46,14 +46,15 @@
                     <div class="main article-header-text-wrapper">        		
             	        <ul class="meta-block children-with-dividers">
             				<li>
-								<a href="/tag/{{ tags.0.slug }}" class="top-tag {{ categories.0.slug }}-colored">{{ tags.0.title }}</a>
+								<a href="/tag/{{ tags.0.slug }}" class="top-tag {{ categories.0.slug }}-colored">{{{ tags.0.title }}}</a>
 							</li>	
             				<li>
             					<p class="byline vcard">
-	 								<time class="updated" datetime="{{ date }}" pubdate=""></time></p>	
+	 								<time class="updated" datetime="{{ date }}" pubdate="">{{ date }}</time>
+	 							</p>
             				</li>
             				<li>
-            					<span class="author">by <a href="/author/{{ author.nickname }}/">{{ author.name }}</a></span>
+            					<span class="author">by <a href="/author/{{ author.name }}/">{{ author.name }}</a></span>
             			    </li>
             			</ul>	
             		</div>	
@@ -64,7 +65,7 @@
 	    </header>
     	<section class="entry-content single-entry-content" itemprop="articleBody">
        		<div class="article-top-panel">
-       			{{#if thumbnail_images }}
+       			{{#if thumbnail_images.large }}
                 <img 
                 	width="{{ thumbnail_images.large.width }}" 
                 	height="{{ thumbnail_images.large.height }}" 

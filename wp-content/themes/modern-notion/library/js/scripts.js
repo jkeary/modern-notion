@@ -251,6 +251,12 @@ $(window).resize(function () {
         }
       });
     }
+
+    function formatPostDate(wrapper, post){
+      var date = new Date(post.date); 
+      var result = date.format("dddd, mmmm dd, yyyy, h:MM TT");
+      jQuery(wrapper).find("time").last().html(result);
+    }
     
     jQuery(window).scroll(function(e) {
       if(!isFront && !isCategory){
@@ -296,11 +302,12 @@ $(window).resize(function () {
                 }
                 else {
                   row.append(template(post)); 
-                  wrapper.append(row);
+                  wrapper.append(row);                  
                 } 
               }
               else if(isCategory) {
                 wrapper.append(template(post)); 
+                formatPostDate(wrapper, post); 
               }
             });
           }
@@ -333,8 +340,9 @@ $(window).resize(function () {
             page++; 
 
             data.posts.forEach(function(post) {
-              if(!posts[post.slug]) {
-                wrapper.append(template(post));
+              if(!posts[post.slug]) { 
+                wrapper.append(template(post)); 
+                formatPostDate(wrapper, post); 
               }
             });
           }
