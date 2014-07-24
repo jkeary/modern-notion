@@ -20,7 +20,7 @@
         <meta property="og:url" content="<?php the_permalink(); ?>" />
         <meta property="fb:app_id" content="1453391324923585" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="<?php if(get_field('dek')) the_field('dek'); ?>" />
+        <meta property="og:description" content="Test description" />
         <meta property="article:publisher" content="https://www.facebook.com/modernnotion" />
         <?php if(get_the_post_thumbnail()) : ?>
             <meta property="og:image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )[0]; ?>" />
