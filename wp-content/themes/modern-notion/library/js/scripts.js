@@ -171,48 +171,48 @@ $(window).resize(function () {
 
 	  //Window scroll event
     var hasAlerted = false;
-    jQuery(window).scroll(function(e) {
+    $(window).scroll(function(e) {
 
         //Nav bar animation
-        var header = jQuery(".site-header");
+        var header = $(".site-header");
         if(header.width() < 1104) {
             return; 
         }
         var height = header.height();
-        var scroll = jQuery(this).scrollTop(); 
+        var scroll = $(this).scrollTop(); 
 
-        if(jQuery(this).scrollTop() > 250){
+        if($(this).scrollTop() > 250){
             header.addClass("scroll"); 
-            jQuery(".logo-text").removeClass("sr-only");
+            $(".logo-text").removeClass("sr-only");
         }
         else {
             header.removeClass("scroll"); 
-            jQuery(".logo-text").addClass("sr-only");                    
+            $(".logo-text").addClass("sr-only");                    
         }
 
         //Alert box, for after articles
-        var contentHeight = jQuery(".standard-content").height();
+        var contentHeight = $(".standard-content").height();
         if(scroll > (contentHeight) && !hasAlerted && isSingle){
             hasAlerted = true;
-            jQuery("#slide-in").addClass("open");
+            $("#slide-in").addClass("open");
         }
     });	
 
 	  //Close recommended
-    jQuery(".slide-in .close").click(function(e) {
+    $(".slide-in .close").click(function(e) {
         e.preventDefault();
-        jQuery("#slide-in").removeClass("open");
+        $("#slide-in").removeClass("open");
     });	
 
     //Modal fix
     var checkeventcount = 1,prevTarget;
-    jQuery('.modal').on('show.bs.modal', function (e) {
+    $('.modal').on('show.bs.modal', function (e) {
         if(typeof prevTarget == 'undefined' || (checkeventcount==1 && e.target!=prevTarget))
         {  
           prevTarget = e.target;
           checkeventcount++;
           e.preventDefault();
-          jQuery(e.target).appendTo('body').modal('show');
+          $(e.target).appendTo('body').modal('show');
         }
         else if(e.target==prevTarget && checkeventcount==2)
         {
@@ -228,20 +228,20 @@ $(window).resize(function () {
     var pages = 2;
     var row = null;
     var loadRecent = false;
-    var source = jQuery("#entry-template").html(); 
-    var loading = jQuery("#article-loading");
+    var source = $("#entry-template").html(); 
+    var loading = $("#article-loading");
     var hasResetPages = false;        
     
     if(isFront){
-      var wrapper = jQuery("#infinite-scroll-wrapper");
+      var wrapper = $("#infinite-scroll-wrapper");
       var template = Handlebars.compile(source); 
     }
     else if(isCategory) {
-      var wrapper = jQuery("#main");
+      var wrapper = $("#main");
       var template = Handlebars.compile(source);
 
       //Grab a reference to all the posts being displayed
-      jQuery.ajax({
+      $.ajax({
         url: window.location.pathname + "?json=1"
       }).success(function(data) {
         if(data.status === "ok") {
@@ -255,15 +255,15 @@ $(window).resize(function () {
     function formatPostDate(wrapper, post){
       var date = new Date(post.date); 
       var result = date.format("dddd, mmmm dd, yyyy, h:MM TT");
-      jQuery(wrapper).find("time").last().html(result);
+      $(wrapper).find("time").last().html(result);
     }
     
-    jQuery(window).scroll(function(e) {
+    $(window).scroll(function(e) {
       if(!isFront && !isCategory){
         return; 
       }
 
-      var scroll = jQuery(this).scrollTop();
+      var scroll = $(this).scrollTop();
 
       if(scroll < wrapper.height()){
         return; 
@@ -280,7 +280,7 @@ $(window).resize(function () {
 
 
       if(!loadRecent) {
-        jQuery.ajax({
+        $.ajax({
           url: window.location.pathname + "page/" + page + "?json=1",
         }).success(function(data) {
           //console.log(data); 
@@ -331,10 +331,10 @@ $(window).resize(function () {
         if(page <= pages)
           loading.css("display", "block"); 
         
-        jQuery.ajax({
+        $.ajax({
           url: "/page/" + page + "?json=1"
         }).success(function(data) {
- 
+
           pages = data.pages;
 
           if(data.status !== "error") {
