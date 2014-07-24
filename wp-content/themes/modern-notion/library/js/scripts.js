@@ -221,21 +221,39 @@ $(window).resize(function () {
      }); 
 
     //Infinite scroll on homepage
+    var posts = {};
+    var done = false;
+    var fetching = false;
+    var page = 2;
+    var pages = 2;
+    var row = null;
+    var loadRecent = false;
+    var source = jQuery("#entry-template").html(); 
+    var loading = jQuery("#article-loading");
+    var hasResetPages = false;        
+    
     if(isFront){
       var wrapper = jQuery("#infinite-scroll-wrapper");
-      var loading = jQuery("#article-loading"); 
-      var content = jQuery("#main").height();
-      var source = jQuery("#entry-template").html(); 
       var template = Handlebars.compile(source); 
-      var done = false;
-      var fetching = false;
-      var page = 2;
-      var pages = 2;
-      var row = null;  
+    }
+    else if(isCategory) {
+      var wrapper = jQuery("#main");
+      var template = Handlebars.compile(source);
+
+      //Grab a reference to all the posts being displayed
+      jQuery.ajax({
+        url: window.location.pathname + "?json=1"
+      }).success(function(data) {
+        if(data.status === "ok") {
+          data.posts.forEach(function(post) {
+            posts[post.slug] = true; 
+          });
+        }
+      });
     }
     
     jQuery(window).scroll(function(e) {
-      if(!isFront){
+      if(!isFront && !isCategory){
         return; 
       }
 
@@ -250,38 +268,83 @@ $(window).resize(function () {
       }
 
       fetching = true;
-      
+
       if(page <= pages)
         loading.css("display", "block"); 
 
-      jQuery.ajax({
-        url: "/page/" + page + "?json=1",
-      }).success(function(data) {
+
+      if(!loadRecent) {
+        jQuery.ajax({
+          url: window.location.pathname + "page/" + page + "?json=1",
+        }).success(function(data) {
+          //console.log(data); 
+
+          //Update the total pages
+          if(data.pages){
+            pages = data.pages;  
+          }
+
+          if(data.status !== "error"){
+            page++;
+            data.posts.forEach(function(post, index) {
+              posts[post.slug] = true; 
+              var isOdd = (index % 2) !== 0;
+              if(isFront){
+                if(!isOdd){
+                  row = null; 
+                  row = jQuery('<div/>', { "class": "row" }).append(template(post));
+                }
+                else {
+                  row.append(template(post)); 
+                  wrapper.append(row);
+                } 
+              }
+              else if(isCategory) {
+                wrapper.append(template(post)); 
+              }
+            });
+          }
+
+          else {
+            loadRecent = true;
+          }
+
+          fetching = false;
+          loading.css("display", "none"); 
+        });
+      }
+
+      else if(!isFront) {
+        if(!hasResetPages) {
+          page = 1; 
+          pages = 1; 
+          hasResetPages = true; 
+        }
         
-        //Update the total pages
-        pages = data.pages;  
+        if(page <= pages)
+          loading.css("display", "block"); 
+        
+        jQuery.ajax({
+          url: "/page/" + page + "?json=1"
+        }).success(function(data) {
+          pages = data.pages;
 
-        if(data.status !== "error"){
-          page++;
-          data.posts.forEach(function(post, index) {
-            var isOdd = (index % 2) !== 0; 
-            if(!isOdd){
-              row = null; 
-              row = jQuery('<div/>', { "class": "row" }).append(template(post));
-            }
-            else {
-              row.append(template(post)); 
-              wrapper.append(row);
-            } 
-          });
-        }
-        else {
-          done = true; 
-        }
+          if(data.status !== "error") {
+            page++; 
 
-        fetching = false;
-        loading.css("display", "none");  
-      });
+            data.posts.forEach(function(post) {
+              if(!posts[post.slug]) {
+                wrapper.append(template(post));
+              }
+            });
+          }
+          else {
+            done = true; 
+          }
+          fetching = false;
+          loading.css("display", "none");          
+        }); 
+      }
     });        
 
 

@@ -40,6 +40,7 @@
         <script>
             var isSingle = "<?php echo is_single(); ?>";
             var isFront  = "<?php echo is_front_page(); ?>";
+            var isCategory = "<?php echo is_category(); ?>";
         </script>
 
         <script type='text/javascript'>
