@@ -162,7 +162,7 @@
                                 <?php $related_query->the_post(); ?>
                                 <div class="col-md-4">
                                     <a href="<?php the_permalink();?>">
-                                        <?php the_post_thumbnail(); ?>
+                                        <?php the_post_thumbnail("medium-rectangle"); ?>
                                     </a>
                                     <h2>
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
