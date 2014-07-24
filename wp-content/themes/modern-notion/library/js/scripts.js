@@ -171,7 +171,8 @@ $(window).resize(function () {
 		});
 
 	  //Window scroll event
-    var hasAlerted = false;
+    var lastScrollTop = 0;
+    var isDownScroll = true;    
     $(window).scroll(function(e) {
 
         //Nav bar animation
@@ -193,9 +194,16 @@ $(window).resize(function () {
 
         //Alert box, for after articles
         var contentHeight = $(".standard-content").height();
-        if(scroll > (contentHeight) && !hasAlerted && isSingle){
-            hasAlerted = true;
-            $("#slide-in").addClass("open");
+        if(scroll > (contentHeight) && isSingle){
+
+            if (scroll > lastScrollTop){
+               $("#slide-in").addClass("open");
+            } 
+
+            else {
+              $("#slide-in").removeClass("open");
+            }
+            lastScrollTop = scroll;            
         }
     });	
 
