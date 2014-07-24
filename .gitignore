@@ -37,6 +37,7 @@ nbproject/
 ############
 ## WP
 ############
+.htaccess
 wp-content/uploads/
 wp-content/cache/
 wp-config.php
