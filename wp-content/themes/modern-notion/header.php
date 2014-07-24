@@ -100,6 +100,7 @@
 		</head>
 
 		<body <?php body_class(); ?>>
+
             
             <?php /*  */ ?>          
             <div id="fb-root"></div>
