@@ -265,7 +265,7 @@ $(window).resize(function () {
 
       var scroll = $(this).scrollTop();
 
-      if(scroll < wrapper.height()){
+      if(scroll < wrapper.height() - 500){
         return; 
       }
 
