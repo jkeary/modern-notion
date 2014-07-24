@@ -15,7 +15,8 @@
 			<h2><span class="icon-Logo_Icon"></span>Get Our Newsletter</h2>
 			<?php get_template_part( 'partials/content', 'newsletter-signup-form'); ?>
 		</div>
-		<?php if(is_front_page()): ?>
+		<?php if(false) : ?>
+		<?php //if(is_front_page()): ?>
 			<div class="hidden-xs">
 				<?php get_template_part( 'partials/content', 'sidebar-small-post-list'); ?>
 			</div>

@@ -9,8 +9,9 @@
 				</div>
 				<div id="infinite-scroll-wrapper">
 					<?php $i = 1; $small_article_num_per_group = 10; ?>
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>								
-						<?php get_template_part('partials/content', 'article-block-small-row'); ?>																
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php if($i ===1 ){ the_post(); } // temporary fix for double post, remove this ?>							
+						<?php get_template_part('partials/content', 'article-block-small-row'); ?>
 						<?php $i++; ?>								
 					<?php endwhile; ?>
 					<?php endif; ?>								

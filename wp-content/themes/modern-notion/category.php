@@ -15,9 +15,9 @@
 					<h1><?php echo $cat_name; ?></h1>
 				</div>
 			</div>
-			<div class="with-divider">
+<!-- 			<div class="with-divider">
 				<img src="http://placehold.it/1080x200&text=Advertisement" alt="">
-			</div>
+			</div> -->
 			<div class="row default-layout">
 				<div id="main" class="m-all t-2of3 d-5of7 cf main" role="main">
 					<img 

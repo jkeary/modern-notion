@@ -60,7 +60,7 @@ function po_loadMessageBox( ) {
         slide.addClass("open");
         slide.find(".close").click(function() {
             slide.removeClass("open"); 
-        });
+        });        
     }
 
     // if (data['html'] !== '') {

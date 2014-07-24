@@ -57,7 +57,9 @@
                     <?php the_field('video_embed_code'); ?>
                 </div> 
             <?php else: ?>
-        	   <?php the_post_thumbnail('large'); ?>
+                <a href="<?php the_permalink(); ?>">
+        	       <?php the_post_thumbnail('large'); ?>
+               </a>
                <?php
                     $link = get_post_meta($post->ID, "cite_link", true);
                     $text = get_post_meta($post->ID, "cite_text", true);
@@ -159,7 +161,9 @@
                             <?php while ( $related_query->have_posts() ) : ?>
                                 <?php $related_query->the_post(); ?>
                                 <div class="col-md-4">
-                                    <?php the_post_thumbnail(); ?>
+                                    <a href="<?php the_permalink();?>">
+                                        <?php the_post_thumbnail(); ?>
+                                    </a>
                                     <h2>
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h2>
