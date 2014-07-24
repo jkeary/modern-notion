@@ -221,7 +221,7 @@ $(window).resize(function () {
         }
      }); 
 
-    //Infinite scroll on homepage
+    //Infinite scroll
     var posts = {};
     var done = false;
     var fetching = false;
