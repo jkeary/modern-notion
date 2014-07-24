@@ -66,11 +66,9 @@
     	<section class="entry-content single-entry-content" itemprop="articleBody">
        		<div class="article-top-panel">
        			{{#if custom_fields.video_embed_code }}
-       				{{#each custom_fields.video_embed_code }}
 					<div class="responsive-iframe" style="padding-bottom: 56.311881188119%">
-                    	{{{ this }}}
+                    	{{{ custom_fields.video_embed_code }}}
                     </div>
-                    {{/each}}
        			{{else}}
 	       			{{#if thumbnail_images.large }}
 	                <img 
