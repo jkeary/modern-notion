@@ -71,14 +71,23 @@
                     </div>
        			{{else}}
 	       			{{#if thumbnail_images.large }}
-	                <img 
-	                	width="{{ thumbnail_images.large.width }}" 
-	                	height="{{ thumbnail_images.large.height }}" 
-	                	src="{{ thumbnail_images.large.url }}" 
-	                	data-lazy-type="image" 
-	                	data-lazy-src="{{ thumbnail_images.large.url }}" 
-	                	class="lazy attachment-large wp-post-image data-lazy-ready" 
-	                	alt="{{{ title }}}" style="display: block;">
+		                <img 
+		                	width="{{ thumbnail_images.large.width }}" 
+		                	height="{{ thumbnail_images.large.height }}" 
+		                	src="{{ thumbnail_images.large.url }}" 
+		                	data-lazy-type="image" 
+		                	data-lazy-src="{{ thumbnail_images.large.url }}" 
+		                	class="lazy attachment-large wp-post-image data-lazy-ready" 
+		                	alt="{{{ title }}}" style="display: block;">
+	                {{else}}
+		                <img 
+		                	width="{{ thumbnail_images.article-main.width }}" 
+		                	height="{{ thumbnail_images.article-main.height }}" 
+		                	src="{{ thumbnail_images.article-main.url }}" 
+		                	data-lazy-type="image" 
+		                	data-lazy-src="{{ thumbnail_images.article-main.url }}" 
+		                	class="lazy attachment-article-main wp-post-image data-lazy-ready" 
+		                	alt="{{{ title }}}" style="display: block;">	                
 	                {{/if}}
                 {{/if}}
         	</div>       
