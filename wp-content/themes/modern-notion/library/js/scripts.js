@@ -257,7 +257,6 @@ $(window).resize(function () {
       jQuery.ajax({
         url: "/page/" + page + "?json=1",
       }).success(function(data) {
-        console.log(data);
         
         //Update the total pages
         pages = data.pages;  
