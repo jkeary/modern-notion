@@ -17,7 +17,7 @@
         <!-- FB tags -->
         <meta property="og:title" content="<?php the_title(); ?>" />
         <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
-        <meta property="og:url" content="<?php echo wpbitly_get_shortlink(get_permalink(), $post->ID); ?>" />
+        <meta property="og:url" content="<?php the_permalink(); ?>" />
         <meta property="fb:app_id" content="1453391324923585" />
         <meta property="og:type" content="article" />
         <meta property="og:description" content="<?php if(get_field('dek')) the_field('dek'); ?>" />
@@ -31,7 +31,7 @@
         <meta name="twitter:creator" content="@modernnotion" />
         <meta name="twitter:description" content="<?php if(get_field('dek')) the_field('dek'); ?>" />
         <meta name="twitter:image:src" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )[0]; ?>">        
-        <meta name="twitter:url" content="<?php echo wpbitly_get_shortlink(get_permalink(), $post->ID); ?>" />
+        <meta name="twitter:url" content="<?php the_permalink(); ?>" />
     <?php endif; ?>
 
 	<?php // mobile meta (hooray!) ?>
