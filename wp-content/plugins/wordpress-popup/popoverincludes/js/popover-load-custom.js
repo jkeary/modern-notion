@@ -44,6 +44,7 @@ function po_removeMessageBox() {
 }
 
 function po_loadMessageBox( ) {
+    console.log(mydata); 
 
     // move the data back to the data variable, from mydata so we can use it without changing a chunk of code :)
     data = mydata;

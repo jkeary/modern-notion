@@ -91,6 +91,11 @@
   font-size: 13px;  
 }
 
+/*Social slide in*/
+#slidein-social {
+  position:fixed;
+}
+
 /* Modern Notion modal */
 .mn-modal {
   margin-top: 67px;
