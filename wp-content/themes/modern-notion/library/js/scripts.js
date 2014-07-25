@@ -251,13 +251,18 @@ $(window).resize(function () {
           loading.css('opacity', '0');       
           return; 
         }
+
         var post = data.posts[0];
         var put = jQuery("#main .load").last(); 
-        put.load('/' + post.slug + ' ' + '#post-' + post.id, function(result) {
+        put.load('/' + post.slug + ' ' + '#post-' + post.id, function(result) { 
           content.append('<div class="load"></div>'); 
           content.append(loading);
           gettingNext = false; 
           loading.css('opacity', '0');
+          // ga('send', 'pageview', {
+          //   'page': '/' + post.slug,
+          //   'title': 'Modern Notion ' + post.title
+          // });
         }); 
       });
       count++;  
