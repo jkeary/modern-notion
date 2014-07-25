@@ -132,11 +132,9 @@ class JSON_API_Post {
     setup_postdata($wp_post);
     $this->set_value('type', $wp_post->post_type);
     $this->set_value('slug', $wp_post->post_name);
+    $this->set_value('url', get_permalink($this->id));
     if(function_exists('wpbitly_get_shortlink')) {
-      $this->set_value('url', wpbitly_get_shortlink(get_permalink($this->id), $this->id);
-    }
-    else {
-      $this->set_value('url', get_permalink($this->id); 
+      $this->set_value('url', wpbitly_get_shortlink($this->url, $post->ID));
     }
     $this->set_value('status', $wp_post->post_status);
     $this->set_value('title', get_the_title($this->id));
