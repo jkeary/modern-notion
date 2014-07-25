@@ -194,15 +194,11 @@ $(window).resize(function () {
 
    //IE, Opera, Safari
    var contentHeight = $("#main").height();
-   var scrollUp = null; 
    $(window).bind('mousewheel', function(e){ 
       var scroll = $(this).scrollTop(); 
-         console.log(e.originalEvent.wheelDelta); 
       if(scroll > (contentHeight-500) && isSingle){
-
         if (e.originalEvent.wheelDelta < 0){
           $("#slide-in").addClass("open");
-          scrollUp = null; 
         } 
         else if(e.originalEvent.wheelDelta > 1){
           $("#slide-in").removeClass("open");
