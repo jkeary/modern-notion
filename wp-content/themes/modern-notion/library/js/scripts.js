@@ -232,6 +232,7 @@ $(window).resize(function () {
 
       var scroll = $(this).scrollTop();
       var height = $(document).height(); 
+
       if(scroll < height - 900) {
         return;
       }
@@ -241,13 +242,13 @@ $(window).resize(function () {
       }
 
       gettingNext = true;
-      loading.css('display', 'block'); 
+      loading.css('opacity', '1');  
       getNextTaggedArticle(tag.slug, count, function(data) {
+
         if(data.status === "done") {
           gettingNext = false; 
           doneSingleLoading = true; 
-          loading.css('display', 'none');
-          jQuery('#newsletter-modal').modal("show");           
+          loading.css('opacity', '0');       
           return; 
         }
         var post = data.posts[0];
@@ -256,7 +257,7 @@ $(window).resize(function () {
           content.append('<div class="load"></div>'); 
           content.append(loading);
           gettingNext = false; 
-          loading.css('display', 'none');
+          loading.css('opacity', '0');
         }); 
       });
       count++;  

@@ -13,7 +13,7 @@
 						id="article-loading" 
 						src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" 
 						alt=""
-						style="display:none; position:relative; bottom: 0" />
+						style="opacity:0; position:relative; bottom: 0" />
 					<div class="load"></div>
 				</div>
 				<?php get_sidebar(); ?>
