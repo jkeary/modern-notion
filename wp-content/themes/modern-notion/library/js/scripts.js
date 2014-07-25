@@ -174,12 +174,21 @@ $(window).resize(function () {
   Single page - Infinite Scroll
   ------------------------------------------------ */
     //Grab the articles with the same tag then the recent posts
-    var totalPages = null;
-    var count = 1;
-    var loadedLastTagged = false; 
-    var loadedLastRecent = false; 
-    var singlePosts = {};
-    singlePosts[post.ID] = true;
+    if(isSingle){
+      var totalPages = null;
+      var count = 1;
+      var loadedLastTagged = false; 
+      var loadedLastRecent = false; 
+      var singlePosts = {};
+      singlePosts[post.ID] = true;
+      var keys = Object.keys(tags); 
+      var tag = tags[keys[0]]; 
+      var gettingNext = false;    
+      var content = jQuery("#main"); 
+      var loading = jQuery("#article-loading");
+      var doneSingleLoading = false; 
+    }
+
     function getNextTaggedArticle(tag, page, cb) {
       var url; 
       if(!loadedLastRecent && loadedLastTagged) {
@@ -207,7 +216,7 @@ $(window).resize(function () {
           }
         }
 
-        if(singlePosts[post.id]){  
+        if(singlePosts[post.id]){ 
           getNextTaggedArticle(tag, count++, cb); 
         }
         else {
@@ -215,14 +224,12 @@ $(window).resize(function () {
           cb(data); 
         }
       }); 
-    } 
-    var keys = Object.keys(tags); 
-    var tag = tags[keys[0]]; 
-    var gettingNext = false;    
-    var content = jQuery("#main"); 
-    var loading = jQuery("#article-loading");
-    var doneSingleLoading = false;  
+    }  
     jQuery(window).scroll(function(event) {
+      if(!isSingle) {
+        return; 
+      }
+
       var scroll = $(this).scrollTop();
       var height = $(document).height(); 
       if(scroll < height - 900) {
