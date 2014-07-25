@@ -1,0 +1,47 @@
+# [ July 25, 2014, 11:49 am ]
+# [ Validate OAuth ]
+
+Array
+(
+    [status_code] => 200
+    [data] => Array
+        (
+            [apiKey] => R_efef8fdbb0e941b6a7b479ce6326f7fb
+            [domain_options] => Array
+                (
+                    [0] => bit.ly
+                    [1] => bitly.com
+                    [2] => j.mp
+                    [3] => modr.no
+                )
+
+            [member_since] => 1406044343
+            [enterprise_permissions] => Array
+                (
+                )
+
+            [has_master] => 0
+            [profile_image] => http://bitly.com/u/modernnotion.png
+            [share_accounts] => Array
+                (
+                )
+
+            [full_name] => 
+            [is_enterprise] => 
+            [tracking_domains] => Array
+                (
+                )
+
+            [default_link_privacy] => public
+            [display_name] => 
+            [custom_short_domain] => modr.no
+            [login] => modernnotion
+            [is_verified] => 1
+            [profile_url] => http://bitly.com/u/modernnotion
+        )
+
+    [status_txt] => OK
+)
+
+
+
