@@ -1,4 +1,8 @@
-			<footer class="footer site-footer" role="contentinfo">
+            <div id="related">
+                <?php related_posts(); ?>
+            </div>
+                        
+            <footer class="footer site-footer" role="contentinfo">
 
 				<div id="inner-footer" class="wrap cf">
 
@@ -71,12 +75,8 @@
     <?php 
         get_template_part("partials/modal", "newsletter-signup");
         get_template_part("partials/modal", "social-media"); 
-        get_template_part("partials/modal", "slidein-social");   
-    ?>
-
-    <div id="related">
-        <?php related_posts(); ?>
-    </div>
+        get_template_part("partials/modal", "slidein-social");  
+    ?>    
 
 
     <?php // all js scripts are loaded in library/bones.php ?>

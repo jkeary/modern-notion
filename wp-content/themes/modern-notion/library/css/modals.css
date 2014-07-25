@@ -14,20 +14,20 @@
 
 /*Slide in modal*/
 .slide-in {
-  position:fixed;
-  bottom: 42px;
-  right: -500px;
+  position:absolute;
+  bottom: 206px;
+  right: -100%;
   background-color: white;
   width: 436px;
   z-index: 10;
-  -webkit-transition: all 500ms ease-out;
-     -moz-transition: all 500ms ease-out;
-       -o-transition: all 500ms ease-out;
-          transition: all 500ms ease-out;  
+  -webkit-transition: all 500ms ease-out 100ms;
+     -moz-transition: all 500ms ease-out 100ms;
+       -o-transition: all 500ms ease-out 100ms;
+          transition: all 500ms ease-out 100ms;  
 }
 
 .slide-in.open {
-  right: 65px;
+  right: 3%;
 }
 
 .slide-in section{

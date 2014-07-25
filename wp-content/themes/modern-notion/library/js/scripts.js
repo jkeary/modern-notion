@@ -170,9 +170,50 @@ $(window).resize(function () {
 			return false;
 		});
 
+        //Alert box, for after articles
+        var contentHeight = $("#main").height();
+        // console.log(contentHeight); 
+        // console.log(scroll); 
+        if(scroll > (contentHeight-500) && isSingle){
+
+            if (scroll > lastScrollTop){
+               $("#slide-in").addClass("open");
+               scrollUpStart = null; 
+            } 
+            else {
+              if(!scrollUpStart){
+                scrollUpStart = scroll;
+              }
+              if(scrollUpStart - scroll > 500){
+                console.log("scroll up start ")
+                $("#slide-in").removeClass("open");
+              }
+            }
+            lastScrollTop = scroll;            
+        }    
+
+   //IE, Opera, Safari
+   var contentHeight = $("#main").height();
+   var scrollUp = null; 
+   $(window).bind('mousewheel', function(e){ 
+      var scroll = $(this).scrollTop(); 
+         console.log(e.originalEvent.wheelDelta); 
+      if(scroll > (contentHeight-500) && isSingle){
+
+        if (e.originalEvent.wheelDelta < 0){
+          $("#slide-in").addClass("open");
+          scrollUp = null; 
+        } 
+        else if(e.originalEvent.wheelDelta > 1){
+          $("#slide-in").removeClass("open");
+        }         
+      }     
+   });    
+
 	  //Window scroll event
     var lastScrollTop = 0;
-    var isDownScroll = true;    
+    var isDownScroll = true;
+    var scrollUpStart = null;    
     $(window).scroll(function(e) {
 
         //Nav bar animation
@@ -190,20 +231,6 @@ $(window).resize(function () {
         else {
             header.removeClass("scroll"); 
             $(".logo-text").addClass("sr-only");                    
-        }
-
-        //Alert box, for after articles
-        var contentHeight = $(".standard-content").height();
-        if(scroll > (contentHeight) && isSingle){
-
-            if (scroll > lastScrollTop){
-               $("#slide-in").addClass("open");
-            } 
-
-            else {
-              $("#slide-in").removeClass("open");
-            }
-            lastScrollTop = scroll;            
         }
     });	
 
