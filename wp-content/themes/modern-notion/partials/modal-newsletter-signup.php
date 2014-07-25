@@ -12,7 +12,7 @@
       </div>
       <div class="modal-body">
 
-      	<p>In sollicitudin justo porta enim blandit suscipit. Duis rhoncus tincidunt bibendum. Phase llus id velit sapien. Fusce hendrerit dictum eros eget semper. Sed pharetra dui eu hendr erit pretium. Cras sed. Fusce hendrerit dictum eros eget sempe.</p>
+      	<p id="newsletter-modal-intro"></p>
 
       	<!-- Signup form -->
 		<div id="mc_embed_signup">

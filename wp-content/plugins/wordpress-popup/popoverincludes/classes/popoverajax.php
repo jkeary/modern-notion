@@ -250,6 +250,7 @@ if(!class_exists('popoverajax')) {
 						$popover = array();
 
 						$popover['title'] = $popover_title;
+						$popover['content'] = $popover_content;
 
 						$popover['name'] = 'a' . md5(date('d')) . '-po';
 
