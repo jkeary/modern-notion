@@ -16,7 +16,7 @@
 				<div id="main">
 					<div class="cf">
 						<div class="headlining">
-							<?php $headlines = new WP_Query('posts_per_page=3'); ?>
+							<?php $headlines = new WP_Query('posts_per_page=3&offset=1'); ?>
 							<?php while($headlines->have_posts()) : $headlines->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>
 								<article>
 									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
