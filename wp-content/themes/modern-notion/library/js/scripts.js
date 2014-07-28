@@ -462,7 +462,7 @@ $(window).resize(function () {
             done = true; 
           }
           fetching = false;
-          loading.css("display", "none");          
+          loading.css("display", "none");
         }); 
       }
     });

@@ -14,48 +14,50 @@
 			</div>
 			<div class="row default-layout">
 				<div id="main">
-					<div class="headlining">
-						<?php $headlines = new WP_Query('posts_per_page=3'); ?>
-						<?php while($headlines->have_posts()) : $headlines->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>
-							<article>
-								<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-								<p class="meta">
-									<a href="<?php echo get_category_link($cat->cat_ID);?>" class="<?php echo $cat->slug; ?>-colored">
-										<?php echo $cat->slug; ?>
-									</a> 
-									By <?php the_author_posts_link(); ?>
-								<div class="sep"></div>
-							</article>
-						<?php endwhile; ?>											
-					</div>												
-					<div id="hero">
-						<?php $hero = new WP_Query('posts_per_page=1&offset=2&category_name=life'); ?>
-						<?php while($hero->have_posts()) : $hero->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>					
-							<article class="article-block">
-								<div class="headline <?php echo $cat->slug; ?>-bgcolored">
-									<span><?php echo $cat->slug?></span>
-									<h1>
-										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-										<span class="arrow <?php echo $cat->slug; ?>-colored"></span>
-									</h1>
-									<p class="meta">By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?></p>
-								</div>
-								<div class="img_wrapper">
-									<a href="">
-										<?php the_post_thumbnail('home-hero'); ?>
-										<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
-											<span class="valign halign post-icon category-icon <?php echo $cat->slug; ?> <?php echo $cat->slug; ?>-bgcolored">
-												<span>
-													<span class="icon-font"></span>
-													<span class="sr-only"><?php echo $cat->slug; ?></span>
-												</span>
-											</span>		
-										</span>
-									</a>
-									<?php get_template_part('partials/content', 'article-tab-link'); ?>
-								</div>							
-							</article>
-						<?php endwhile; ?>
+					<div class="cf">
+						<div class="headlining">
+							<?php $headlines = new WP_Query('posts_per_page=3'); ?>
+							<?php while($headlines->have_posts()) : $headlines->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>
+								<article>
+									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+									<p class="meta">
+										<a href="<?php echo get_category_link($cat->cat_ID);?>" class="<?php echo $cat->slug; ?>-colored">
+											<?php echo $cat->slug; ?>
+										</a> 
+										By <?php the_author_posts_link(); ?>
+									<div class="sep"></div>
+								</article>
+							<?php endwhile; ?>											
+						</div>												
+						<div id="hero">
+							<?php $hero = new WP_Query('posts_per_page=1&offset=2&category_name=life'); ?>
+							<?php while($hero->have_posts()) : $hero->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>					
+								<article class="article-block">
+									<div class="headline <?php echo $cat->slug; ?>-bgcolored">
+										<span><?php echo $cat->slug?></span>
+										<h1>
+											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+											<span class="arrow <?php echo $cat->slug; ?>-colored"></span>
+										</h1>
+										<p class="meta">By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?></p>
+									</div>
+									<div class="img_wrapper">
+										<a href="">
+											<?php the_post_thumbnail('home-hero'); ?>
+											<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
+												<span class="valign halign post-icon category-icon <?php echo $cat->slug; ?> <?php echo $cat->slug; ?>-bgcolored">
+													<span>
+														<span class="icon-font"></span>
+														<span class="sr-only"><?php echo $cat->slug; ?></span>
+													</span>
+												</span>		
+											</span>
+										</a>
+										<?php get_template_part('partials/content', 'article-tab-link'); ?>
+									</div>							
+								</article>
+							<?php endwhile; ?>
+						</div>
 					</div>
 					<div id="two-stories" class="cf">
 						<?php 
