@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 
     watch: {
       styles: {
-        files: ["./library/css/*.css", './homepage.php'],
+        files: ["./library/css/*.css", './homepage.php', "./library/js/scripts.js"],
         options: {
           livereload: 1337
         }
