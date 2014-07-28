@@ -262,6 +262,11 @@ function wpse26032_restrict_manage_posts_format()
 }
 add_action( 'restrict_manage_posts', 'wpse26032_restrict_manage_posts_format' );
 
+function custom_excerpt_length( $length ) {
+  return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 function get_the_slug() {
   global $post;
   return $post->post_name;

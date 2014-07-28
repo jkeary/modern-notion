@@ -465,7 +465,35 @@ $(window).resize(function () {
           loading.css("display", "none");          
         }); 
       }
-    });        
+    });
+
+    var page = 2;
+    var pages;  
+    $('.load-more').click(function(e) {
+      e.preventDefault();
+      if(pages && pages < page) {
+        $(this).html("No more posts.");
+        return;
+      }      
+      var source = $("#entry-template").html();
+      var template = Handlebars.compile(source);
+      var loading = $("#article-loading");      
+
+      loading.css("display", "block");
+      $.ajax({
+        url: '/api/get_recent_posts?count=3&page=' + page
+      }).success(function(data) {
+        pages = data.pages; 
+        data.posts.forEach(function(post) {
+          var result = jQuery("#articles").append(template(post));
+          var date = new Date(post.date); 
+          date = date.format("mmmm d, yyyy");
+          result.find("time").html(date);
+        });
+        loading.css("display", "none");
+        page++;
+      }); 
+    }); 
 
 
 }); /* end of as page load scripts */

@@ -117,9 +117,9 @@
 		<div id="home-content" class="wrap">
 			<div class="row">
 				<div id="main-content" class="col-md-9">
-					<div class="articles">
-					<?php $recent = new WP_Query('posts_per_page=3&offset=2'); ?>
-					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category(); $slug = $cat[0]->slug; //echo "<pre>";var_dump($cat); ?>
+					<div id="articles" class="articles">
+					<?php $recent = new WP_Query('posts_per_page=3'); ?>
+					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category(); $slug = $cat[0]->slug; ?>
 						<article class="article-block cf">
 							<div class="img_wrapper">
 								<a href="<?php the_permalink();?>">
@@ -137,7 +137,7 @@
 							</div>
 							<div class="article-content">
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<p><?php the_excerpt(); ?></p>
+								<p><?php if(get_field('dek')) the_field('dek'); ?></p>
 								<p class="meta">
 									<a href="<?php echo get_category_link($cat[0]->cat_ID);?>" class="<?php echo $slug; ?>-colored">
 										<?php echo $slug; ?>
@@ -148,6 +148,7 @@
 						</article>
 					<?php endwhile; ?>
 					</div>
+					<img style="display:none;" id="article-loading" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" alt="">
 					<a href="" class="load-more">Load More Stories</a>
 					<img src="http://placehold.it/860x500&text=Advertisement" alt="" class="">
 				</div>
@@ -182,6 +183,56 @@
 		</div>
 	</div>
 </div>
+
+<script id="entry-template" type="text/x-handlebars-template">
+	<article class="article-block cf">
+		<div class="img_wrapper">
+			<a href="{{ url }}">
+				<img src="{{ thumbnail_images.home-mini.url }}" />
+				<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
+					<span class="valign halign post-icon category-icon {{categories.0.slug}} {{categories.0.slug}}-bgcolored">
+						<span>
+							<span class="icon-font"></span>
+							<span class="sr-only">{{categories.0.slug}}</span>
+						</span>
+					</span>		
+				</span>
+			</a>
+			<div class="share-tab-wrapper">
+				<div class="share-tab">
+					<span class="icon-Share"></span>
+				</div>
+				<div class="share-buttons inline black-style">
+					<span><a 
+						onclick="window.open(this.href, 'mywin', 'left=50,top=50,width=550,height=550,toolbar=1,resizable=0'); return false;" 
+						class="twitter" href="http://twitter.com/share?url={{ url }}&amp;text={{{ title }}}" 
+						target="_blank"><span class="icon-twitter"></span><span class="text">Share on Twitter</span></a></span>
+					<span><a 
+						onclick="window.open(this.href, 'mywin','left=50,top=50,width=550,height=550,toolbar=1,resizable=0'); return false;" 
+						class="facebook" href="http://www.facebook.com/sharer.php?u={{ url }}" 
+						target="_blank"><span class="icon-facebook"></span><span class="text">Share on Facebook</span></a></span>
+					<span><a onclick="window.open(this.href, 'mywin','left=50,top=50,width=550,height=550,toolbar=1,resizable=0'); return false;" 
+						class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ url }}" 
+						target="_blank"><span class="icon-linkedin"></span><span class="text">Share on LinkedIn</span></a></span>
+					<span><a 
+						class="email" 
+						href="mailto:?Subject={{ title }}&amp;Body=%20{{ url }}">
+						<span class="icon-Email"></span><span class="sr-only">Email</span></a></span>
+				</div>
+			</div>
+		</div>
+		<div class="article-content">
+			<h3><a href="{{ url }}">{{{ title }}}</a></h3>
+			<p>{{{ custom_fields.dek.[0] }}}</p>
+			<p class="meta">
+				<a href="/category/{{categories.0.slug}}" class="{{categories.0.slug}}-colored">
+					{{categories.0.title}}
+				</a> 
+				By <a href="/author/{{author.slug}}">{{author.name}}</a> | <time>{{date}}</time>
+			</p>
+		</div>
+	</article>
+</script>
 
 
 <script src="//localhost:1337/livereload.js"></script>
