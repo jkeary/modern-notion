@@ -10,7 +10,7 @@
 	<div id="content">
 		<div id="inner-content" class="wrap cf">
 			<div class="row">
-				<img src="http://placehold.it/645x78&text=Advertisement" alt="" class="top-ad">
+				<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
 			</div>
 			<div class="row default-layout">
 				<div id="main">
