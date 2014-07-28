@@ -42,7 +42,7 @@
 										<p class="meta">By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?></p>
 									</div>
 									<div class="img_wrapper">
-										<a href="">
+										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail('home-hero'); ?>
 											<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
 												<span class="valign halign post-icon category-icon <?php echo $cat->slug; ?> <?php echo $cat->slug; ?>-bgcolored">
