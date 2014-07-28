@@ -27,6 +27,20 @@
           transition: opacity 500ms ease-out 100ms;  
 }
 
+.site-header .facebook {
+  display: block;
+  width: 34px;
+  height: 34px; 
+  background: url(../images/icons/facebook.png) no-repeat;
+}
+
+.site-header .twitter {
+  display: block;
+  width: 34px;
+  height: 34px; 
+  background: url(../images/icons/twitter.png) no-repeat;
+}
+
 .site-header.scroll {
   height:44px;
 }
@@ -77,7 +91,8 @@
   vertical-align: middle; 
   font-size: 18px;
 }
-.site-header.scroll .facebook img, 
-.site-header.scroll .twitter img {
+.site-header.scroll .facebook, 
+.site-header.scroll .twitter {
+  background-size: 24px;
   width: 24px;
 }

@@ -23,6 +23,7 @@ the whole project.
 
 @import url("navbar.css");
 @import url("modals.css"); 
+@import url("homepage.css");
 
 /* line 10, ../scss/partials/bootstrap/_grid.scss */
 .container, .wrap, #infinite-handle {

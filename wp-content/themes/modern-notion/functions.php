@@ -86,6 +86,12 @@ add_image_size( 'medium-rectangle', 356, 200, true );
 add_image_size( 'side-square', 318, 318, true );
 add_image_size( 'side-rectangle', 318, 178, true );
 
+
+add_image_size( 'home-hero', 786, 440, true );
+add_image_size( 'home-left', 720, 409, true );
+add_image_size( 'home-right', 437, 409, true );
+add_image_size( 'home-mini', 282, 264, true );
+
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you
