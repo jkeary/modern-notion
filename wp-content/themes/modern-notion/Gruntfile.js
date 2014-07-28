@@ -16,6 +16,15 @@ module.exports = function(grunt) {
       }
     },
 
+    watch: {
+      styles: {
+        files: ["./library/css/*.css", './homepage.php'],
+        options: {
+          livereload: 1337
+        }
+      }
+    },
+
     sass: {
       dev: {
         options: {
@@ -28,6 +37,7 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   grunt.registerTask('default', ['uglify', 'sass:dev']);
