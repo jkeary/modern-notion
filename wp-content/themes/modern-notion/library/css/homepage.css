@@ -1,5 +1,6 @@
 /* Page template */
-.page-template-homepage-php #inner-header{
+.page-template-homepage-php #inner-header,
+.page-template-homepage-php #inner-footer{
 	width: 100%;
 	padding: 0 16px;
 }
@@ -315,6 +316,9 @@
 	position: relative;
 }
 
+#main-content .loading {
+	margin-bottom: 32px;
+}
 #main-content .load-more {
 	background-color: black;
 	display: block;
@@ -326,7 +330,6 @@
 	text-transform: uppercase;
 	font-family: 'stratum1bold';
 	font-size: 20px;
-	margin-bottom: 32px;
 }
 
 /* Sidebar */

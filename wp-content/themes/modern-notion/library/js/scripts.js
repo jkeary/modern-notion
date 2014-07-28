@@ -479,6 +479,9 @@ $(window).resize(function () {
       var template = Handlebars.compile(source);
       var loading = $("#article-loading");      
 
+      var button = $(this); 
+
+      button.css("display", "none"); 
       loading.css("display", "block");
       $.ajax({
         url: '/api/get_recent_posts?count=3&page=' + page
@@ -490,6 +493,7 @@ $(window).resize(function () {
           date = date.format("mmmm d, yyyy");
           result.find("time").html(date);
         });
+        button.css("display", "block");
         loading.css("display", "none");
         page++;
       }); 

@@ -150,8 +150,10 @@
 						</article>
 					<?php endwhile; ?>
 					</div>
-					<img style="display:none;" id="article-loading" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" alt="">
-					<a href="" class="load-more">Load More Stories</a>
+					<div class="loading">
+						<img style="display:none;" id="article-loading" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" alt="">
+						<a href="" class="load-more">Load More Stories</a>
+					</div>
 					<img src="http://placehold.it/860x500&text=Advertisement" alt="" class="">
 				</div>
 				
