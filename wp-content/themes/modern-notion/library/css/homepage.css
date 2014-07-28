@@ -1,4 +1,8 @@
 /* Page template */
+.home.page-template-homepage-php div.jPanelMenu-panel {
+	background: none;
+}
+
 .page-template-homepage-php #inner-header,
 .page-template-homepage-php #inner-footer{
 	width: 100%;

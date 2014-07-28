@@ -343,11 +343,7 @@ $(window).resize(function () {
     var loading = $("#article-loading");
     var hasResetPages = false;        
     
-    if(isFront){
-      var wrapper = $("#infinite-scroll-wrapper");
-      var template = Handlebars.compile(source); 
-    }
-    else if(isCategory) {
+    if(isCategory) {
       var wrapper = $("#main");
       var template = Handlebars.compile(source);
 
@@ -370,7 +366,7 @@ $(window).resize(function () {
     }
     
     $(window).scroll(function(e) {
-      if(!isFront && !isCategory){
+      if(!isCategory){
         return; 
       }
 
@@ -394,7 +390,6 @@ $(window).resize(function () {
         $.ajax({
           url: window.location.pathname + "page/" + page + "?json=1",
         }).success(function(data) {
-          //console.log(data); 
 
           //Update the total pages
           if(data.pages){
