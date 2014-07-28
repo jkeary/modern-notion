@@ -236,7 +236,8 @@
 	</article>
 </script>
 
-
-<script src="//localhost:1337/livereload.js"></script>
+<?php if(DB_HOST === 'localhost') : ?>
+	<script src="//localhost:1337/livereload.js"></script>
+<?php endif; ?>
 
 <?php get_footer(); ?>
