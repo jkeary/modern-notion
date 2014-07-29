@@ -6,23 +6,11 @@
 
 <?php get_header(); ?>
 
-<?php 
-	$list = get_option("hp_slots"); 
-	$posts = get_posts(array(
-		'orderby' => 'post__in', 
-		'include' => $list
-	));
-	//echo "<pre>"; var_dump($posts);
-	//$hero   = array($posts[0]);
-	//$top    = array($posts[1], $posts[2], $posts[3]); 
-	//$middle = array($posts[4], $posts[5]); 
-	//$mini   = array($posts[6], $posts[7], $posts[8], $posts[9]);
-
+<?php
 	$hero = get_posts('meta_key=hp_slot&meta_value=hero&posts_per_page=1&orderby=modified');
 	$top = get_posts('meta_key=hp_slot&meta_value=top&posts_per_page=3&orderby=modified'); 
 	$middle = get_posts('meta_key=hp_slot&meta_value=middle&posts_per_page=2&orderby=modified'); 
 	$mini = get_posts('meta_key=hp_slot&meta_value=mini&posts_per_page=4&orderby=modified'); 
-	//echo "<pre>"; var_dump($heros);
 ?>
 
 <div id="main">
