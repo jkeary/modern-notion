@@ -6,6 +6,25 @@
 
 <?php get_header(); ?>
 
+<?php 
+	$list = get_option("hp_slots"); 
+	$posts = get_posts(array(
+		'orderby' => 'post__in', 
+		'include' => $list
+	));
+	//echo "<pre>"; var_dump($posts);
+	//$hero   = array($posts[0]);
+	//$top    = array($posts[1], $posts[2], $posts[3]); 
+	//$middle = array($posts[4], $posts[5]); 
+	//$mini   = array($posts[6], $posts[7], $posts[8], $posts[9]);
+
+	$hero = get_posts('meta_key=hp_slot&meta_value=hero&posts_per_page=1&orderby=modified');
+	$top = get_posts('meta_key=hp_slot&meta_value=top&posts_per_page=3&orderby=modified'); 
+	$middle = get_posts('meta_key=hp_slot&meta_value=middle&posts_per_page=2&orderby=modified'); 
+	$mini = get_posts('meta_key=hp_slot&meta_value=mini&posts_per_page=4&orderby=modified'); 
+	//echo "<pre>"; var_dump($heros);
+?>
+
 <div id="main">
 	<div id="content">
 		<div id="inner-content" class="wrap cf">
@@ -16,8 +35,7 @@
 				<div id="main">
 					<div class="cf">
 						<div class="headlining">
-							<?php $headlines = new WP_Query('posts_per_page=3&offset=1'); ?>
-							<?php while($headlines->have_posts()) : $headlines->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>
+							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 								<article>
 									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 									<p class="meta">
@@ -27,11 +45,10 @@
 										By <?php the_author_posts_link(); ?>
 									<div class="sep"></div>
 								</article>
-							<?php endwhile; ?>											
+							<?php endforeach; ?>											
 						</div>												
 						<div id="hero">
-							<?php $hero = new WP_Query('posts_per_page=1&offset=2&category_name=life'); ?>
-							<?php while($hero->have_posts()) : $hero->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>					
+							<?php foreach($hero as $post) : setup_postdata($post); $cat = get_the_category(); $cat = $cat[0]; ?>					
 								<article class="article-block">
 									<div class="headline <?php echo $cat->slug; ?>-bgcolored">
 										<span><?php echo $cat->slug?></span>
@@ -56,13 +73,13 @@
 										<?php get_template_part('partials/content', 'article-tab-link'); ?>
 									</div>							
 								</article>
-							<?php endwhile; ?>
+							<?php endforeach; ?>
 						</div>
 					</div>
 					<div id="two-stories" class="cf">
 						<?php 
-							$two = new WP_Query('posts_per_page=2'); $x=0;
-							while($two->have_posts()) : $two->the_post(); 
+							$x=0;
+							foreach($middle as $post) : setup_postdata($post);  
 							$side = ($x%2 === 0) ? 'left' : 'right'; $x++; 
 							$cat = get_the_category()[0];
 						?>
@@ -89,7 +106,7 @@
 									<?php get_template_part('partials/content', 'article-tab-link'); ?>
 								</div>							
 							</article>
-						<?php endwhile; ?>						
+						<?php endforeach; ?>						
 					</div>					
 				</div>
 			</div>
@@ -98,11 +115,11 @@
 		<div id="mini-featured">
 			<div class="wrap">
 				<div class="row">
-					<?php $featured = new WP_Query('posts_per_page=4'); ?>
-					<?php while($featured->have_posts()) : $featured->the_post(); $cat = get_the_category(); ?>
+					<?php  ?>
+					<?php foreach($mini as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 						<article class="article-block">
 							<div class="headline">
-								<h2 class="<?php echo $cat[0]->slug; ?>-bgcolored"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<h2 class="<?php echo $cat->slug; ?>-bgcolored"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 							</div>						
 							<div class="img_wrapper">
 								<a href="<?php the_permalink()?>">
@@ -111,7 +128,7 @@
 								<?php get_template_part('partials/content', 'article-tab-link'); ?>
 							</div>							
 						</article>
-					<?php endwhile;  ?>
+					<?php endforeach;  ?>
 				</div>
 			</div>
 		</div>
