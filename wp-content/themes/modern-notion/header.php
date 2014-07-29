@@ -123,7 +123,7 @@
 
 					<div id="inner-header" class="wrap cf container">
 
-						<a href="<?php echo home_url(); ?>" rel="nofollow" class="header-logo"><span class="icon-Full_Logo visible-lg"></span><span class="icon-logo_type hidden-lg"></span><span class="sr-only logo-text">Modern Notion</span></a>
+						<a href="<?php echo home_url(); ?>" rel="nofollow" class="header-logo"><span class="icon-Full_Logo visible-lg"></span><span class="icon-logo_type hidden-lg"></span><span class="sr-only logo-text visible-lg">Modern Notion</span></a>
 
 						<div class="header-links-wrapper">
 							<nav role="navigation" class="site-nav">

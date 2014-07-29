@@ -70,7 +70,7 @@ class HomepageSlots {
       return $post_id;
 
     // Check the user's permissions.
-  	if ( ! current_user_can( 'edit_post', $post_id ) )
+  	if ( !current_user_can( 'edit_post', $post_id ))
   	  return $post_id;
 
   	if(empty($_POST['position']))

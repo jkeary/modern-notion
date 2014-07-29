@@ -16,13 +16,13 @@
 <div id="main">
 	<div id="content">
 		<div id="inner-content" class="wrap cf">
-			<div class="row">
+			<div class="row visible-lg">
 				<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
 			</div>
 			<div class="row default-layout">
 				<div id="main">
 					<div class="cf">
-						<div class="headlining">
+						<div class="headlining visible-lg">
 							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 								<article>
 									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -43,6 +43,7 @@
 										<h1>
 											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 											<span class="arrow <?php echo $cat->slug; ?>-colored"></span>
+											<span class="arrow-up <?php echo $cat->slug; ?>-colored"></span>
 										</h1>
 										<p class="meta">By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?></p>
 									</div>
@@ -100,7 +101,7 @@
 			</div>
 		</div>
 
-		<div id="mini-featured">
+		<div id="mini-featured" class="hidden-sm">
 			<div class="wrap">
 				<div class="row">
 					<?php  ?>
@@ -128,7 +129,7 @@
 					<?php $recent = new WP_Query('posts_per_page=3'); ?>
 					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category(); $slug = $cat[0]->slug; ?>
 						<article class="article-block cf">
-							<div class="img_wrapper">
+							<div class="img_wrapper col-md-3">
 								<a href="<?php the_permalink();?>">
 									<?php the_post_thumbnail("home-mini"); ?>
 									<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
@@ -159,11 +160,11 @@
 						<img style="display:none;" id="article-loading" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" alt="">
 						<a href="" class="load-more">Load More Stories</a>
 					</div>
-					<img src="http://placehold.it/860x500&text=Advertisement" alt="" class="">
+					<img src="http://placehold.it/860x500&text=Advertisement" alt="" class="visible-lg">
 				</div>
 				
 				<div id="home-sidebar" class="col-md-3">
-					<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="">
+					<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
 					<div id="recommended">
 						<h4>Recommended</h4>
 						<div class="headlining">

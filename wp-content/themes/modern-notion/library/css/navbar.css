@@ -96,3 +96,24 @@
   background-size: 24px;
   width: 24px;
 }
+
+/* Responsive */
+
+@media(max-width:1104px) {
+  .site-header .facebook, 
+  .site-header .twitter {
+    background-size: 24px;
+    width: 24px;
+  }
+  .footer .site-action-links a{
+    font-size: 34px;
+  }  
+}
+
+@media(min-width:1104px) {
+  .site-header .facebook, 
+  .site-header .twitter {
+    background-size: 34px;
+    width: 34px;
+  }
+}
