@@ -135,46 +135,48 @@
                             <?php get_template_part( 'partials/content', 'share-buttons'); ?>
                         </div>
                     <?php endif; ?>
-                    <div class="article-footer">
-                        <?php the_tags( '<div class="article-tags">', ' ', '</div>' ); ?>
-                    </div> <?php // end article footer ?>
-                    <?php /*
-                    <section class="comments-wrapper">
-                        <div class="comments-toggle-wrapper">
-                            <button type="button" data-toggle="collapse" data-target="#comments-<?php echo get_the_slug(); ?>" class="comments-toggle">View Comments</button>
-                        </div>
-                        <div id="comments-<?php echo get_the_slug(); ?>" class="collapse">
-                            <?php comments_template(); ?>
-                        </div>
-                    </section>
-                    */ ?>
-                     <?php $related_query = new WP_Query( array(
-                        'post_type' => 'post',
-                        'posts_per_page' => 3
-                    ) ); ?>
-                    
-                    <?php if ( $related_query->have_posts() ) : ?>
-                    <section class="suggested-posts">
-                        <div class="row">
-                            <?php while ( $related_query->have_posts() ) : ?>
-                                <?php $related_query->the_post(); ?>
-                                <div class="col-md-4">
-                                    <a href="<?php the_permalink();?>">
-                                        <?php the_post_thumbnail("medium-rectangle"); ?>
-                                    </a>
-                                    <h2>
-                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                    </h2>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-                    </section>
-                    
-                    <?php get_template_part("partials/content", "taboola-related"); ?>
+                    <div class="article-footer-container">
+                        <div class="article-footer">
+                            <?php the_tags( '<div class="article-tags">', ' ', '</div>' ); ?>
+                        </div> <?php // end article footer ?>
+                        <?php /*
+                        <section class="comments-wrapper">
+                            <div class="comments-toggle-wrapper">
+                                <button type="button" data-toggle="collapse" data-target="#comments-<?php echo get_the_slug(); ?>" class="comments-toggle">View Comments</button>
+                            </div>
+                            <div id="comments-<?php echo get_the_slug(); ?>" class="collapse">
+                                <?php comments_template(); ?>
+                            </div>
+                        </section>
+                        */ ?>
+                         <?php $related_query = new WP_Query( array(
+                            'post_type' => 'post',
+                            'posts_per_page' => 3
+                        ) ); ?>
+                        
+                        <?php if ( $related_query->have_posts() ) : ?>
+                        <section class="suggested-posts">
+                            <div class="row">
+                                <?php while ( $related_query->have_posts() ) : ?>
+                                    <?php $related_query->the_post(); ?>
+                                    <div class="col-md-4">
+                                        <a href="<?php the_permalink();?>">
+                                            <?php the_post_thumbnail("medium-rectangle"); ?>
+                                        </a>
+                                        <h2>
+                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                        </h2>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                        </section>
+                        
+                        <?php get_template_part("partials/content", "taboola-related"); ?>
 
-                    <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>   
-                    <img src="http://placehold.it/693x100&text=Advertisement" alt="" class="page-block">
+                        <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>   
+                       <img src="http://placehold.it/693x100&text=Advertisement" alt="" class="page-block">
+                    </div>
                 </div>
             </div>
         <?php endif; ?>

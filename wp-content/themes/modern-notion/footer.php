@@ -1,6 +1,3 @@
-            <div id="related">
-                <?php related_posts(); ?>
-            </div>
                         
             <footer class="footer site-footer" role="contentinfo">
 

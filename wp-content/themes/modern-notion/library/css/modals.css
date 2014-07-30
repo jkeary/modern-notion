@@ -14,9 +14,9 @@
 
 /*Slide in modal*/
 .slide-in {
-  position:absolute;
+/*  position:absolute;
   bottom: 206px;
-  right: -100%;
+  right: -100%;*/
   background-color: white;
   width: 436px;
   z-index: 10;
@@ -64,6 +64,15 @@
   border-style: solid;
   border-top: 0;
   padding: 16px;  
+}
+
+#slide-in {
+  position: relative;
+  right: -150%;
+}
+
+#slide-in.open {
+  right: 0%;
 }
 
 #slide-in .icon {

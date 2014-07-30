@@ -109,12 +109,11 @@ jQuery(document).ready(function($) {
 	  		$this.stick_in_parent({
 				offset_top: sticky_offest_top,
 				parent: '.article-text-wrapper[data-slug="'+this_slug+'"]'
-			});
+			})
 		});
 		if($('body.home').length == 0)  {
-      return;
 		  	$('.sidebar-sticky-wrapper').stick_in_parent({
-				offset_top: sticky_offest_top,
+				offset_top: 200,
 				inner_scrolling: false,
 				parent: '#inner-content'
 			});
@@ -186,7 +185,8 @@ $(window).resize(function () {
       var gettingNext = false;    
       var content = jQuery("#main"); 
       var loading = jQuery("#article-loading");
-      var doneSingleLoading = false; 
+      var doneSingleLoading = false;
+      var hasLoaded = false;  
     }
 
     function getNextTaggedArticle(tag, page, cb) {
@@ -244,7 +244,6 @@ $(window).resize(function () {
       gettingNext = true;
       loading.css('opacity', '1');  
       getNextTaggedArticle(tag.slug, count, function(data) {
-
         if(data.status === "done") {
           gettingNext = false; 
           doneSingleLoading = true; 
@@ -263,6 +262,8 @@ $(window).resize(function () {
           //   'page': '/' + post.slug,
           //   'title': 'Modern Notion ' + post.title
           // });
+          $(".sidebar-sticky-wrapper, .share-panel").trigger("sticky_kit:recalc");
+          hasLoaded = true; 
         }); 
       });
       count++;  
@@ -272,17 +273,49 @@ $(window).resize(function () {
   /* ------------------------------------------------
   Single page - Slide in Recommendation
   ------------------------------------------------ */
-   var contentHeight = $("#inner-content").height();
-   $(window).bind('mousewheel', function(e){ 
-      var scroll = $(this).scrollTop(); 
-      if(scroll > (contentHeight-500) && isSingle){
-        if (e.originalEvent.wheelDelta < 0) {
-          $("#slide-in").addClass("open");          
-        } 
-        else if(e.originalEvent.wheelDelta > 1) {
-          $("#slide-in").removeClass("open");
-        }         
-      }     
+   var scrollStart = 0; 
+   var article = $(".standard-content");
+   var end = article.offset().top + article.height();
+   $(window).bind('mousewheel', function(e) {
+      var scroll = $(this).scrollTop();
+      if(!hasLoaded) {
+        console.log(scroll > (end - 476));
+      }
+
+      else {
+        article = $('.load');
+        console.log(article);
+        //console.log(article);
+        //end = article.offset().top + article.height() - 476;
+      }
+
+      // var contentHeight = $("#inner-content").height(); 
+      // var footerHeight = $(".load").eq(-2).find('.article-footer-container').height() || $('.article-footer-container').height();
+      // var scroll = $(this).scrollTop(); 
+
+      // console.log("content: "+ (contentHeight - footerHeight)); 
+      // console.log("scroll: "+ scroll); 
+
+      // if(scroll > (contentHeight - footerHeight) && isSingle){
+      //   if (e.originalEvent.wheelDelta < 0) {
+      //     if(!scrollStart) {
+      //       scrollStart = scroll; 
+      //     }
+      //     var difference = scroll - scrollStart;
+      //     console.log("diff: " + difference); 
+      //     if(difference >= 500) {
+      //       $("#slide-in").removeClass("open");
+      //       scrollStart = 0;
+      //     }
+      //     else {
+      //       $("#slide-in").addClass("open");
+      //     }
+      //   } 
+      //   else if(e.originalEvent.wheelDelta > 1) {
+      //     scrollStart = 0;
+      //     $("#slide-in").removeClass("open");
+      //   }         
+      // }     
    });    
 
 	  //Window scroll event
@@ -304,8 +337,8 @@ $(window).resize(function () {
             $(".logo-text").removeClass("sr-only");
         }
         else {
-            header.removeClass("scroll"); 
-            $(".logo-text").addClass("sr-only");                    
+          header.removeClass("scroll"); 
+          $(".logo-text").addClass("sr-only");                    
         }
     });	
 
