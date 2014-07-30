@@ -11,6 +11,9 @@ sidebars, comments, ect.
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 require_once( 'library/cite-photo.php' );
+require_once( 'library/homepage-slots.php' );
+require_once( 'library/author-twitter-handle.php' );
+
 
 
 // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
@@ -85,6 +88,12 @@ add_image_size( 'medium-rectangle', 356, 200, true );
 
 add_image_size( 'side-square', 318, 318, true );
 add_image_size( 'side-rectangle', 318, 178, true );
+
+
+add_image_size( 'home-hero', 786, 440, true );
+add_image_size( 'home-left', 720, 409, true );
+add_image_size( 'home-right', 437, 409, true );
+add_image_size( 'home-mini', 282, 264, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -255,6 +264,11 @@ function wpse26032_restrict_manage_posts_format()
     ) );
 }
 add_action( 'restrict_manage_posts', 'wpse26032_restrict_manage_posts_format' );
+
+function custom_excerpt_length( $length ) {
+  return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 function get_the_slug() {
   global $post;

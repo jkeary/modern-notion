@@ -1,15 +1,10 @@
-.site-header {
+.site-header,
+.site-header .site-nav a {
   -webkit-transition: all 300ms ease-out;
      -moz-transition: all 300ms ease-out;
        -o-transition: all 300ms ease-out;
           transition: all 300ms ease-out;
 }
-/*.site-header .header-logo{
-  -webkit-transition: all 300ms ease-out;
-     -moz-transition: all 300ms ease-out;
-       -o-transition: all 300ms ease-out;
-          transition: all 300ms ease-out;
-}*/
 .site-header .icon-Full_Logo{
   opacity: 1;
   -webkit-transition: all 500ms ease-out 200ms;
@@ -32,9 +27,32 @@
           transition: opacity 500ms ease-out 100ms;  
 }
 
+.site-header .facebook {
+  display: block;
+  width: 34px;
+  height: 34px; 
+  background: url(../images/icons/facebook.png) no-repeat;
+}
+
+.site-header .twitter {
+  display: block;
+  width: 34px;
+  height: 34px; 
+  background: url(../images/icons/twitter.png) no-repeat;
+}
+
 .site-header.scroll {
   height:44px;
 }
+
+.site-header.scroll .site-nav {
+  margin-top: 6px;
+}
+
+.site-header.scroll .site-nav a {
+  font-size: 18px; 
+}
+
 .site-header.scroll .header-logo {
   /*font-size: 44px;*/
 }
@@ -73,7 +91,28 @@
   vertical-align: middle; 
   font-size: 18px;
 }
-.site-header.scroll .facebook img, 
-.site-header.scroll .twitter img {
+.site-header.scroll .facebook, 
+.site-header.scroll .twitter {
+  background-size: 24px;
   width: 24px;
+}
+
+/* Responsive */
+@media(max-width:1104px) {
+  .site-header .facebook, 
+  .site-header .twitter {
+    background-size: 24px;
+    width: 24px;
+  }
+  .footer .site-action-links a{
+    font-size: 34px;
+  }  
+}
+
+@media(min-width:1104px) {
+  .site-header .facebook, 
+  .site-header .twitter {
+    background-size: 34px;
+    width: 34px;
+  }
 }

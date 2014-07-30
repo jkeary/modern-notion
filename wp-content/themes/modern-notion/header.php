@@ -20,7 +20,7 @@
         <meta property="og:url" content="<?php the_permalink(); ?>" />
         <meta property="fb:app_id" content="1453391324923585" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="Test description" />
+        <meta property="og:description" content="<?php if(get_field('dek')) the_field('dek'); ?>" />
         <meta property="article:publisher" content="https://www.facebook.com/modernnotion" />
         <?php if(get_the_post_thumbnail()) : ?>
             <meta property="og:image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )[0]; ?>" />
@@ -32,6 +32,11 @@
         <meta name="twitter:description" content="<?php if(get_field('dek')) the_field('dek'); ?>" />
         <meta name="twitter:image:src" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )[0]; ?>">        
         <meta name="twitter:url" content="<?php the_permalink(); ?>" />
+
+        <script>
+            var tags = <?php echo json_encode(get_the_tags()); ?>;
+            var post = <?php echo json_encode($post); ?>;
+        </script>
     <?php endif; ?>
 
 	<?php // mobile meta (hooray!) ?>
@@ -118,7 +123,7 @@
 
 					<div id="inner-header" class="wrap cf container">
 
-						<a href="<?php echo home_url(); ?>" rel="nofollow" class="header-logo"><span class="icon-Full_Logo visible-lg"></span><span class="icon-logo_type hidden-lg"></span><span class="sr-only logo-text">Modern Notion</span></a>
+						<a href="<?php echo home_url(); ?>" rel="nofollow" class="header-logo"><span class="icon-Full_Logo visible-lg"></span><span class="icon-logo_type hidden-lg"></span><span class="sr-only logo-text visible-lg">Modern Notion</span></a>
 
 						<div class="header-links-wrapper">
 							<nav role="navigation" class="site-nav">

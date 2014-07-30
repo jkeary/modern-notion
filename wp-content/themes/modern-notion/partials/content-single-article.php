@@ -57,9 +57,7 @@
                     <?php the_field('video_embed_code'); ?>
                 </div> 
             <?php else: ?>
-                <a href="<?php the_permalink(); ?>">
         	       <?php the_post_thumbnail('large'); ?>
-               </a>
                <?php
                     $link = get_post_meta($post->ID, "cite_link", true);
                     $text = get_post_meta($post->ID, "cite_text", true);
@@ -183,9 +181,6 @@
     </section> <?php // end article section ?>
 
 </article> <?php // end article ?>
-
-
-<?php get_template_part("partials/modal", "slidein-recommended"); ?>
 
 
 

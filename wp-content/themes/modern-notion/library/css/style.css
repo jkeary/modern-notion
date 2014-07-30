@@ -23,6 +23,9 @@ the whole project.
 
 @import url("navbar.css");
 @import url("modals.css"); 
+@import url("homepage.css");
+@import url("share-buttons.css");
+@import url("footer.css");
 
 /* line 10, ../scss/partials/bootstrap/_grid.scss */
 .container, .wrap, #infinite-handle {

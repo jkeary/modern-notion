@@ -57,10 +57,10 @@
 					<span class="icon-Share"></span>
 				</div>
 				<div class="share-buttons inline black-style">
-					<span><a class="twitter" href="http://twitter.com/share?url={{url}}&amp;text={{title}}" target="_blank"><span class="icon-twitter"></span><span class="text">Share on Twitter</span></a></span>
-					<span><a class="facebook" href="http://www.facebook.com/sharer.php?u={{url}}" target="_blank"><span class="icon-facebook"></span><span class="text">Share on Facebook</span></a></span>
-					<span><a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url}}" target="_blank"><span class="icon-linkedin"></span><span class="text">Share on LinkedIn</span></a></span>
-					<span><a class="email" href="mailto:?Subject={{title}}&amp;Body=%20{{url}}" target="_blank"><span class="icon-Email"></span><span class="sr-only">Email</span></a></span>	
+					<span><a onclick="window.open(this.href, 'mywin','left=50,top=50,width=550,height=550,toolbar=1,resizable=0'); return false;" class="twitter" href="http://twitter.com/share?url={{url}}&amp;text={{title}}" target="_blank"><span class="icon-twitter"></span><span class="text">Share on Twitter</span></a></span>
+					<span><a onclick="window.open(this.href, 'mywin','left=50,top=50,width=550,height=550,toolbar=1,resizable=0'); return false;" class="facebook" href="http://www.facebook.com/sharer.php?u={{url}}" target="_blank"><span class="icon-facebook"></span><span class="text">Share on Facebook</span></a></span>
+					<span><a onclick="window.open(this.href, 'mywin','left=50,top=50,width=550,height=550,toolbar=1,resizable=0'); return false;" class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url}}" target="_blank"><span class="icon-linkedin"></span><span class="text">Share on LinkedIn</span></a></span>
+					<span><a onclick="window.open(this.href, 'mywin','left=50,top=50,width=550,height=550,toolbar=1,resizable=0'); return false;" class="email" href="mailto:?Subject={{title}}&amp;Body=%20{{url}}" target="_blank"><span class="icon-Email"></span><span class="sr-only">Email</span></a></span>	
 				</div>
 			</div>	
 		</div>

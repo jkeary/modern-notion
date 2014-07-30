@@ -9,6 +9,12 @@
 						<?php endwhile; ?>
 						<?php endif; ?>															
 					</div>
+					<img 
+						id="article-loading" 
+						src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" 
+						alt=""
+						style="opacity:0; position:relative; bottom: 0" />
+					<div class="load"></div>
 				</div>
 				<?php get_sidebar(); ?>
 			</div>

@@ -49,9 +49,14 @@ function po_loadMessageBox( ) {
     data = mydata;
     if(!data.title){
         return; 
-    }
+    }     
 
     if(data.title.indexOf("slide") === -1) {
+        var intro = jQuery("#" + data.title + "-intro"); 
+        if(intro.length){
+            intro.html(data.content);
+        }
+
         jQuery("#" + data.title).modal("show"); 
     }
 
