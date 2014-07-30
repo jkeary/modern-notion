@@ -22,7 +22,7 @@
 			</div>
 		<?php endif; ?>
 		<div class="hidden-xs">
-			<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=5&post_type=post"); ?>
+			<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
 		</div>		
 	</div>
 

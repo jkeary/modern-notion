@@ -396,7 +396,7 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
       $extra_class = '';
     }
     else  {
-      $image_size = 'side-rectangle'; 
+      $image_size = 'small-square'; 
       $extra_class = 'nopin';
     }
 
