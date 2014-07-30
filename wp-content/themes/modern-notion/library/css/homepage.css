@@ -569,6 +569,11 @@
 		display:none;
 	}
 
+	#inner-footer .header-nav-in-footer a,
+	#inner-footer .footer-only-nav a{
+		font-size:10px;
+	}	
+
 	body.admin-bar.home {
 		padding-bottom: 0;
 		margin: 0;
