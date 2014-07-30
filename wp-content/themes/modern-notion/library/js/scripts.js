@@ -113,7 +113,7 @@ jQuery(document).ready(function($) {
 		});
 		if($('body.home').length == 0)  {
 		  	$('.sidebar-sticky-wrapper').stick_in_parent({
-				offset_top: 350,
+				offset_top: 550,
 				inner_scrolling: false,
 				parent: '#inner-content'
 			});
@@ -272,7 +272,7 @@ $(window).resize(function () {
           hasLoaded = true;
           hasSet = false;
           loadedArticle = put.find('article'); 
-          //$(document.body).trigger("sticky_kit:recalc"); 
+          $(document.body).trigger("sticky_kit:recalc"); 
         }); 
       });
       count++;  
@@ -304,9 +304,10 @@ $(window).resize(function () {
       setTimeout(function() {
         if(!isCalculating){
           $(document.body).trigger("sticky_kit:recalc");
+          isCalculating = true; 
         }
         else {
-          isCalculating = true; 
+          isCalculating = false;
         }
       }, 650);
       
