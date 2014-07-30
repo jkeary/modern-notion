@@ -476,10 +476,6 @@
 		width: 100%;
 	}
 
-	.page-template-homepage-php #container {
-		padding-top: 8px;
-	}	
-
 	#hero {
 		height: 266px;
 		width: 100%;
@@ -597,21 +593,55 @@
 
 	#hero .headline {
 		width: 100%;
-		bottom: -229px;
+		top: 246px;
 		height: auto;
 	}
 
-	#hero .headline .arrow {
-		border-left: 25px solid transparent;
-		border-right: 25px solid transparent;
-		border-bottom: 25px solid #f6d04a;
-		border-top: 0;
-		left: 50%;
-		top: -20%;
+	#hero .arrow {
+		display:none;
 	}
 
+	#hero .headline .arrow-up {
+		position:absolute;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		border-top: 0;
+		left: 45%;
+		top: -10%;
+	}
+
+	/* line 570, ../scss/partials/_custom.scss */
+	#hero .headline .arrow-up.innovation-colored {
+	  	border-bottom: 25px solid #7d8ac1;
+	}
+
+	/* line 573, ../scss/partials/_custom.scss */
+	#hero .headline .arrow-up.science-colored {
+	  	border-bottom: 25px solid #e58530;
+	}
+
+	/* line 576, ../scss/partials/_custom.scss */
+	#hero .headline .arrow-up.history-colored {
+	  	border-bottom: 25px solid #f5d454;
+	}
+
+	/* line 579, ../scss/partials/_custom.scss */
+	#hero .headline .arrow-up.life-colored {
+	  	border-bottom: 25px solid #9daa39;
+	}
+	
+
 	#home-content {
-		margin-top: 150px;
+		margin-top: 200px;
+	}
+	
+	#main-content .article-content {
+		padding-right: 8px;
+	}
+	
+	#inner-footer .header-nav-in-footer a,
+	#inner-footer .footer-only-nav a{
+		font-size:10px;
 	}
 
 }
