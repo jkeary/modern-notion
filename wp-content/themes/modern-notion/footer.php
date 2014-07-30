@@ -88,13 +88,15 @@
         _taboola.push({flush: true});
     </script>   
     
+    <?php if (!WP_DEBUG) : ?>
     <!-- Crowdskout -->
     <script>
-        // (function(l,o,v,e) {
-        // l.ownerid = 6
-        // ;a=o.getElementsByTagName(v)[0];b=o.createElement(v);b.src=e;a.parentNode.insertBefore(b,a);
-        // })(window, document, 'script', 'https://api.crowdskout.com/analytics.js');
+        (function(l,o,v,e) {
+        l.ownerid = 6
+        ;a=o.getElementsByTagName(v)[0];b=o.createElement(v);b.src=e;a.parentNode.insertBefore(b,a);
+        })(window, document, 'script', 'https://api.crowdskout.com/analytics.js');
     </script>    
+    <?php endif; ?>
 
 </body>
 </html> <!-- end of site. what a ride! -->
