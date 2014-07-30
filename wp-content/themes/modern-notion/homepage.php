@@ -124,12 +124,12 @@
 
 		<div id="home-content" class="wrap">
 			<div class="row">
-				<div id="main-content" class="col-md-9">
+				<div id="main-content" class="col-md-9 col-sm-8">
 					<div id="articles" class="articles">
 					<?php $recent = new WP_Query('posts_per_page=3'); ?>
 					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category(); $slug = $cat[0]->slug; ?>
 						<article class="article-block cf">
-							<div class="img_wrapper col-md-3">
+							<div class="img_wrapper col-md-3 col-sm-3">
 								<a href="<?php the_permalink();?>">
 									<?php the_post_thumbnail("home-mini"); ?>
 									<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
@@ -163,7 +163,7 @@
 					<img src="http://placehold.it/860x500&text=Advertisement" alt="" class="visible-lg">
 				</div>
 				
-				<div id="home-sidebar" class="col-md-3">
+				<div id="home-sidebar" class="col-md-3 col-sm-4">
 					<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
 					<div id="recommended">
 						<h4>Recommended</h4>
