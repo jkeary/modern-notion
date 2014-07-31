@@ -73,6 +73,10 @@
 	padding-top: 16px;
 }
 
+.top.headlining {
+	margin: 0 48px;
+}
+
 .headlining .sep {
 	border-bottom: 2px solid black;
 	width: 30%;
@@ -103,8 +107,8 @@
 
 /* Hero Article */
 #hero {
-	float:left;
-	width: 80%;
+	float:right;
+	width: 73%;
 	height: 440px;
 	margin-bottom: 16px;
 }

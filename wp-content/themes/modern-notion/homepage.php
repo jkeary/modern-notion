@@ -22,7 +22,7 @@
 			<div class="default-layout">
 				<div id="main">
 					<div class="cf">
-						<div class="headlining visible-lg">
+						<div class="top headlining visible-lg">
 							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 								<article>
 									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
