@@ -23,10 +23,10 @@
 		<?php endif; ?>
 		<div class="hidden-xs">
 			<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
-		</div>		
+		</div>	
+		<div id="related">
+		    <?php related_posts(); ?>
+		</div>				
 	</div>
 
-	<div id="related" class="sidebar-sticky-wrapper">
-	    <?php related_posts(); ?>
-	</div>	
 </div>
