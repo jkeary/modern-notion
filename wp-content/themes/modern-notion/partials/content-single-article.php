@@ -36,15 +36,7 @@
               		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>                                           
                     <div class="share-buttons inline-color-style">
                         <?php get_template_part( 'partials/content', 'share-buttons'); ?>
-                    </div>
-                    <?php /*
-                    <?php if(get_field('dek')): ?>    
-                        <hr class="short">
-                        <div class="prose dek category-prose <?php echo top_category_slug(); ?>-styled">
-                            <?php the_field('dek'); ?>
-                        </div>
-                    <?php endif; ?>
-                    */ ?>                                   
+                    </div>                                 
                 <?php endif; ?>
           	</div>
         </div>        
@@ -90,6 +82,11 @@
                 </div>
                 <div class="main">
                     <?php if ( has_post_format( 'aside' )): ?>
+                        <?php if(get_field('dek')): ?>
+                            <div class="prose dek category-prose <?php echo top_category_slug(); ?>-styled">
+                                <?php the_field('dek'); ?>
+                            </div>
+                        <?php endif; ?>                         
                         <?php $values = get_field('list_items'); ?>
                         <?php if(get_field('list_number_order') == 'decreasing')  {
                             $list_num = count($values);
@@ -97,7 +94,7 @@
                         else  {
                             $list_num = 1;   
                         }  ?>
-                        <?php if($values): ?>
+                        <?php if(is_array($values)): ?>
                             <ol class="article-list-items category-prose <?php echo top_category_slug(); ?>-styled">
                             <?php foreach($values as $value): ?>
                                 <li>
