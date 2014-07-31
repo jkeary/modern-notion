@@ -124,14 +124,14 @@
                             <?php get_template_part('partials/content', 'podcast-player'); ?>                                            
                         </div>
                     <?php endif; ?>
-                    <?php if(get_the_content()): ?>
+                    <?php //if(get_the_content()): ?>
                         <div class="prose standard-content category-prose <?php echo top_category_slug(); ?>-styled">
                             <?php the_content(); ?>
                         </div>
                         <div class="share-buttons inline-color-style">
                             <?php get_template_part( 'partials/content', 'share-buttons'); ?>
                         </div>
-                    <?php endif; ?>
+                    <?php //endif; ?>
                     <div class="article-footer-container">
                         <div class="article-footer">
                             <?php the_tags( '<div class="article-tags">', ' ', '</div>' ); ?>

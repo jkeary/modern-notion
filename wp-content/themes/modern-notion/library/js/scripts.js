@@ -194,8 +194,10 @@ $(window).resize(function () {
       var loadedLastRecent = false; 
       var singlePosts = {};
       singlePosts[post.ID] = true;
-      var keys = Object.keys(tags); 
-      var tag = tags[keys[0]]; 
+      if(tags){
+        var keys = Object.keys(tags); 
+        var tag = tags[keys[0]]; 
+      }
       var gettingNext = false;    
       var content = jQuery("#main"); 
       var loading = jQuery("#article-loading");
@@ -294,7 +296,7 @@ $(window).resize(function () {
   ------------------------------------------------ */
   if(isSingle) {
    var scrollStart = 0; 
-   var article = $(".standard-content");
+   var article = $(".prose");
    var end = article.offset().top + (article.height()-$(window).height());
    var isCalculating = false; 
   }
