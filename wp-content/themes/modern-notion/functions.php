@@ -13,6 +13,7 @@ require_once( 'library/bones.php' );
 require_once( 'library/cite-photo.php' );
 require_once( 'library/homepage-slots.php' );
 require_once( 'library/author-twitter-handle.php' );
+require_once( 'library/category-meta.php' );
 
 
 

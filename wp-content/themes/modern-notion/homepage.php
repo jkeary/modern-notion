@@ -10,7 +10,8 @@
 	$hero = get_posts('meta_key=hp_slot&meta_value=hero&posts_per_page=1&orderby=modified');
 	$top = get_posts('meta_key=hp_slot&meta_value=top&posts_per_page=3&orderby=modified'); 
 	$middle = get_posts('meta_key=hp_slot&meta_value=middle&posts_per_page=2&orderby=modified'); 
-	$mini = get_posts('meta_key=hp_slot&meta_value=mini&posts_per_page=4&orderby=modified'); 
+	$mini = get_posts('meta_key=hp_slot&meta_value=mini&posts_per_page=4&orderby=modified');
+	$category_meta = get_option('category_meta'); 
 ?>
 
 <div id="main">
@@ -27,7 +28,7 @@
 								<article>
 									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 									<p class="meta">
-										<a href="<?php echo get_category_link($cat->cat_ID);?>" class="<?php echo $cat->slug; ?>-colored">
+										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']?>">
 											<?php echo $cat->slug; ?>
 										</a> 
 										By <?php the_author_posts_link(); ?>
@@ -38,7 +39,7 @@
 						<div id="hero">
 							<?php foreach($hero as $post) : setup_postdata($post); $cat = get_the_category(); $cat = $cat[0]; ?>					
 								<article class="article-block">
-									<div class="headline <?php echo $cat->slug; ?>-bgcolored">
+									<div class="headline" style="background-color: <?php echo $category_meta[$cat->cat_ID]['color'];?>">
 										<span><?php echo $cat->slug?></span>
 										<h1>
 											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -51,7 +52,9 @@
 										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail('home-hero'); ?>
 											<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
-												<span class="valign halign post-icon category-icon <?php echo $cat->slug; ?> <?php echo $cat->slug; ?>-bgcolored">
+												<span 
+													class="valign halign post-icon category-icon <?php echo $cat->slug; ?>" 
+													style="background-color: <?php echo $category_meta[$cat->cat_ID]['color'];?>">
 													<span>
 														<span class="icon-font"></span>
 														<span class="sr-only"><?php echo $cat->slug; ?></span>
@@ -74,8 +77,8 @@
 						?>
 							<article class="article-block <?php echo $side; ?>">
 								<div class="headline">
-									<h2 class="<?php echo $cat->slug; ?>-bgcolored"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-									<p class="meta <?php echo $cat->slug; ?>-bgcolored">
+									<h2 style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+									<p class="meta" style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
 										<a href="<?php echo get_category_link($cat->cat_ID);?>" class="category"><?php echo $cat->name; ?></a> 
 										By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?>
 									</p>
@@ -84,7 +87,9 @@
 									<a href="<?php the_permalink(); ?>">
 										<?php the_post_thumbnail('home-' . $side); ?>
 										<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
-											<span class="valign halign post-icon category-icon <?php echo $cat->slug; ?> <?php echo $cat->slug; ?>-bgcolored">
+											<span 
+												class="valign halign post-icon category-icon <?php echo $cat->slug; ?>" 
+												style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
 												<span>
 													<span class="icon-font"></span>
 													<span class="sr-only"><?php echo $cat->slug; ?></span>
@@ -108,7 +113,9 @@
 					<?php foreach($mini as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 						<article class="article-block">
 							<div class="headline">
-								<h2 class="<?php echo $cat->slug; ?>-bgcolored"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<h2 style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</h2>
 							</div>						
 							<div class="img_wrapper">
 								<a href="<?php the_permalink()?>">
@@ -127,16 +134,18 @@
 				<div id="main-content" class="col-md-9 col-sm-8">
 					<div id="articles" class="articles">
 					<?php $recent = new WP_Query('posts_per_page=3'); ?>
-					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category(); $slug = $cat[0]->slug; ?>
+					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category()[0]; ?>
 						<article class="article-block cf">
 							<div class="img_wrapper col-md-3 col-sm-3">
 								<a href="<?php the_permalink();?>">
 									<?php the_post_thumbnail("home-mini"); ?>
 									<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
-										<span class="valign halign post-icon category-icon <?php echo $slug; ?> <?php echo $slug; ?>-bgcolored">
+										<span 
+											class="valign halign post-icon category-icon <?php echo $cat->slug; ?>" 
+											style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
 											<span>
 												<span class="icon-font"></span>
-												<span class="sr-only"><?php echo $slug; ?></span>
+												<span class="sr-only"><?php echo $cat->slug; ?></span>
 											</span>
 										</span>		
 									</span>
@@ -147,8 +156,8 @@
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<p><?php if(get_field('dek')) the_field('dek'); ?></p>
 								<p class="meta">
-									<a href="<?php echo get_category_link($cat[0]->cat_ID);?>" class="<?php echo $slug; ?>-colored">
-										<?php echo $slug; ?>
+									<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
+										<?php echo $cat->slug; ?>
 									</a> 
 									By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?>
 								</p>
@@ -173,7 +182,7 @@
 								<article>
 									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 									<p class="meta">
-										<a href="<?php echo get_category_link($cat->cat_ID);?>" class="<?php echo $cat->slug; ?>-colored">
+										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
 											<?php echo $cat->slug; ?>
 										</a> 
 										By <?php the_author_posts_link(); ?>
