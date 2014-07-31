@@ -68,7 +68,7 @@
 
 #slide-in {
   position: relative;
-  right: -150%;
+  right: -250%;
 }
 
 #slide-in.open {
