@@ -12,6 +12,7 @@ $cat_name = $category[0]->cat_name;
 $cat_id = $category[0]->term_id;
 $cat_url = get_category_link($cat_id);
 $cat_slug = $category[0]->slug;
+$category_meta = get_option('category_meta');
 $href = '';
 $title_attr = '';
 global $icon_element;
@@ -23,7 +24,7 @@ if($icon_element == 'a')  {
 	$title_attr = 'title="View all '.$cat_slug.' posts';
 }
 ?>
-<<?php echo $icon_element; ?> <?php echo $href; ?> class="valign halign post-icon category-icon <?php echo $cat_slug; ?> <?php echo $cat_slug; ?>-bgcolored" <?php echo $title_attr; ?>>
+<<?php echo $icon_element; ?> <?php echo $href; ?> class="valign halign post-icon category-icon <?php echo $cat_slug; ?>" style="background-color:<?php echo $category_meta[$cat_id]['color']; ?>;" <?php echo $title_attr; ?>>
 	<span>
 		<span class="icon-font"></span>
 		<span class="sr-only">

@@ -389,49 +389,70 @@ function load_template_part($template_name, $part_name=null) {
  * @return  string
  */
 function my_custom_popular_posts_html_list( $mostpopular, $instance ){
+    if(is_front_page()) {
+      return $mostpopular; 
+    }
     $counter = 0;
+    $image_size = 'small-square'; 
+    $extra_class = 'nopin';
 
-    
-    if(is_front_page())  {
-      $image_size = 'side-rectangle';
-      $extra_class = '';
-    }
-    else  {
-      $image_size = 'small-square'; 
-      $extra_class = 'nopin';
-    }
+    $output = '<ul class="sidebar-large-post-list page-block '.$image_size.' '.$extra_class.'">';      
 
-      $output = '<ul class="sidebar-large-post-list page-block '.$image_size.' '.$extra_class.'">';      
-
-      foreach( $mostpopular as $popular ) {        
-        if(get_the_post_thumbnail($popular->id, $image_size))  {          
-          $custom_thumbnail = get_the_post_thumbnail( $popular->id, $image_size, array('alt' => esc_attr($popular->title), 'title' => esc_attr($popular->title)) ); 
-        }        
-        else  {
-          $custom_thumbnail = '';
-        }
-        global $popular_id;
-        $popular_id = $popular->id;
-        ob_start();
-        post_class('', $popular->id);
-        $post_class = ob_get_contents();
-        ob_end_clean();
-        $output .= "<li><article {$post_class}>";
-        $output .= '<a href="'.get_the_permalink($popular_id).'">' . $custom_thumbnail . '</a>';
-        $output .= '<div class="post-icon-wrapper post-icon-wrapper-medium-large">';
-        //$output .= load_template_part('partials/content', 'post-category-icon');
-        $output .= '<div class="text-wrapper">';
-        $output .= load_template_part('partials/content', 'article-block-title-and-meta');
-        $output .= '</div>';
-        $output .= "</div></li></article>";
-        $counter++;
+    foreach( $mostpopular as $popular ) {        
+      if(get_the_post_thumbnail($popular->id, $image_size))  {          
+        $custom_thumbnail = get_the_post_thumbnail( $popular->id, $image_size, array('alt' => esc_attr($popular->title), 'title' => esc_attr($popular->title)) ); 
+      }        
+      else  {
+        $custom_thumbnail = '';
       }
+      global $popular_id;
+      $popular_id = $popular->id;
+      ob_start();
+      post_class('', $popular->id);
+      $post_class = ob_get_contents();
+      ob_end_clean();
+      $output .= "<li><article {$post_class}>";
+      $output .= '<a href="'.get_the_permalink($popular_id).'">' . $custom_thumbnail . '</a>';
+      $output .= '<div class="post-icon-wrapper post-icon-wrapper-medium-large">';
+      //$output .= load_template_part('partials/content', 'post-category-icon');
+      $output .= '<div class="text-wrapper">';
+      $output .= load_template_part('partials/content', 'article-block-title-and-meta');
+      $output .= '</div>';
+      $output .= "</div></li></article>";
+      $counter++;
+    }
 
-      $output .= '</ul>';
+    $output .= '</ul>';
 
-      return $output;
+    return $output;
 }
-
 add_filter( 'wpp_custom_html', 'my_custom_popular_posts_html_list', 10, 2 );
+
+function homepage_sidebar($mostpopular, $instance) {
+  if(!is_front_page()){
+    return $mostpopular; 
+  }
+  $category_meta = get_option('category_meta');
+  ob_start(); 
+  foreach($mostpopular as $popular) : $cat = get_the_category($popular->id)[0]; ?>
+  
+    <article>
+      <h1><a href="<?php the_permalink($popular->id); ?>"><?php echo get_the_title($popular->id); ?></a></h1>
+      <p class="meta">
+        <a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
+          <?php echo $cat->slug; ?>
+        </a> 
+        By <?php the_author_posts_link(); ?>
+      <div class="sep"></div>
+    </article>
+
+<?php
+  endforeach;
+  $output = ob_get_contents(); 
+  ob_end_clean(); 
+  return $output; 
+}
+add_filter( 'wpp_custom_html', 'homepage_sidebar', 10, 2 );
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
