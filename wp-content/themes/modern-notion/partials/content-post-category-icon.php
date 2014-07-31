@@ -6,12 +6,12 @@ if(!empty($popular_id))  {
 else  {
 	$post_id = $post->ID;	
 }
-if(get_the_category($post_id)): 
-$category = get_the_category($post_id); 
-$cat_name = $category[0]->cat_name;
-$cat_id = $category[0]->term_id;
+
+$category = get_queried_object(); 
+$cat_name = $category->cat_name;
+$cat_id = $category->term_id;
 $cat_url = get_category_link($cat_id);
-$cat_slug = $category[0]->slug;
+$cat_slug = $category->slug;
 $category_meta = get_option('category_meta');
 $href = '';
 $title_attr = '';
@@ -36,4 +36,3 @@ if($icon_element == 'a')  {
 		</span>
 	</span>
 </<?php echo $icon_element; ?>>
-<?php endif; ?>
