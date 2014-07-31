@@ -19,7 +19,7 @@
 			<div class="row visible-lg">
 				<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
 			</div>
-			<div class="row default-layout">
+			<div class="default-layout">
 				<div id="main">
 					<div class="cf">
 						<div class="headlining visible-lg">
@@ -103,7 +103,7 @@
 
 		<div id="mini-featured" class="hidden-sm">
 			<div class="wrap">
-				<div class="row">
+				<div class="">
 					<?php  ?>
 					<?php foreach($mini as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 						<article class="article-block">

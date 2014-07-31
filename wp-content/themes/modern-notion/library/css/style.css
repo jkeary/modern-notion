@@ -2890,7 +2890,7 @@ input:focus, textarea:focus {
 }
 /* line 196, ../scss/partials/_custom.scss */
 .site-header {
-  background: url(../images/header-bg-noise.jpg) center top repeat;  
+  /*background: url(../images/header-bg-noise.jpg) center top repeat;  */
 }
 /* line 199, ../scss/partials/_custom.scss */
 .site-header, .site-footer {

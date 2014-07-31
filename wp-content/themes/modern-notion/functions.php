@@ -91,8 +91,8 @@ add_image_size( 'side-rectangle', 318, 178, true );
 
 
 add_image_size( 'home-hero', 786, 440, true );
-add_image_size( 'home-left', 720, 409, true );
-add_image_size( 'home-right', 437, 409, true );
+add_image_size( 'home-left', 700, 398, true );
+add_image_size( 'home-right', 437, 398, true );
 add_image_size( 'home-mini', 282, 264, true );
 
 /*
