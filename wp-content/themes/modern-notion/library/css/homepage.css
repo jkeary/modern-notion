@@ -587,6 +587,15 @@
 	.loading {
 		display:none;
 	}
+	
+	.page-template-homepage-php #inner-content {
+		padding: 0px;
+	}
+
+	.page-template-homepage-php #inner-header {
+		padding-left: 12.5px;
+		padding-right: 12.5px;
+	}
 
 	.page-template-homepage-php #content {
 		margin: 0;
