@@ -7,11 +7,21 @@ else  {
 	$post_id = $post->ID;	
 }
 
-$category = get_queried_object(); 
-$cat_name = $category->cat_name;
-$cat_id = $category->term_id;
-$cat_url = get_category_link($cat_id);
-$cat_slug = $category->slug;
+$tax = get_queried_object(); 
+if($tax->taxonomy === 'category'){
+	$cat_name = $tax->cat_name;
+	$cat_id = $tax->term_id;
+	$cat_url = get_category_link($cat_id);
+	$cat_slug = $tax->slug;
+}
+
+else if($tax->taxonomy === 'post_tag'){
+	$category = get_the_category($post_id)[0]; 
+	$cat_name = $category->cat_name; 
+	$cat_id = $category->term_id; 
+	$cat_url = get_category_link($cat_id);
+	$cat_slug = $category->slug; 
+}
 $category_meta = get_option('category_meta');
 $href = '';
 $title_attr = '';
