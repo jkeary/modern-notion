@@ -43,8 +43,8 @@
 										<span><?php echo $cat->slug?></span>
 										<h1>
 											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-											<span class="arrow <?php echo $cat->slug; ?>-colored"></span>
-											<span class="arrow-up <?php echo $cat->slug; ?>-colored"></span>
+											<span class="arrow" style="border-left: 25px solid <?php echo $category_meta[$cat->cat_ID]['color'];?>"></span>
+											<span class="arrow-up" style="border-bottom: 25px solid <?php echo $category_meta[$cat->cat_ID]['color'];?>"></span>
 										</h1>
 										<p class="meta">By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?></p>
 									</div>
