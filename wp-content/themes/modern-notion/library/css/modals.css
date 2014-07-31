@@ -67,12 +67,13 @@
 }
 
 #slide-in {
-  position: relative;
-  right: -250%;
+  position: fixed;
+  right: -100%;
+  bottom: 236px;
 }
 
 #slide-in.open {
-  right: 0%;
+  right: 2.25%;
 }
 
 #slide-in .icon {

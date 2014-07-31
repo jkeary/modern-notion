@@ -27,11 +27,11 @@
 			<div class="hidden-xs">
 				<?php get_template_part( 'partials/content', 'sidebar-small-post-list'); ?>
 			</div>
-		<?php endif; ?>	
-		
-		<div id="related">
-		    <?php related_posts(); ?>
-		</div>				
+		<?php endif; ?>					
 	</div>
+
+	<div id="related">
+	    <?php related_posts(); ?>
+	</div>	
 
 </div>

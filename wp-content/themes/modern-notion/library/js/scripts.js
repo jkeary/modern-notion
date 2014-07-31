@@ -285,6 +285,7 @@ $(window).resize(function () {
           loadedArticle = put.find('article');
           stick_share_buttons(); 
           $(document.body).trigger("sticky_kit:recalc");
+          isCalculating = false;
         }); 
       });
       count++;  
@@ -303,7 +304,10 @@ $(window).resize(function () {
   $(window).bind('mousewheel', function(e) {
     if(!isSingle) return; 
 
-    //$(document.body).trigger("sticky_kit:recalc");  
+    if(!isCalculating){
+      $(document.body).trigger("sticky_kit:recalc"); 
+      isCalculating = true; 
+    }
 
     var scroll = $(this).scrollTop();
 
@@ -314,7 +318,7 @@ $(window).resize(function () {
     }
 
     if(scroll > end) {     
-      $("#slide-in").addClass("open")
+      //$("#slide-in").addClass("open")
     }
 
     else {
