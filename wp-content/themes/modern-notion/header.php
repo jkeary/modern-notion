@@ -14,18 +14,22 @@
 	<title><?php wp_title(''); ?></title>
 
     <?php if(is_single()) :  ?>
+        <?php
+            $description = ""; 
+            if(class_exists("WPSEO_Meta")){
+                $description = esc_attr(WPSEO_Meta::get_value("metadesc"));
+            }
+            else if(get_field('dek')) {
+                $description = esc_attr(get_field('dek'));
+            }
+        ?>
         <!-- FB tags -->
         <meta property="og:title" content="<?php the_title(); ?>" />
         <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
         <meta property="og:url" content="<?php the_permalink(); ?>" />
         <meta property="fb:app_id" content="1453391324923585" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content='<?php if(class_exists("WPSEO_Meta")){ 
-            echo esc_attr(WPSEO_Meta::get_value('metadesc'));
-        } else if(get_field('dek')) {
-            echo esc_attr(get_field('dek'));
-        }
-        ?>' />
+        <meta property="og:description" content='<?php echo $description; ?>' />
         <meta property="article:publisher" content="https://www.facebook.com/modernnotion" />
         <?php if(get_the_post_thumbnail()) : ?>
             <meta property="og:image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )[0]; ?>" />
