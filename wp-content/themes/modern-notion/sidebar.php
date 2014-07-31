@@ -8,22 +8,27 @@
         //(adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 
-	<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block">
 	
 	<div class="sidebar-sticky-wrappers">
+		
+		<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block">
+		
+		<div class="hidden-xs">
+			<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
+		</div>	
+		
 		<div class="page-block newsletter-signup">
 			<h2><span class="icon-Logo_Icon"></span>Get Our Newsletter</h2>
 			<?php get_template_part( 'partials/content', 'newsletter-signup-form'); ?>
-		</div>
+		</div>	
+		
 		<?php if(false) : ?>
 		<?php //if(is_front_page()): ?>
 			<div class="hidden-xs">
 				<?php get_template_part( 'partials/content', 'sidebar-small-post-list'); ?>
 			</div>
-		<?php endif; ?>
-		<div class="hidden-xs">
-			<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
-		</div>	
+		<?php endif; ?>	
+		
 		<div id="related">
 		    <?php related_posts(); ?>
 		</div>				
