@@ -20,7 +20,7 @@
                 $description = esc_attr(WPSEO_Meta::get_value("metadesc"));
             }
             else if(get_field('dek')) {
-                $description = esc_attr(get_field('dek'));
+                $description = esc_attr(wp_strip_all_tags(get_field('dek')));
             }
         ?>
         <!-- FB tags -->
