@@ -301,7 +301,7 @@ $(window).resize(function () {
 
     if(hasLoaded && !hasSet) {
       //article = $('#main .load .standard-content');
-      end = (loadedArticle.offset().top + loadedArticle.height() - 476);
+      end = (loadedArticle.offset().top + loadedArticle.height() - $(window).height());
       hasSet = true; 
     }
 
