@@ -1,90 +1,99 @@
 <?php get_header(); ?>
-	<div id="content">
-		<div id="inner-content" class="wrap cf">
-			<div class="centered-image-text-header valign with-divider">
-				<div>
-					<div class="post-icon-wrapper post-icon-wrapper-largest">
-						<?php get_template_part('partials/content', 'post-category-icon'); ?>
-					</div>
-				</div>
-				<div>
-					<?php
-						$tag = get_queried_object(); 
-						//var_dump($tag); 
-						$tag_name = $tag->name;
-					?>
-					<h1><?php echo $tag_name; ?></h1>
-				</div>
-			</div>
-<!-- 			<div class="with-divider">
-				<img src="http://placehold.it/1080x200&text=Advertisement" alt="">
-			</div> -->
-			<div class="row default-layout">
-				<div id="main" class="m-all t-2of3 d-5of7 cf main" role="main">
-					<img 
-						id="article-loading" 
-						src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" 
-						alt=""
-						style="display:none; position:absolute; bottom: 0" />				
-					<?php while (have_posts()) : the_post(); ?>
-						<div class="with-short-hr-dividers">
-							<?php get_template_part( 'partials/content', 'single-article'); ?>
-						</div>
-					<?php endwhile; ?>
-				</div>
-				<?php get_sidebar(); ?>
-			</div>
-		</div>
-	</div>
 
-<!-- Infinte template -->
-<script id="entry-template" type="text/x-handlebars-template">
-<div class="with-short-hr-dividers">
-	<article id="post-{{ id }}" class="post-{{ id }} post type-post status-publish format-standard has-post-thumbnail hentry category-life category-science tag-children tag-lgbt tag-marriage tag-study single-article" role="article" itemscope="" itemtype="http://schema.org/BlogPosting">								
-    	<header class="article-header">
-    		<div class="article-content-row top">
-                <h2 class="entry-title single-title" itemprop="headline"><a href="{{ url }}">{{{ title }}}</a></h2>
-                    <div class="main article-header-text-wrapper">        		
-            	        <ul class="meta-block children-with-dividers">
-            				<li>
-								<a href="/tag/{{ tags.0.slug }}" class="top-tag {{ categories.0.slug }}-colored">{{{ tags.0.title }}}</a>
-							</li>	
-            				<li>
-            					<p class="byline vcard">
-	 								<time class="updated" datetime="{{ date }}" pubdate="">{{ date }}</time>
-	 							</p>
-            				</li>
-            				<li>
-            					<span class="author">by <a href="/author/{{ author.name }}/">{{ author.name }}</a></span>
-            			    </li>
-            			</ul>	
-            		</div>	
-        	</div>		
-	        <div class="article-content-row bottom"> 
-	            <div class="main article-header-text-wrapper"></div>
-	        </div>        
-	    </header>
-    	<section class="entry-content single-entry-content" itemprop="articleBody">
-       		<div class="article-top-panel">
-       			{{#if custom_fields.video_embed_code }}
-					<div class="responsive-iframe" style="padding-bottom: 56.311881188119%">
-                    	{{{ custom_fields.video_embed_code }}}
-                    </div>
-       			{{else}}
-	       			{{#if thumbnail_images.large }}
-		                <img 
-		                	width="{{ thumbnail_images.large.width }}" 
-		                	height="{{ thumbnail_images.large.height }}" 
-		                	src="{{ thumbnail_images.large.url }}" 
-		                	data-lazy-type="image" 
-		                	data-lazy-src="{{ thumbnail_images.large.url }}" 
-		                	class="lazy attachment-large wp-post-image data-lazy-ready" 
-		                	alt="{{{ title }}}" style="display: block;">                
-	                {{/if}}
-                {{/if}}
-        	</div>       
-        </section> 
-	</article> 
-</div>
-</script>	
+			<div id="content">
+
+				<div id="inner-content" class="wrap cf">
+
+						<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+
+							<?php if (is_category()) { ?>
+								<h1 class="archive-title h2">
+									<span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
+								</h1>
+
+							<?php } elseif (is_tag()) { ?>
+								<h1 class="archive-title h2">
+									<span><?php _e( 'Posts Tagged:', 'bonestheme' ); ?></span> <?php single_tag_title(); ?>
+								</h1>
+
+							<?php } elseif (is_author()) {
+								global $post;
+								$author_id = $post->post_author;
+							?>
+								<h1 class="archive-title h2">
+
+									<span><?php _e( 'Posts By:', 'bonestheme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+
+								</h1>
+							<?php } elseif (is_day()) { ?>
+								<h1 class="archive-title h2">
+									<span><?php _e( 'Daily Archives:', 'bonestheme' ); ?></span> <?php the_time('l, F j, Y'); ?>
+								</h1>
+
+							<?php } elseif (is_month()) { ?>
+									<h1 class="archive-title h2">
+										<span><?php _e( 'Monthly Archives:', 'bonestheme' ); ?></span> <?php the_time('F Y'); ?>
+									</h1>
+
+							<?php } elseif (is_year()) { ?>
+									<h1 class="archive-title h2">
+										<span><?php _e( 'Yearly Archives:', 'bonestheme' ); ?></span> <?php the_time('Y'); ?>
+									</h1>
+							<?php } ?>
+
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+
+								<header class="article-header">
+
+									<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+									<p class="byline vcard"><?php
+										printf(__( 'Posted', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time> ' . __('by', 'bonestheme' ) . ' <span class="author">%3$s</span> <span class="amp">&</span> ' . __('filed under', 'bonestheme') .  ' %4$s.', get_the_time('Y-m-j'), get_the_time(__( 'F jS, Y', 'bonestheme' )), get_the_author_link( get_the_author_meta( 'ID' ) ), get_the_category_list(', '));
+									?></p>
+
+								</header>
+
+								<section class="entry-content cf">
+
+									<?php the_post_thumbnail(); ?>
+
+									<?php the_excerpt(); ?>
+
+								</section>
+
+								<footer class="article-footer">
+
+								</footer>
+
+							</article>
+
+							<?php endwhile; ?>
+
+									<?php bones_page_navi(); ?>
+
+							<?php else : ?>
+
+									<article id="post-not-found" class="hentry cf">
+										<header class="article-header">
+											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+										</header>
+										<section class="entry-content">
+											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+										</section>
+										<footer class="article-footer">
+												<p><?php _e( 'This is the error message in the archive.php template.', 'bonestheme' ); ?></p>
+										</footer>
+									</article>
+
+							<?php endif; ?>
+
+						</div>
+
+					<?php get_sidebar(); ?>
+
+				</div>
+
+			</div>
+
 <?php get_footer(); ?>
