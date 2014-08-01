@@ -79,7 +79,7 @@ if ( ! isset( $content_width ) ) {
 // thumbnail: 185 x 185
 // medium:  391 x 9999
 // large:  808 x 455
-add_image_size( 'small-square', 93, 93, true );
+add_image_size( 'small-square', 82, 82, true );
 add_image_size( 'smaller-square', 69, 69, true );
 add_image_size( 'medium-square-no-sidebar', 343, 343, true );
 add_image_size( 'article-main', 737, 415, true );
@@ -92,8 +92,8 @@ add_image_size( 'side-rectangle', 318, 178, true );
 
 
 add_image_size( 'home-hero', 786, 440, true );
-add_image_size( 'home-left', 700, 398, true );
-add_image_size( 'home-right', 437, 398, true );
+add_image_size( 'home-left', 550, 313, true );
+add_image_size( 'home-right', 401, 313, true );
 add_image_size( 'home-mini', 282, 264, true );
 
 /*

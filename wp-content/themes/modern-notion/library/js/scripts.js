@@ -121,7 +121,7 @@ jQuery(document).ready(function($) {
   /* ------------------------------------------------
   Sticky Elements
   ------------------------------------------------ */
-  	var sticky_offest_top = 70;
+  	var sticky_offest_top = 63;
   	$(window).load(function() {
 		if(isSingle)  {      
       stick_share_and_sidebar();       

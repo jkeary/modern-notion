@@ -69,7 +69,7 @@ $desktop-article-main: 693px;
 $tablet_header_height: 44px;
 $mobile_header_height: 38px;
 
-$image-small-d: 93px;
+$image-small-d: 82px;
 $image-thumbnail-d: 185px;
 
 $article-content-row-side-w: 69px;
@@ -246,6 +246,8 @@ $main_percent_w: 69%;
 	> .sidebar  {
 		// @include make-md-column(12 - $default-layout-main-cols);		
 		width: 100% - $main_percent_w;
+		padding-left: 16px; 
+		padding-right: 16px; 
 	}
 	@include respond(md)  {
 		> .main, > .sidebar  {
@@ -266,7 +268,7 @@ $main_percent_w: 69%;
 .header-logo  {
 	display: inline-block;
 	color: #000;
-	font-size: 63px;
+	font-size: 57px;
 	text-decoration: none;
 	float: left;
 	@include respond(md)  {
@@ -315,7 +317,7 @@ $main_percent_w: 69%;
 		text-transform: lowercase;
 		color: #000;
 		@include s2b;
-		font-size: 24px;
+		font-size: $font-size-h3;
 		@include line-hover;
 	}
 }
@@ -337,7 +339,7 @@ input, textarea  {
 	a, button  {
 		color: #000;
 		text-decoration: none;
-		font-size: 31px;
+		font-size: 28px;
 		@include respond(md)  {
 			font-size: 18px;
 		}
@@ -633,7 +635,7 @@ article.category-life  {
 		}
 	}
 	a  {
-		font-size: 18px;
+		font-size: 16px;
 		@include s2b;
 	}
 }
@@ -647,7 +649,7 @@ article.category-life  {
 		}
 	}
 	a  {
-		font-size: 18px;
+		font-size: 16px;
 		@include s2b;
 	}
 }
@@ -664,7 +666,7 @@ article.category-life  {
 .footer-logo  {
 	text-decoration: none;	
 	color: #fff;
-	font-size: 63px;
+	font-size: 59px;
 	z-index: 2;
 	position: relative;
 	&:hover  {
@@ -702,7 +704,7 @@ article.category-life  {
 	&.inline-color-style  {		
 		background: #fff;				
 		a  {
-			padding: 0 20px 0 5px;
+			padding: 0 17px 0 5px;
 			color: #fff;
 			height: 34px;
 			line-height: 34px;
@@ -1118,7 +1120,7 @@ $newsletter_form_header_icon_d: 60px;
 	}
 	h2  {
 		@include s2b;
-		font-size: 24px;
+		font-size: 18px;
 		position: relative;
 		border-bottom: 3px solid #000;
 		text-align: center;
@@ -1267,7 +1269,7 @@ a.menu-trigger  {
 	}
 }
 .article-header  {
-	margin-bottom: 40px;
+	margin-bottom: 36px;
 	body.category &  {
 		margin-bottom: 0;
 	}
@@ -1276,9 +1278,9 @@ a.menu-trigger  {
 	@include clearfix2;
 	body.single &  {
 		> .main  {
-			margin-left: $article-content-row-side-w + 39px;
+			margin-left: $article-content-row-side-w + 29px;
 			@include respond(md)  {
-				margin-left: $article-content-row-side-w + 20px;
+				margin-left: $article-content-row-side-w + 10px;
 			}
 		}
 
@@ -1435,7 +1437,7 @@ div.simplePullQuote  {
 		padding: 8px 15px;
 		text-decoration: none;
 		@include s2m;
-		font-size: 16px;
+		font-size: 14px;
 		&:hover  {
 			@include opacity(0.7);
 		}
@@ -1465,9 +1467,9 @@ button.comments-toggle  {
 	}
 	h2  {
 		@include s1m;
-		font-size: 23px;
+		font-size: 18px;
 		@include respond(md)  {
-			font-size: 16px;
+			font-size: 13px;
 		}
 	}
 }

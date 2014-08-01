@@ -131,7 +131,7 @@ some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
 .prose  {
-  font-size: 16px;
+  font-size: $font-size-base + 2;
   line-height: 1.66;
   @include respond(xs)  {
     font-size: 12px;
