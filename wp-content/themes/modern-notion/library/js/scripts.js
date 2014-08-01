@@ -106,7 +106,16 @@ jQuery(document).ready(function($) {
         offset_top: sticky_offest_top,
         parent: '.article-text-wrapper[data-slug="'+this_slug+'"]'
       });
-    });    
+    });
+
+    $(".sidebar-sticky-wrappers").each(function() {
+      var $this = $(this);
+      var id = $this.data("id");
+      $this.stick_in_parent({
+        offset_top: sticky_offest_top,
+        parent: "#post-" + id
+      });
+    });
   }
 
   /* ------------------------------------------------
@@ -124,11 +133,11 @@ jQuery(document).ready(function($) {
 		  // });
 		if($('body.home').length == 0)  {
 
-      $('.sidebar-sticky-wrappers').stick_in_parent({
-				offset_top: sticky_offest_top,
-				inner_scrolling: false,
-				parent: '#inner-content'
-			});
+   //    $('.sidebar-sticky-wrappers').stick_in_parent({
+			// 	offset_top: sticky_offest_top,
+			// 	inner_scrolling: false,
+			// 	parent: '#inner-content'
+			// });
       
       stick_share_buttons();       
 		}

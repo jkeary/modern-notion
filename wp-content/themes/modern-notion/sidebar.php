@@ -9,7 +9,7 @@
     </script>
 
 	
-	<div class="sidebar-sticky-wrappers">
+	<div class="sidebar-sticky-wrappers" data-id="<?php echo $post->ID; ?>">
 		
 		<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block">
 		

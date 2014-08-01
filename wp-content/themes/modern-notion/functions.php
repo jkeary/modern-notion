@@ -396,9 +396,11 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
     $image_size = 'small-square'; 
     $extra_class = 'nopin';
 
-    $output = '<ul class="sidebar-large-post-list page-block '.$image_size.' '.$extra_class.'">';      
-
-    foreach( $mostpopular as $popular ) {        
+    ob_start(); 
+  ?>
+      <ul class="sidebar-large-post-list page-block <?php echo $image_size . ' ' . $extra_class; ?>">
+  <?php
+    foreach( $mostpopular as $popular ) :        
       if(get_the_post_thumbnail($popular->id, $image_size))  {          
         $custom_thumbnail = get_the_post_thumbnail( $popular->id, $image_size, array('alt' => esc_attr($popular->title), 'title' => esc_attr($popular->title)) ); 
       }        
@@ -406,24 +408,23 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
         $custom_thumbnail = '';
       }
       global $popular_id;
-      $popular_id = $popular->id;
-      ob_start();
-      post_class('', $popular->id);
-      $post_class = ob_get_contents();
-      ob_end_clean();
-      $output .= "<li><article {$post_class}>";
-      $output .= '<a href="'.get_the_permalink($popular_id).'">' . $custom_thumbnail . '</a>';
-      $output .= '<div class="post-icon-wrapper post-icon-wrapper-medium-large">';
-      //$output .= load_template_part('partials/content', 'post-category-icon');
-      $output .= '<div class="text-wrapper">';
-      $output .= load_template_part('partials/content', 'article-block-title-and-meta');
-      $output .= '</div>';
-      $output .= "</div></li></article>";
-      $counter++;
-    }
+      $popular_id = $popular->id; 
+  ?>
+        <li>
+          <article <?php post_class('', $popular_id);?>>
+            <a href="<?php the_permalink($popular_id);?>"><?php echo $custom_thumbnail; ?></a>
+            <div class="post-icon-wrapper post-icon-wrapper-medium-large">
+              <div class="text-wrapper">
+                <?php get_template_part('partials/content', 'article-block-title-and-meta'); ?>
+              </div>
+            </div>
+          </article>
+        </li>
+  <?php
+    endforeach; 
 
-    $output .= '</ul>';
-
+    $output = ob_get_contents();
+    ob_end_clean();
     return $output;
 }
 add_filter( 'wpp_custom_html', 'my_custom_popular_posts_html_list', 10, 2 );
