@@ -14,7 +14,8 @@
 		<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block">
 		
 		<div class="hidden-xs">
-			<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
+			<?php $cat = get_the_category()[0]; ?>
+			<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=2&post_type=post&cat=".$cat->cat_ID); ?>
 		</div>	
 		
 		<div class="page-block newsletter-signup">

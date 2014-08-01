@@ -76,6 +76,7 @@
             var isSingle = "<?php echo is_single(); ?>";
             var isFront  = "<?php echo is_front_page(); ?>";
             var isCategory = "<?php echo is_category(); ?>";
+            var isTag = "<?php echo is_tag(); ?>";
         </script>
 
         <script type='text/javascript'>

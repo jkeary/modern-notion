@@ -98,7 +98,7 @@ jQuery(document).ready(function($) {
 	});
 	jPM.on();
 
-  function stick_share_buttons() {
+  function stick_share_and_sidebar() {
     $(".share-panel").each(function() {     
       var $this = $(this);
       var this_slug = $this.data('slug');
@@ -123,24 +123,15 @@ jQuery(document).ready(function($) {
   ------------------------------------------------ */
   	var sticky_offest_top = 70;
   	$(window).load(function() {
-    //  	$(".share-panel").each(function() {  		
-	  	// 	var $this = $(this);
-	  	// 	var this_slug = $this.data('slug');
-	  	// 	$this.stick_in_parent({
-				//   offset_top: sticky_offest_top,
-				//   parent: '.article-text-wrapper[data-slug="'+this_slug+'"]'
-			 //  })
-		  // });
-		if($('body.home').length == 0)  {
-
-   //    $('.sidebar-sticky-wrappers').stick_in_parent({
-			// 	offset_top: sticky_offest_top,
-			// 	inner_scrolling: false,
-			// 	parent: '#inner-content'
-			// });
-      
-      stick_share_buttons();       
+		if(isSingle)  {      
+      stick_share_and_sidebar();       
 		}
+    // if(isCategory || isTag) {
+    //   $('.sidebar-sticky-wrappers').stick_in_parent({
+    //     offset_top: sticky_offest_top,
+    //     parent: '#inner-content'
+    //   });
+    // }
 	});
   	
 
@@ -292,7 +283,7 @@ $(window).resize(function () {
           hasLoaded = true;
           hasSet = false;
           loadedArticle = put.find('article');
-          stick_share_buttons(); 
+          stick_share_and_sidebar(); 
           $(document.body).trigger("sticky_kit:recalc");
           isCalculating = false;
         }); 
@@ -307,11 +298,12 @@ $(window).resize(function () {
   if(isSingle) {
    var scrollStart = 0; 
    var article = $(".prose");
-   var end = article.offset().top + (article.height()-$(window).height());
+   var footerHeight = jQuery('.article-footer').height() + jQuery('.suggested-posts').height(); 
+   var end = article.offset().top + (article.height() - footerHeight);
    var isCalculating = false; 
   }
   $(window).bind('mousewheel', function(e) {
-    if(!isSingle) return; 
+    if(!isSingle) return;
 
     if(!isCalculating){
       $(document.body).trigger("sticky_kit:recalc"); 
@@ -473,7 +465,8 @@ $(window).resize(function () {
           }
 
           fetching = false;
-          loading.css("display", "none"); 
+          loading.css("display", "none");
+          $(document.body).trigger("sticky_kit:recalc"); 
         });
       }
 
@@ -508,6 +501,7 @@ $(window).resize(function () {
           }
           fetching = false;
           loading.css("display", "none");
+          $(document.body).trigger("sticky_kit:recalc");
         }); 
       }
     });
