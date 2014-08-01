@@ -165,7 +165,7 @@ more here: http://www.newnet-soft.com/blog/csstypography
      -webkit-hyphenate-after: 3;
              hyphenate-lines: 3;
     // enabling fancy ligatures when available
-    //ie11 fix
+    //ie11 fix, remove feature settings
     -webkit-font-feature-settings: "liga", "dlig";
      -moz-font-feature-settings: "liga=1, dlig=1";
         //-ms-font-feature-settings: "liga", "dlig";
