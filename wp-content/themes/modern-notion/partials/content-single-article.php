@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('single-article default-layout cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="main">
+    <div class="<?php if(is_single()) echo 'main'; ?>">
     <header class="article-header">
     	<div class="article-content-row top">
             <?php if(is_single()): ?>
@@ -180,7 +180,11 @@
         <?php endif; ?>
     </section> <?php // end article section ?>
     </div>
-    <?php get_sidebar(); ?>
+    <?php 
+        if(is_single()){
+            get_sidebar(); 
+        }
+    ?>
 
 </article> <?php // end article ?>
 
