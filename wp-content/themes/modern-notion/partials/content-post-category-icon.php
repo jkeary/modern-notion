@@ -8,7 +8,7 @@ else  {
 }
 
 $tax = get_queried_object(); 
-if($tax->taxonomy === 'category'){
+if(isset($tax->taxonomy) && $tax->taxonomy === 'category'){
 	$cat_name = $tax->cat_name;
 	$cat_id = $tax->term_id;
 	$cat_url = get_category_link($cat_id);
