@@ -91,7 +91,11 @@
         // l.ownerid = 6
         // ;a=o.getElementsByTagName(v)[0];b=o.createElement(v);b.src=e;a.parentNode.insertBefore(b,a);
         // })(window, document, 'script', 'https://api.crowdskout.com/analytics.js');
-    </script>    
+    </script>  
+
+    <?php if(DB_HOST === 'localhost') : ?>
+        <script src="//localhost:1337/livereload.js"></script>
+    <?php endif; ?>      
 
 </body>
 </html> <!-- end of site. what a ride! -->
