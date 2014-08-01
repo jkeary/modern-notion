@@ -1,16 +1,14 @@
 <div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
-<!-- 	<ins class="adsbygoogle"
-	style="display:inline-block;width:300px;height:250px"
-	data-ad-client="ca-pub-5436367174279870"
-	data-ad-slot="4829671748"></ins> -->
-
-    <script>
-        //(adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
 	
 	<div class="sidebar-sticky-wrappers" data-id="<?php echo $post->ID; ?>">
-		
+		<!-- 	<ins class="adsbygoogle"
+		style="display:inline-block;width:300px;height:250px"
+		data-ad-client="ca-pub-5436367174279870"
+		data-ad-slot="4829671748"></ins> -->
+
+	    <script>
+	        //(adsbygoogle = window.adsbygoogle || []).push({});
+	    </script>
 		<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block">
 		
 		<div class="hidden-xs">
@@ -29,10 +27,5 @@
 				<?php get_template_part( 'partials/content', 'sidebar-small-post-list'); ?>
 			</div>
 		<?php endif; ?>					
-	</div>
-
-	<div id="related">
-	    <?php related_posts(); ?>
 	</div>	
-
 </div>

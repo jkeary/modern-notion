@@ -296,7 +296,6 @@ $(window).resize(function () {
   Single page - Slide in Recommendation
   ------------------------------------------------ */
   if(isSingle) {
-   var scrollStart = 0; 
    var article = $(".prose");
    var footerHeight = jQuery('.article-footer').height() + jQuery('.suggested-posts').height(); 
    var end = article.offset().top + (article.height() - footerHeight);
@@ -318,12 +317,12 @@ $(window).resize(function () {
       hasSet = true; 
     }
 
-    if(scroll > end) {     
-      //$("#slide-in").addClass("open")
+    if(scroll > end) {
+      $(".yarpp-related > div").last().addClass("open");
     }
 
     else {
-      $("#slide-in").removeClass("open");
+      $(".yarpp-related > div").last().removeClass("open");
     }
   });    
 

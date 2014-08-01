@@ -17,6 +17,9 @@
 					<div class="load"></div>
 				</div>				
 			</div>
+		    <div id="related">
+		        <?php related_posts(); ?>
+		    </div>
 		</div>
 	</div>
 <?php get_footer(); ?>
