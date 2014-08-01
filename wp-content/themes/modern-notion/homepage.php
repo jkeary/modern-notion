@@ -178,18 +178,6 @@
 						<h4>Recommended</h4>
 						<div class="headlining">
 							<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
-							<?php $headlines = new WP_Query('posts_per_page=4&offset=10000000'); ?>
-							<?php while($headlines->have_posts()) : $headlines->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>
-								<article>
-									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-									<p class="meta">
-										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
-											<?php echo $cat->slug; ?>
-										</a> 
-										By <?php the_author_posts_link(); ?>
-									<div class="sep"></div>
-								</article>
-							<?php endwhile; ?>											
 						</div>						
 					</div>
 					<div class="row">
@@ -253,9 +241,5 @@
 		</div>
 	</article>
 </script>
-
-<?php if(DB_HOST === 'localhost') : ?>
-	<script src="//localhost:1337/livereload.js"></script>
-<?php endif; ?>
 
 <?php get_footer(); ?>
