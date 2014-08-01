@@ -322,6 +322,7 @@
 	float:left;
 	margin-right: 16px;
 	position: relative;
+	padding: 0;
 }
 
 #main-content .loading {
