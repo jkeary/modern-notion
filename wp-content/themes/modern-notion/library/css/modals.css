@@ -68,7 +68,8 @@
 
 #slide-in {
   position: fixed;
-  right: -100%;
+  /*right: -100%;*/
+  left: 100%;
   bottom: 236px;
 }
 
