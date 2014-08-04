@@ -169,11 +169,10 @@
 						<img style="display:none;" id="article-loading" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" alt="">
 						<a href="" class="load-more">Load More Stories</a>
 					</div>
-					<img src="http://placehold.it/860x500&text=Advertisement" alt="" class="visible-lg">
 				</div>
 				
 				<div id="home-sidebar" class="col-md-3 col-sm-4">
-					<!-- <img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg"> -->
+					<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
 					<div id="recommended">
 						<h4>Recommended</h4>
 						<div class="headlining">
