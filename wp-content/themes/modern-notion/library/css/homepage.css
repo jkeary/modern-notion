@@ -97,6 +97,7 @@
 
 .headlining article p.meta {
 	font-size: 11px;
+	font-weight:bold;
 	text-align:center;
 	text-transform:uppercase;
 }
