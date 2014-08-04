@@ -26,7 +26,7 @@
 						<div class="top headlining visible-lg">
 							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 								<article>
-									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+									<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 									<p class="meta">
 										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']?>">
 											<?php echo $cat->slug; ?>
@@ -153,7 +153,7 @@
 								<?php get_template_part('partials/content', 'article-tab-link'); ?>
 							</div>
 							<div class="article-content">
-								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								<p><?php if(get_field('dek')) the_field('dek'); ?></p>
 								<p class="meta">
 									<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
@@ -229,7 +229,7 @@
 			</div>
 		</div>
 		<div class="article-content">
-			<h3><a href="{{ url }}">{{{ title }}}</a></h3>
+			<h2><a href="{{ url }}">{{{ title }}}</a></h2>
 			<p>{{{ custom_fields.dek.[0] }}}</p>
 			<p class="meta">
 				<a href="/category/{{categories.0.slug}}" class="{{categories.0.slug}}-colored">
