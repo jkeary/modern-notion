@@ -1,17 +1,20 @@
 <div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
 	
 	<div class="sidebar-sticky-wrappers" data-id="<?php echo $post->ID; ?>">
-		<!-- 	<ins class="adsbygoogle"
-		style="display:inline-block;width:300px;height:250px"
-		data-ad-client="ca-pub-5436367174279870"
-		data-ad-slot="4829671748"></ins> -->
-
-	    <script>
-	        //(adsbygoogle = window.adsbygoogle || []).push({});
-	    </script>
 
 	    <div class="cf">
-			<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block" style="width:100%">
+	    	<?php if(WP_DEBUG) : ?>
+				<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block" style="width:100%">
+			<?php else : ?>
+				<!-- Article Sidebar -->
+				<ins class="adsbygoogle"
+				style="display:inline-block;width:300px;height:250px"
+				data-ad-client="ca-pub-5436367174279870"
+				data-ad-slot="1387547345"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			<?php endif; ?>
 		</div>
 		
 		<div class="hidden-xs">
@@ -29,6 +32,10 @@
 			<div class="hidden-xs">
 				<?php get_template_part( 'partials/content', 'sidebar-small-post-list'); ?>
 			</div>
-		<?php endif; ?>					
+		<?php endif; ?>	
+
+	    <div id="related">
+	        <?php related_posts(); ?>
+	    </div>						
 	</div>	
 </div>

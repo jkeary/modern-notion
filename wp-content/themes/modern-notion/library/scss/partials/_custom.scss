@@ -1313,7 +1313,7 @@ a.menu-trigger  {
 	}
 	.entry-title  {
 		@include s1m;
-		font-size: 34px;
+		font-size: 36px;
 		line-height: 1;
 		margin-bottom: 15px;
 		@include respond(md)  {
@@ -1593,7 +1593,7 @@ div.ssba img  {
 	}
 	h2  {
 		margin-bottom: 27px;
-		font-size: 32px;
+		font-size: 24px;
 		@include s1;
 		span.num  {
 			@include s1b;

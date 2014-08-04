@@ -18,7 +18,18 @@
 	<div id="content">
 		<div id="inner-content" class="wrap cf">
 			<div class="row visible-lg">
-				<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
+				<?php if(WP_DEBUG) : ?>
+					<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
+				<?php else : ?>
+					<!-- Homepage Top -->
+					<ins class="adsbygoogle"
+					style="display:inline-block;width:728px;height:90px"
+					data-ad-client="ca-pub-5436367174279870"
+					data-ad-slot="7434080947"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				<?php endif; ?>
 			</div>
 			<div class="default-layout">
 				<div id="main">
@@ -26,7 +37,7 @@
 						<div class="top headlining visible-lg">
 							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 								<article>
-									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+									<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 									<p class="meta">
 										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']?>">
 											<?php echo $cat->slug; ?>
@@ -133,7 +144,7 @@
 			<div class="row">
 				<div id="main-content" class="col-md-8 col-sm-8">
 					<div id="articles" class="articles">
-					<?php $recent = new WP_Query('posts_per_page=3'); ?>
+					<?php $recent = new WP_Query('posts_per_page=5'); ?>
 					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category()[0]; ?>
 						<article class="article-block cf">
 							<div class="img_wrapper col-md-3 col-sm-3">
@@ -153,7 +164,7 @@
 								<?php get_template_part('partials/content', 'article-tab-link'); ?>
 							</div>
 							<div class="article-content">
-								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								<p><?php if(get_field('dek')) the_field('dek'); ?></p>
 								<p class="meta">
 									<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
@@ -172,7 +183,18 @@
 				</div>
 				
 				<div id="home-sidebar" class="col-md-3 col-sm-4">
-					<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
+					<?php if(WP_DEBUG) : ?>
+						<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
+					<?php else : ?>
+						<!-- Homepage Sidebar -->
+						<ins class="adsbygoogle"
+						style="display:inline-block;width:300px;height:250px"
+						data-ad-client="ca-pub-5436367174279870"
+						data-ad-slot="8910814147"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					<?php endif; ?>
 					<div id="recommended">
 						<h4>Recommended</h4>
 						<div class="headlining">
@@ -229,7 +251,7 @@
 			</div>
 		</div>
 		<div class="article-content">
-			<h3><a href="{{ url }}">{{{ title }}}</a></h3>
+			<h2><a href="{{ url }}">{{{ title }}}</a></h2>
 			<p>{{{ custom_fields.dek.[0] }}}</p>
 			<p class="meta">
 				<a href="/category/{{categories.0.slug}}" class="{{categories.0.slug}}-colored">

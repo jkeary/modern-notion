@@ -4666,7 +4666,7 @@ body.category .article-content-row .entry-title, body.category .article-content-
 /* line 1314, ../scss/partials/_custom.scss */
 .article-content-row .entry-title {
   font-family: 'stratum1medium';
-  font-size: 34px;
+  font-size: 36px;
   line-height: 1;
   margin-bottom: 15px;
 }
@@ -5020,7 +5020,7 @@ body.home div.jPanelMenu-panel {
 /* line 1594, ../scss/partials/_custom.scss */
 .article-list-items h2 {
   margin-bottom: 27px;
-  font-size: 32px;
+  font-size: 24px;
   font-family: 'stratum1_regularregular';
 }
 /* line 1598, ../scss/partials/_custom.scss */

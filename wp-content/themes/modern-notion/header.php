@@ -77,6 +77,7 @@
             var isFront  = "<?php echo is_front_page(); ?>";
             var isCategory = "<?php echo is_category(); ?>";
             var isTag = "<?php echo is_tag(); ?>";
+            var dev = "<?php echo WP_DEBUG; ?>";
         </script>
 
         <script type='text/javascript'>
@@ -128,8 +129,8 @@
             }(document, 'script', 'facebook-jssdk'));</script>
 			
             <div id="container">
-
-				<header class="header site-header" role="banner">
+                <?php global $is_safari; $safari = $is_safari ? 'safari' : ''; ?>
+				<header class="header site-header <?php echo $safari; ?>" role="banner">
 
 					<div id="inner-header" class="wrap cf container">
 

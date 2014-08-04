@@ -210,10 +210,10 @@ $(window).resize(function () {
     function getNextTaggedArticle(tag, page, cb) {
       var url; 
       if(!loadedLastRecent && loadedLastTagged) {
-        url = '/api/get_recent_posts/?count=1&page=' + page;
+        url = '/api/get_recent_posts/?ajax=1&count=1&page=' + page;
       }
       else {
-        url = '/api/get_tag_posts/?count=1&tag_slug=' + tag + '&page=' + page;
+        url = '/api/get_tag_posts/?ajax=1&count=1&tag_slug=' + tag + '&page=' + page;
       }
       $.ajax({
         url: url
@@ -276,10 +276,12 @@ $(window).resize(function () {
           content.append(loading);
           gettingNext = false; 
           loading.css('opacity', '0');
-          // ga('send', 'pageview', {
-          //   'page': '/' + post.slug,
-          //   'title': 'Modern Notion ' + post.title
-          // });
+          if(!dev) {
+            ga('send', 'pageview', {
+              'page': '/' + post.slug,
+              'title': 'Modern Notion ' + post.title
+            });
+          }
           hasLoaded = true;
           hasSet = false;
           loadedArticle = put.find('article');
@@ -321,28 +323,11 @@ $(window).resize(function () {
     }
 
     if(scroll > end) {
-      //$(".yarpp-related > div").last().addClass("open");
-      if(!animating){
-        animating = true;
-        $("#slide-in").animate({
-          left: left
-        }, 'fast', function() {
-          isShowing = true; 
-          animating = false; 
-        });
-      }
+      $(".yarpp-related > div").last().addClass("open");
     }
 
     else {
-      if(!animating && isShowing){
-        animating = true;
-        $("#slide-in").animate({
-          left: "100%"
-        }, 5, function() {
-          animating = false; 
-          isShowing = false; 
-        });
-      }    
+      $(".yarpp-related > div").last().removeClass("open");
     }
   });    
 
@@ -365,7 +350,7 @@ $(window).resize(function () {
             $(".logo-text").removeClass("sr-only");
         }
         else {
-          header.removeClass("scroll"); 
+          header.removeClass("scroll");
           $(".logo-text").addClass("sr-only");                    
         }
     });	
@@ -542,7 +527,7 @@ $(window).resize(function () {
       button.css("display", "none"); 
       loading.css("display", "block");
       $.ajax({
-        url: '/api/get_recent_posts?count=3&page=' + page
+        url: '/api/get_recent_posts?count=5&page=' + page
       }).success(function(data) {
         pages = data.pages; 
         data.posts.forEach(function(post) {
