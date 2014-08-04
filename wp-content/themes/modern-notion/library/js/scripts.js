@@ -409,7 +409,7 @@ $(window).resize(function () {
       var date = new Date(post.date); 
       var result = date.format("dddd, mmmm dd, yyyy, h:MM TT");
       $(wrapper).find("time").last().html(result);
-    }
+    }   
     
     $(window).scroll(function(e) {
       if(!isCategory){
@@ -514,6 +514,7 @@ $(window).resize(function () {
     var pages;  
     $('.load-more').click(function(e) {
       e.preventDefault();
+      
       if(pages && pages < page) {
         $(this).html("No more posts.");
         return;
@@ -532,7 +533,8 @@ $(window).resize(function () {
         pages = data.pages; 
         data.posts.forEach(function(post) {
           var result = jQuery("#articles").append(template(post));
-          var date = new Date(post.date); 
+          var split = post.date.split(" "); 
+          var date = new Date(split[0]); 
           date = date.format("mmmm d, yyyy");
           result.find("time").html(date);
         });
