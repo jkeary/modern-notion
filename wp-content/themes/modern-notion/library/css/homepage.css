@@ -370,7 +370,7 @@
 }
 
 /* Responsive */
-@media all and (min-width:501px) and (max-width: 1104px){
+@media all and (min-width:501px) and (max-width: 995px){
 	.page-template-homepage-php .wrap {
 		width: 100%;
 	}
