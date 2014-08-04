@@ -114,7 +114,7 @@
 }
 #hero .headline{
 	padding: 24px;
-	width: 355px;
+	width: 33%;
 	height: 396px;
 	position:absolute;
 }
@@ -159,7 +159,7 @@
 
 #hero h1 {
 	font-family: "stratum2bold";
-	font-size: 38px;
+	font-size: 30px;
 	margin-bottom: 32px;
 }
 
@@ -265,6 +265,12 @@
 	font-size:18px;
 	font-family: 'stratum2bold';
 	padding: 13px;
+}
+
+#mini-featured .article-block .share-tab {
+	border: 28px solid #f3f3f3;
+	border-top-color: transparent;
+	border-left-color: transparent;	
 }
 
 /* Home page content */

@@ -173,7 +173,7 @@
 				</div>
 				
 				<div id="home-sidebar" class="col-md-3 col-sm-4">
-					<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
+					<!-- <img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg"> -->
 					<div id="recommended">
 						<h4>Recommended</h4>
 						<div class="headlining">
