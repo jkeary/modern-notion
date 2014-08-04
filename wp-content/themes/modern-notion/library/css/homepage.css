@@ -14,7 +14,7 @@
 }
 
 .page-template-homepage-php .wrap {
-	width: 995px;
+	width: 1080px;
 }
 
 .page-template-homepage-php .post-icon-wrapper.post-icon-wrapper-fifty .post-icon {
@@ -272,6 +272,10 @@
 	margin-top: 32px;
 }
 
+#main-content {
+	width: 71%;
+}
+
 #main-content .post-icon{
 	position: absolute;
 	top:0;
@@ -343,7 +347,9 @@
 
 /* Sidebar */
 #home-sidebar {
-	/*padding: 0;*/
+	width: 300px;
+	padding: 0;
+	margin-left: 12.5px;
 }
 
 #recommended h4 {
@@ -370,7 +376,7 @@
 }
 
 /* Responsive */
-@media all and (min-width:501px) and (max-width: 995px){
+@media all and (min-width:501px) and (max-width: 1180px){
 	.page-template-homepage-php .wrap {
 		width: 100%;
 	}

@@ -131,7 +131,7 @@
 
 		<div id="home-content" class="wrap">
 			<div class="row">
-				<div id="main-content" class="col-md-9 col-sm-8">
+				<div id="main-content" class="col-md-8 col-sm-8">
 					<div id="articles" class="articles">
 					<?php $recent = new WP_Query('posts_per_page=3'); ?>
 					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category()[0]; ?>
@@ -180,7 +180,7 @@
 							<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
 						</div>						
 					</div>
-					<div class="row">
+					<div class="cf">
 						<div class="page-block newsletter-signup">
 							<h2><span class="icon-Logo_Icon"></span>Our Newsletter</h2>
 							<?php get_template_part( 'partials/content', 'newsletter-signup-form'); ?>

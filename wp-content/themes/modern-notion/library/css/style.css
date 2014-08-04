@@ -54,10 +54,10 @@ the whole project.
     width: 765px;
   }
 }
-@media (min-width: 995px) {
+@media (min-width: 1080px) {
   /* line 10, ../scss/partials/bootstrap/_grid.scss */
   .container, .wrap, #infinite-handle {
-    width: 995px;
+    width: 1080px;
   }
 }
 
@@ -883,7 +883,7 @@ the whole project.
     margin-left: 100%;
   }
 }
-@media (min-width: 995px) {
+@media (min-width: 1080px) {
   /* line 817, ../scss/partials/bootstrap/_mixins.scss */
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
@@ -1443,7 +1443,7 @@ the whole project.
     display: table-cell !important;
   }
 }
-@media (min-width: 768px) and (max-width: 994px) {
+@media (min-width: 768px) and (max-width: 1079px) {
   /* line 636, ../scss/partials/bootstrap/_mixins.scss */
   .visible-md {
     display: block !important;
@@ -1465,7 +1465,7 @@ the whole project.
     display: table-cell !important;
   }
 }
-@media (min-width: 995px) {
+@media (min-width: 1080px) {
   /* line 636, ../scss/partials/bootstrap/_mixins.scss */
   .visible-lg {
     display: block !important;
@@ -1499,13 +1499,13 @@ the whole project.
     display: none !important;
   }
 }
-@media (min-width: 768px) and (max-width: 994px) {
+@media (min-width: 768px) and (max-width: 1079px) {
   /* line 647, ../scss/partials/bootstrap/_mixins.scss */
   .hidden-md {
     display: none !important;
   }
 }
-@media (min-width: 995px) {
+@media (min-width: 1080px) {
   /* line 647, ../scss/partials/bootstrap/_mixins.scss */
   .hidden-lg {
     display: none !important;
@@ -2853,7 +2853,7 @@ Mixins
 /*  ------------------------------------------------------------------------------------------------
 Styles
 ------------------------------------------------------------------------------------------------  */
-@media (min-width: 526px) and (max-width: 994px) {
+@media (min-width: 526px) and (max-width: 1079px) {
   /* line 140, ../scss/partials/_custom.scss */
   .row {
     margin-right: -7.5px;
@@ -2861,7 +2861,7 @@ Styles
   }
 }
 
-@media (min-width: 526px) and (max-width: 994px) {
+@media (min-width: 526px) and (max-width: 1079px) {
   /* line 145, ../scss/partials/_custom.scss */
   .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
     padding-right: 7.5px;
@@ -2921,7 +2921,7 @@ input:focus, textarea:focus {
   margin: 25px 0;
   min-height: 500px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 183, ../scss/partials/_custom.scss */
   #content {
     margin: 15px 0;
@@ -2952,7 +2952,7 @@ body #container {
 body .site-header {
   height: 87px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 203, ../scss/partials/_custom.scss */
   body #container {
     padding-top: 44px;
@@ -2987,7 +2987,7 @@ body .site-header {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 226, ../scss/partials/_custom.scss */
   .site-header #inner-header {
     padding-top: 0;
@@ -3012,7 +3012,7 @@ body .site-header {
   padding-left: 16px;
   padding-right: 16px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 253, ../scss/partials/_custom.scss */
   .default-layout > .main, .default-layout > .sidebar {
     padding-right: 7.5px;
@@ -3041,7 +3041,7 @@ body .site-header {
   text-decoration: none;
   float: left;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 268, ../scss/partials/_custom.scss */
   .header-logo {
     font-size: 20px;
@@ -3089,7 +3089,7 @@ body .site-header {
   float: right;
   margin-top: 15px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 294, ../scss/partials/_custom.scss */
   .header-links-wrapper {
     margin-top: 12px;
@@ -3107,7 +3107,7 @@ body .site-header {
   float: left;
   margin-right: 60px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 304, ../scss/partials/_custom.scss */
   .site-nav {
     display: none;
@@ -3160,7 +3160,7 @@ input, textarea {
   text-decoration: none;
   font-size: 28px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 339, ../scss/partials/_custom.scss */
   .site-action-links a, .site-action-links button {
     font-size: 18px;
@@ -3171,7 +3171,7 @@ input, textarea {
   display: block;
   margin-top: 5px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 347, ../scss/partials/_custom.scss */
   .site-action-links iframe {
     margin-top: 0;
@@ -3192,7 +3192,7 @@ input, textarea {
   float: left;
   margin-left: 10px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 363, ../scss/partials/_custom.scss */
   .site-header .site-action-links .rss-feed-item {
     display: none;
@@ -3306,7 +3306,7 @@ a.post-icon:hover {
 .post-icon-wrapper.post-icon-wrapper-medium .post-icon + .text-wrapper {
   margin-left: 58px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 412, ../scss/partials/_custom.scss */
   .post-icon-wrapper.post-icon-wrapper-medium a + a:before {
     height: 20px;
@@ -3370,7 +3370,7 @@ a.post-icon:hover {
 .post-icon-wrapper.post-icon-wrapper-medium-large .post-icon + .text-wrapper {
   margin-left: 61px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 412, ../scss/partials/_custom.scss */
   .post-icon-wrapper.post-icon-wrapper-medium-large a + a:before {
     height: 20px;
@@ -3861,7 +3861,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   vertical-align: middle;
   font-weight: bold;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 737, ../scss/partials/_custom.scss */
   .share-buttons.inline-color-style span.text {
     position: absolute;
@@ -3934,7 +3934,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   position: relative;
   margin-bottom: 25px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 783, ../scss/partials/_custom.scss */
   .article-block {
     margin-bottom: 15px;
@@ -3993,7 +3993,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   font-size: 26px;
   font-family: 'stratum1medium';
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 829, ../scss/partials/_custom.scss */
   .article-block .entry-title {
     font-size: 20px;
@@ -4003,7 +4003,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 .article-block .meta {
   font-size: 16px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 836, ../scss/partials/_custom.scss */
   .article-block .meta {
     font-size: 14px;
@@ -4054,7 +4054,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   position: relative;
   margin-bottom: 16px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 873, ../scss/partials/_custom.scss */
   .article-block-small .img_wrapper {
     margin-bottom: 5px;
@@ -4147,7 +4147,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   padding-top: 15px;
   padding-bottom: 15px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 939, ../scss/partials/_custom.scss */
   .article-block-large .entry-title {
     padding-top: 8px;
@@ -4167,7 +4167,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   padding-top: 10px;
   padding-bottom: 10px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 951, ../scss/partials/_custom.scss */
   .article-block-large .meta {
     padding-top: 6px;
@@ -4180,7 +4180,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   display: block;
   margin-bottom: 25px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 959, ../scss/partials/_custom.scss */
   .page-block {
     margin-bottom: 15px;
@@ -4239,7 +4239,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   border: 1px solid #ebebec;
   padding: 15px 9px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1005, ../scss/partials/_custom.scss */
   .sidebar-small-post-list li {
     padding: 6px;
@@ -4259,7 +4259,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 .sidebar-small-post-list .post-icon-wrapper.post-icon-wrapper-medium-large .text-wrapper {
   margin-left: 68px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1018, ../scss/partials/_custom.scss */
   .sidebar-small-post-list .post-icon-wrapper.post-icon-wrapper-medium-large .text-wrapper {
     margin-left: 45px;
@@ -4275,7 +4275,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   font-size: 19px;
   margin-bottom: 8px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1027, ../scss/partials/_custom.scss */
   .sidebar-small-post-list .entry-title {
     margin-bottom: 5px;
@@ -4286,7 +4286,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 .sidebar-small-post-list .meta {
   font-size: 14px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1036, ../scss/partials/_custom.scss */
   .sidebar-small-post-list .meta {
     font-size: 11px;
@@ -4340,7 +4340,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 .sidebar-large-post-list li + li {
   margin-top: 20px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1076, ../scss/partials/_custom.scss */
   .sidebar-large-post-list li + li {
     margin-top: 15px;
@@ -4367,7 +4367,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   font-size: 22px;
   margin: 0 0 4px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1095, ../scss/partials/_custom.scss */
   .sidebar-large-post-list .entry-title {
     font-size: 18px;
@@ -4378,7 +4378,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   font-weight: 300;
   font-size: 18px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1103, ../scss/partials/_custom.scss */
   .sidebar-large-post-list .meta {
     font-size: 12px;
@@ -4634,7 +4634,7 @@ body.category .article-header {
 body.single .article-content-row > .main {
   margin-left: 98px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1280, ../scss/partials/_custom.scss */
   body.single .article-content-row > .main {
     margin-left: 79px;
@@ -4675,7 +4675,7 @@ body.category .article-content-row .entry-title, body.category .article-content-
   line-height: 1;
   margin-bottom: 15px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1314, ../scss/partials/_custom.scss */
   .article-content-row .entry-title {
     font-size: 30px;
@@ -4696,7 +4696,7 @@ body.category .article-content-row .entry-title, body.category .article-content-
   position: relative;
   top: -9px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1336, ../scss/partials/_custom.scss */
   .entry-content .prose.standard-content {
     margin-bottom: 20px;
@@ -4866,7 +4866,7 @@ button.comments-toggle {
   font-family: 'stratum1medium';
   font-size: 18px;
 }
-@media (max-width: 994px) {
+@media (max-width: 1079px) {
   /* line 1468, ../scss/partials/_custom.scss */
   .suggested-posts h2 {
     font-size: 13px;
@@ -5271,12 +5271,12 @@ body.home div.jPanelMenu-panel {
 .three-col {
   overflow: hidden;
   *zoom: 1;
-  margin: 0 14.75px;
+  margin: 0 -6.5px;
 }
 /* line 1762, ../scss/partials/_custom.scss */
 .three-col > * {
   width: 343px;
-  padding: 0 -14.75px -29.5px;
+  padding: 0 6.5px 13px;
   float: left;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
