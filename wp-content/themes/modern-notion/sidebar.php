@@ -32,6 +32,10 @@
 			<div class="hidden-xs">
 				<?php get_template_part( 'partials/content', 'sidebar-small-post-list'); ?>
 			</div>
-		<?php endif; ?>					
+		<?php endif; ?>	
+
+	    <div id="related">
+	        <?php related_posts(); ?>
+	    </div>						
 	</div>	
 </div>

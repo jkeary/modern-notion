@@ -1,6 +1,6 @@
 /* YARPP Fix */
 #related .yarpp-related {
-  margin: 0 !important;
+  /*margin: 0 !important;*/
 }
 
 /* WP Popup Fix */
@@ -67,14 +67,12 @@
 }
 
 #slide-in {
-  position: fixed;
-  /*right: -100%;*/
-  left: 100%;
-  bottom: 236px;
+  position: relative;
+  right: -200%;
 }
 
 #slide-in.open {
-  right:0;
+  right:0%;
 }
 
 #slide-in .icon {
