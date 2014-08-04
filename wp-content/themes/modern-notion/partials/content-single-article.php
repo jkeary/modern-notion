@@ -8,7 +8,8 @@
                 </div>
             <?php endif; ?>
             <?php if(!is_single()): ?>
-                <h2 class="entry-title single-title" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <h2 class="entry-title single-title" itemprop="headline">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <?php endif; ?>
         	<div class="main article-header-text-wrapper">        		
             	<?php $author_id = get_the_author_meta( 'ID' ); ?>
