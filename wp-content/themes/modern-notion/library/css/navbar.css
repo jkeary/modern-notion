@@ -7,10 +7,10 @@
 }
 .site-header .icon-Full_Logo{
   opacity: 1;
-  -webkit-transition: all 500ms ease-out 200ms;
-     -moz-transition: all 500ms ease-out 200ms;
-       -o-transition: all 500ms ease-out 200ms;
-          transition: all 500ms ease-out 200ms;
+  -webkit-transition: opacity 500ms ease-out 200ms;
+     -moz-transition: opacity 500ms ease-out 200ms;
+       -o-transition: opacity 500ms ease-out 200ms;
+          transition: opacity 500ms ease-out 200ms;
 }
 
 .site-header .header-links-wrapper {
