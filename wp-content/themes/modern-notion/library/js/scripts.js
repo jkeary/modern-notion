@@ -323,11 +323,11 @@ $(window).resize(function () {
     }
 
     if(scroll > (end - 500)) {
-      $(".yarpp-related > div").last().addClass("open");
+      //$(".yarpp-related > div").last().addClass("open");
     }
 
     else {
-      $(".yarpp-related > div").removeClass("open");
+      //$(".yarpp-related > div").removeClass("open");
     }
   });    
 
