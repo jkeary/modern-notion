@@ -1313,7 +1313,7 @@ a.menu-trigger  {
 	}
 	.entry-title  {
 		@include s1m;
-		font-size: $font-size-h1;
+		font-size: 34px;
 		line-height: 1;
 		margin-bottom: 15px;
 		@include respond(md)  {
