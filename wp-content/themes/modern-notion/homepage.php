@@ -203,7 +203,7 @@
 					</div>
 					<div class="cf">
 						<div class="page-block newsletter-signup">
-							<h2><span class="icon-Logo_Icon"></span>Our Newsletter</h2>
+							<h2><span class="icon-Logo_Icon"></span>Get Our Newsletter</h2>
 							<?php get_template_part( 'partials/content', 'newsletter-signup-form'); ?>
 						</div>			
 					</div>		
