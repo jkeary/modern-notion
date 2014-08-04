@@ -327,7 +327,7 @@ $(window).resize(function () {
     }
 
     else {
-      $(".yarpp-related > div").last().removeClass("open");
+      $(".yarpp-related > div").removeClass("open");
     }
   });    
 
