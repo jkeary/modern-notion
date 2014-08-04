@@ -1,6 +1,9 @@
 /* YARPP Fix */
+#related {
+  margin-bottom: 16px;
+}
 #related .yarpp-related {
-  /*margin: 0 !important;*/
+  margin: 0 !important;
 }
 
 /* WP Popup Fix */
