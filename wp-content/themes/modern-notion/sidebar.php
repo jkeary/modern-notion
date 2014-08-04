@@ -1,14 +1,6 @@
 <div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
 	
 	<div class="sidebar-sticky-wrappers" data-id="<?php echo $post->ID; ?>">
-		<!-- 	<ins class="adsbygoogle"
-		style="display:inline-block;width:300px;height:250px"
-		data-ad-client="ca-pub-5436367174279870"
-		data-ad-slot="4829671748"></ins> -->
-
-	    <script>
-	        //(adsbygoogle = window.adsbygoogle || []).push({});
-	    </script>
 
 	    <div class="cf">
 	    	<?php if(WP_DEBUG) : ?>
