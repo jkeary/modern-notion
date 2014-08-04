@@ -173,7 +173,18 @@
 
                         <?php wp_reset_postdata(); ?>
                         <?php endif; ?>   
-                       <img src="http://placehold.it/693x100&text=Advertisement" alt="" class="page-block">
+                        <?php if(WP_DEBUG) : ?>
+                            <img src="http://placehold.it/693x100&text=Advertisement" alt="" class="page-block">
+                        <?php else : ?>
+                            <!-- Article Below Story -->
+                            <ins class="adsbygoogle"
+                            style="display:inline-block;width:728px;height:90px"
+                            data-ad-client="ca-pub-5436367174279870"
+                            data-ad-slot="2864280542"></ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

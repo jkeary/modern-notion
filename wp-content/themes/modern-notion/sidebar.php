@@ -11,7 +11,18 @@
 	    </script>
 
 	    <div class="cf">
-			<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block" style="width:100%">
+	    	<?php if(WP_DEBUG) : ?>
+				<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block" style="width:100%">
+			<?php else : ?>
+				<!-- Article Sidebar -->
+				<ins class="adsbygoogle"
+				style="display:inline-block;width:300px;height:250px"
+				data-ad-client="ca-pub-5436367174279870"
+				data-ad-slot="1387547345"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			<?php endif; ?>
 		</div>
 		
 		<div class="hidden-xs">

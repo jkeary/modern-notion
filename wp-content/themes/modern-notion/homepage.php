@@ -18,7 +18,18 @@
 	<div id="content">
 		<div id="inner-content" class="wrap cf">
 			<div class="row visible-lg">
-				<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
+				<?php if(WP_DEBUG) : ?>
+					<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
+				<?php else : ?>
+					<!-- Homepage Top -->
+					<ins class="adsbygoogle"
+					style="display:inline-block;width:728px;height:90px"
+					data-ad-client="ca-pub-5436367174279870"
+					data-ad-slot="7434080947"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				<?php endif; ?>
 			</div>
 			<div class="default-layout">
 				<div id="main">
@@ -172,7 +183,18 @@
 				</div>
 				
 				<div id="home-sidebar" class="col-md-3 col-sm-4">
-					<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
+					<?php if(WP_DEBUG) : ?>
+						<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
+					<?php else : ?>
+						<!-- Homepage Sidebar -->
+						<ins class="adsbygoogle"
+						style="display:inline-block;width:300px;height:250px"
+						data-ad-client="ca-pub-5436367174279870"
+						data-ad-slot="8910814147"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					<?php endif; ?>
 					<div id="recommended">
 						<h4>Recommended</h4>
 						<div class="headlining">
