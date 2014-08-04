@@ -542,7 +542,7 @@ $(window).resize(function () {
       button.css("display", "none"); 
       loading.css("display", "block");
       $.ajax({
-        url: '/api/get_recent_posts?count=3&page=' + page
+        url: '/api/get_recent_posts?count=5&page=' + page
       }).success(function(data) {
         pages = data.pages; 
         data.posts.forEach(function(post) {

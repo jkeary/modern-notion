@@ -144,7 +144,7 @@
 			<div class="row">
 				<div id="main-content" class="col-md-8 col-sm-8">
 					<div id="articles" class="articles">
-					<?php $recent = new WP_Query('posts_per_page=3'); ?>
+					<?php $recent = new WP_Query('posts_per_page=5'); ?>
 					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category()[0]; ?>
 						<article class="article-block cf">
 							<div class="img_wrapper col-md-3 col-sm-3">
