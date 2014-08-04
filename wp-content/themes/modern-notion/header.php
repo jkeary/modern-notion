@@ -128,8 +128,8 @@
             }(document, 'script', 'facebook-jssdk'));</script>
 			
             <div id="container">
-
-				<header class="header site-header" role="banner">
+                <?php global $is_safari; $safari = $is_safari ? 'safari' : ''; ?>
+				<header class="header site-header <?php echo $safari; ?>" role="banner">
 
 					<div id="inner-header" class="wrap cf container">
 

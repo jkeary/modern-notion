@@ -365,7 +365,7 @@ $(window).resize(function () {
             $(".logo-text").removeClass("sr-only");
         }
         else {
-          header.removeClass("scroll"); 
+          header.removeClass("scroll");
           $(".logo-text").addClass("sr-only");                    
         }
     });	

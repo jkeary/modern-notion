@@ -97,6 +97,10 @@
   width: 24px;
 }
 
+.site-header.scroll.safari .header-logo .logo-text {
+  height: 44px;
+}
+
 /* Responsive */
 @media(max-width:1104px) {
   .site-header .facebook, 
