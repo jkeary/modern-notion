@@ -439,7 +439,7 @@ function homepage_sidebar($mostpopular, $instance) {
   foreach($mostpopular as $popular) : $cat = get_the_category($popular->id)[0]; ?>
   
     <article>
-      <h1><a href="<?php echo get_permalink($popular->id); ?>"><?php echo get_the_title($popular->id); ?></a></h1>
+      <h2><a href="<?php echo get_permalink($popular->id); ?>"><?php echo get_the_title($popular->id); ?></a></h2>
       <p class="meta">
         <a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
           <?php echo $cat->slug; ?>
