@@ -5374,6 +5374,19 @@ body #mc_embed_signup div.mce_inline_error {
   color: #ff0000;
 }
 
+/* line 1846, ../scss/partials/_custom.scss */
+.cite-photo,
+.prose .cite-photo {
+  text-align: right;
+  font-size: 12px;
+  margin: 0;
+}
+/* line 1851, ../scss/partials/_custom.scss */
+.cite-photo a,
+.prose .cite-photo a {
+  font-weight: normal;
+}
+
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make

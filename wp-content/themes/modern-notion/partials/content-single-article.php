@@ -52,13 +52,13 @@
             <?php else: ?>
         	       <?php the_post_thumbnail('large'); ?>
                <?php
-                    $link = get_post_meta($post->ID, "cite_link", true);
-                    $text = get_post_meta($post->ID, "cite_text", true);
+                    $link = get_post_meta(get_post_thumbnail_id(), 'mn_photographer_url', true);
+                    $author = get_post_meta(get_post_thumbnail_id(), 'mn_photographer', true);
 
                     if($link): 
                ?>
                <p class="photo-cite">
-                   <a href="<?php echo $link; ?>" target="_blank"><?php echo $text; ?></a>
+                   <a href="<?php echo $link; ?>" target="_blank"><?php echo $author; ?></a>
                </p>
             <?php endif; endif; ?>   
         </div>       

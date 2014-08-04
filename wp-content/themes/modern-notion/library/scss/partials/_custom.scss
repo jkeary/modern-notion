@@ -1841,3 +1841,14 @@ body #mc_embed_signup div.mce_inline_error  {
 #mce-error-response  {
 	color: #ff0000;
 }
+
+.cite-photo,
+.prose .cite-photo {
+	text-align:right;
+	font-size: 12px;
+	margin: 0;
+
+	a {
+		font-weight: normal;
+	}
+}
