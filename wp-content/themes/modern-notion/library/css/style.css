@@ -2588,6 +2588,16 @@ more here: http://www.newnet-soft.com/blog/csstypography
   -o-font-feature-settings: "liga", "dlig";
 }
 
+/* line 179, ../scss/partials/_typography.scss */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+/* line 184, ../scss/partials/_typography.scss */
+.prose h1 + p, .prose h2 + p, .prose h3 + p, .prose h4 + p, .prose h5 + p, .prose h6 + p {
+  margin-top: 0;
+}
+
 /******************************************************************
 Site Name:
 Author:
