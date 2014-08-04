@@ -1,6 +1,3 @@
-            <div id="related">
-                <?php related_posts(); ?>
-            </div>
                         
             <footer class="footer site-footer" role="contentinfo">
 
@@ -76,8 +73,7 @@
         get_template_part("partials/modal", "newsletter-signup");
         get_template_part("partials/modal", "social-media"); 
         get_template_part("partials/modal", "slidein-social");  
-    ?>    
-
+    ?>   
 
     <?php // all js scripts are loaded in library/bones.php ?>
     <?php wp_footer(); ?>
@@ -96,7 +92,9 @@
         ;a=o.getElementsByTagName(v)[0];b=o.createElement(v);b.src=e;a.parentNode.insertBefore(b,a);
         })(window, document, 'script', 'https://api.crowdskout.com/analytics.js');
     </script>    
-    <?php endif; ?>
+
+    <script src="//localhost:1337/livereload.js"></script>
+    <?php endif; ?>      
 
 </body>
 </html> <!-- end of site. what a ride! -->

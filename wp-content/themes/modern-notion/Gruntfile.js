@@ -23,23 +23,11 @@ module.exports = function(grunt) {
           livereload: 1337
         }
       }
-    },
-
-    sass: {
-      dev: {
-        options: {
-          style: "expanded"
-        }, 
-        files: {
-          "./library/css/style.css": "./library/scss/style.scss"
-        }
-      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
 
-  grunt.registerTask('default', ['uglify', 'sass:dev']);
+  grunt.registerTask('default', ['uglify']);
 
 };

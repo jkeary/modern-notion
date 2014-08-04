@@ -98,27 +98,40 @@ jQuery(document).ready(function($) {
 	});
 	jPM.on();
 
+  function stick_share_and_sidebar() {
+    $(".share-panel").each(function() {     
+      var $this = $(this);
+      var this_slug = $this.data('slug');
+      $this.stick_in_parent({
+        offset_top: sticky_offest_top,
+        parent: '.article-text-wrapper[data-slug="'+this_slug+'"]'
+      });
+    });
+
+    $(".sidebar-sticky-wrappers").each(function() {
+      var $this = $(this);
+      var id = $this.data("id");
+      $this.stick_in_parent({
+        offset_top: sticky_offest_top,
+        parent: "#post-" + id
+      });
+    });
+  }
+
   /* ------------------------------------------------
   Sticky Elements
   ------------------------------------------------ */
-  	var sticky_offest_top = 70;
+  	var sticky_offest_top = 63;
   	$(window).load(function() {
-     	$(".share-panel").each(function() {  		
-	  		var $this = $(this);
-	  		var this_slug = $this.data('slug');
-	  		$this.stick_in_parent({
-				offset_top: sticky_offest_top,
-				parent: '.article-text-wrapper[data-slug="'+this_slug+'"]'
-			});
-		});
-		if($('body.home').length == 0)  {
-      return;
-		  	$('.sidebar-sticky-wrapper').stick_in_parent({
-				offset_top: sticky_offest_top,
-				inner_scrolling: false,
-				parent: '#inner-content'
-			});
+		if(isSingle)  {      
+      stick_share_and_sidebar();       
 		}
+    // if(isCategory || isTag) {
+    //   $('.sidebar-sticky-wrappers').stick_in_parent({
+    //     offset_top: sticky_offest_top,
+    //     parent: '#inner-content'
+    //   });
+    // }
 	});
   	
 
@@ -181,12 +194,17 @@ $(window).resize(function () {
       var loadedLastRecent = false; 
       var singlePosts = {};
       singlePosts[post.ID] = true;
-      var keys = Object.keys(tags); 
-      var tag = tags[keys[0]]; 
+      if(tags){
+        var keys = Object.keys(tags); 
+        var tag = tags[keys[0]]; 
+      }
       var gettingNext = false;    
       var content = jQuery("#main"); 
       var loading = jQuery("#article-loading");
-      var doneSingleLoading = false; 
+      var doneSingleLoading = false;
+      var hasLoaded = false;  
+      var hasSet = false;
+      var loadedArticle = undefined; 
     }
 
     function getNextTaggedArticle(tag, page, cb) {
@@ -233,7 +251,7 @@ $(window).resize(function () {
       var scroll = $(this).scrollTop();
       var height = $(document).height(); 
 
-      if(scroll < height - 900) {
+      if(scroll < height - 1000) {
         return;
       }
 
@@ -244,7 +262,6 @@ $(window).resize(function () {
       gettingNext = true;
       loading.css('opacity', '1');  
       getNextTaggedArticle(tag.slug, count, function(data) {
-
         if(data.status === "done") {
           gettingNext = false; 
           doneSingleLoading = true; 
@@ -263,6 +280,12 @@ $(window).resize(function () {
           //   'page': '/' + post.slug,
           //   'title': 'Modern Notion ' + post.title
           // });
+          hasLoaded = true;
+          hasSet = false;
+          loadedArticle = put.find('article');
+          stick_share_and_sidebar(); 
+          $(document.body).trigger("sticky_kit:recalc");
+          isCalculating = false;
         }); 
       });
       count++;  
@@ -272,18 +295,56 @@ $(window).resize(function () {
   /* ------------------------------------------------
   Single page - Slide in Recommendation
   ------------------------------------------------ */
-   var contentHeight = $("#inner-content").height();
-   $(window).bind('mousewheel', function(e){ 
-      var scroll = $(this).scrollTop(); 
-      if(scroll > (contentHeight-500) && isSingle){
-        if (e.originalEvent.wheelDelta < 0) {
-          $("#slide-in").addClass("open");          
-        } 
-        else if(e.originalEvent.wheelDelta > 1) {
-          $("#slide-in").removeClass("open");
-        }         
-      }     
-   });    
+  if(isSingle) {
+   var article = $(".prose");
+   var footerHeight = jQuery('.article-footer').height() + jQuery('.suggested-posts').height(); 
+   var end = article.offset().top + (article.height() - footerHeight);
+   var isCalculating = false; 
+   var left = jQuery(".sidebar-sticky-wrappers").first().offset().left;
+   var animating = false; 
+   var isShowing = false; 
+  }
+  $(window).bind('mousewheel', function(e) {
+    if(!isSingle) return;
+
+    if(!isCalculating){
+      $(document.body).trigger("sticky_kit:recalc"); 
+      isCalculating = true; 
+    }
+
+    var scroll = $(this).scrollTop();
+
+    if(hasLoaded && !hasSet) {
+      //article = $('#main .load .standard-content');
+      end = (loadedArticle.offset().top + (loadedArticle.height() - $(window).height()));
+      hasSet = true; 
+    }
+
+    if(scroll > end) {
+      //$(".yarpp-related > div").last().addClass("open");
+      if(!animating){
+        animating = true;
+        $("#slide-in").animate({
+          left: left
+        }, 'fast', function() {
+          isShowing = true; 
+          animating = false; 
+        });
+      }
+    }
+
+    else {
+      if(!animating && isShowing){
+        animating = true;
+        $("#slide-in").animate({
+          left: "100%"
+        }, 5, function() {
+          animating = false; 
+          isShowing = false; 
+        });
+      }    
+    }
+  });    
 
 	  //Window scroll event
     var lastScrollTop = 0;
@@ -299,13 +360,13 @@ $(window).resize(function () {
         var height = header.height();
         var scroll = $(this).scrollTop(); 
 
-        if($(this).scrollTop() > 250){
+        if($(this).scrollTop() > 20){
             header.addClass("scroll"); 
             $(".logo-text").removeClass("sr-only");
         }
         else {
-            header.removeClass("scroll"); 
-            $(".logo-text").addClass("sr-only");                    
+          header.removeClass("scroll"); 
+          $(".logo-text").addClass("sr-only");                    
         }
     });	
 
@@ -423,7 +484,8 @@ $(window).resize(function () {
           }
 
           fetching = false;
-          loading.css("display", "none"); 
+          loading.css("display", "none");
+          $(document.body).trigger("sticky_kit:recalc"); 
         });
       }
 
@@ -458,6 +520,7 @@ $(window).resize(function () {
           }
           fetching = false;
           loading.css("display", "none");
+          $(document.body).trigger("sticky_kit:recalc");
         }); 
       }
     });

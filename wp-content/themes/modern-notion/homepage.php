@@ -10,7 +10,8 @@
 	$hero = get_posts('meta_key=hp_slot&meta_value=hero&posts_per_page=1&orderby=modified');
 	$top = get_posts('meta_key=hp_slot&meta_value=top&posts_per_page=3&orderby=modified'); 
 	$middle = get_posts('meta_key=hp_slot&meta_value=middle&posts_per_page=2&orderby=modified'); 
-	$mini = get_posts('meta_key=hp_slot&meta_value=mini&posts_per_page=4&orderby=modified'); 
+	$mini = get_posts('meta_key=hp_slot&meta_value=mini&posts_per_page=4&orderby=modified');
+	$category_meta = get_option('category_meta'); 
 ?>
 
 <div id="main">
@@ -19,15 +20,15 @@
 			<div class="row visible-lg">
 				<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
 			</div>
-			<div class="row default-layout">
+			<div class="default-layout">
 				<div id="main">
 					<div class="cf">
-						<div class="headlining visible-lg">
+						<div class="top headlining visible-lg">
 							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 								<article>
 									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 									<p class="meta">
-										<a href="<?php echo get_category_link($cat->cat_ID);?>" class="<?php echo $cat->slug; ?>-colored">
+										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']?>">
 											<?php echo $cat->slug; ?>
 										</a> 
 										By <?php the_author_posts_link(); ?>
@@ -38,12 +39,12 @@
 						<div id="hero">
 							<?php foreach($hero as $post) : setup_postdata($post); $cat = get_the_category(); $cat = $cat[0]; ?>					
 								<article class="article-block">
-									<div class="headline <?php echo $cat->slug; ?>-bgcolored">
+									<div class="headline" style="background-color: <?php echo $category_meta[$cat->cat_ID]['color'];?>">
 										<span><?php echo $cat->slug?></span>
 										<h1>
 											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-											<span class="arrow <?php echo $cat->slug; ?>-colored"></span>
-											<span class="arrow-up <?php echo $cat->slug; ?>-colored"></span>
+											<span class="arrow" style="border-left: 25px solid <?php echo $category_meta[$cat->cat_ID]['color'];?>"></span>
+											<span class="arrow-up" style="border-bottom: 25px solid <?php echo $category_meta[$cat->cat_ID]['color'];?>"></span>
 										</h1>
 										<p class="meta">By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?></p>
 									</div>
@@ -51,7 +52,9 @@
 										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail('home-hero'); ?>
 											<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
-												<span class="valign halign post-icon category-icon <?php echo $cat->slug; ?> <?php echo $cat->slug; ?>-bgcolored">
+												<span 
+													class="valign halign post-icon category-icon <?php echo $cat->slug; ?>" 
+													style="background-color: <?php echo $category_meta[$cat->cat_ID]['color'];?>">
 													<span>
 														<span class="icon-font"></span>
 														<span class="sr-only"><?php echo $cat->slug; ?></span>
@@ -74,8 +77,8 @@
 						?>
 							<article class="article-block <?php echo $side; ?>">
 								<div class="headline">
-									<h2 class="<?php echo $cat->slug; ?>-bgcolored"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-									<p class="meta <?php echo $cat->slug; ?>-bgcolored">
+									<h2 style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+									<p class="meta" style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
 										<a href="<?php echo get_category_link($cat->cat_ID);?>" class="category"><?php echo $cat->name; ?></a> 
 										By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?>
 									</p>
@@ -84,7 +87,9 @@
 									<a href="<?php the_permalink(); ?>">
 										<?php the_post_thumbnail('home-' . $side); ?>
 										<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
-											<span class="valign halign post-icon category-icon <?php echo $cat->slug; ?> <?php echo $cat->slug; ?>-bgcolored">
+											<span 
+												class="valign halign post-icon category-icon <?php echo $cat->slug; ?>" 
+												style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
 												<span>
 													<span class="icon-font"></span>
 													<span class="sr-only"><?php echo $cat->slug; ?></span>
@@ -103,12 +108,14 @@
 
 		<div id="mini-featured" class="hidden-sm">
 			<div class="wrap">
-				<div class="row">
+				<div class="">
 					<?php  ?>
 					<?php foreach($mini as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 						<article class="article-block">
 							<div class="headline">
-								<h2 class="<?php echo $cat->slug; ?>-bgcolored"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<h2 style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</h2>
 							</div>						
 							<div class="img_wrapper">
 								<a href="<?php the_permalink()?>">
@@ -124,19 +131,21 @@
 
 		<div id="home-content" class="wrap">
 			<div class="row">
-				<div id="main-content" class="col-md-9 col-sm-8">
+				<div id="main-content" class="col-md-8 col-sm-8">
 					<div id="articles" class="articles">
 					<?php $recent = new WP_Query('posts_per_page=3'); ?>
-					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category(); $slug = $cat[0]->slug; ?>
+					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category()[0]; ?>
 						<article class="article-block cf">
 							<div class="img_wrapper col-md-3 col-sm-3">
 								<a href="<?php the_permalink();?>">
 									<?php the_post_thumbnail("home-mini"); ?>
 									<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
-										<span class="valign halign post-icon category-icon <?php echo $slug; ?> <?php echo $slug; ?>-bgcolored">
+										<span 
+											class="valign halign post-icon category-icon <?php echo $cat->slug; ?>" 
+											style="background-color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
 											<span>
 												<span class="icon-font"></span>
-												<span class="sr-only"><?php echo $slug; ?></span>
+												<span class="sr-only"><?php echo $cat->slug; ?></span>
 											</span>
 										</span>		
 									</span>
@@ -147,8 +156,8 @@
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<p><?php if(get_field('dek')) the_field('dek'); ?></p>
 								<p class="meta">
-									<a href="<?php echo get_category_link($cat[0]->cat_ID);?>" class="<?php echo $slug; ?>-colored">
-										<?php echo $slug; ?>
+									<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
+										<?php echo $cat->slug; ?>
 									</a> 
 									By <?php the_author_posts_link(); ?> | <?php echo get_the_date(); ?>
 								</p>
@@ -160,7 +169,6 @@
 						<img style="display:none;" id="article-loading" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bx_loader.gif" alt="">
 						<a href="" class="load-more">Load More Stories</a>
 					</div>
-					<img src="http://placehold.it/860x500&text=Advertisement" alt="" class="visible-lg">
 				</div>
 				
 				<div id="home-sidebar" class="col-md-3 col-sm-4">
@@ -168,21 +176,10 @@
 					<div id="recommended">
 						<h4>Recommended</h4>
 						<div class="headlining">
-							<?php $headlines = new WP_Query('posts_per_page=4'); ?>
-							<?php while($headlines->have_posts()) : $headlines->the_post(); $cat = get_the_category(); $cat = $cat[0]; ?>
-								<article>
-									<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-									<p class="meta">
-										<a href="<?php echo get_category_link($cat->cat_ID);?>" class="<?php echo $cat->slug; ?>-colored">
-											<?php echo $cat->slug; ?>
-										</a> 
-										By <?php the_author_posts_link(); ?>
-									<div class="sep"></div>
-								</article>
-							<?php endwhile; ?>											
+							<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
 						</div>						
 					</div>
-					<div class="row">
+					<div class="cf">
 						<div class="page-block newsletter-signup">
 							<h2><span class="icon-Logo_Icon"></span>Our Newsletter</h2>
 							<?php get_template_part( 'partials/content', 'newsletter-signup-form'); ?>
@@ -196,7 +193,7 @@
 
 <script id="entry-template" type="text/x-handlebars-template">
 	<article class="article-block cf">
-		<div class="img_wrapper">
+		<div class="img_wrapper col-md-3 col-sm-3">
 			<a href="{{ url }}">
 				<img src="{{ thumbnail_images.home-mini.url }}" />
 				<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
@@ -243,9 +240,5 @@
 		</div>
 	</article>
 </script>
-
-<?php if(DB_HOST === 'localhost') : ?>
-	<script src="//localhost:1337/livereload.js"></script>
-<?php endif; ?>
 
 <?php get_footer(); ?>

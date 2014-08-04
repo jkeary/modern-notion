@@ -14,13 +14,22 @@
 	<title><?php wp_title(''); ?></title>
 
     <?php if(is_single()) :  ?>
+        <?php
+            $description = ""; 
+            if(class_exists("WPSEO_Meta")){
+                $description = esc_attr(WPSEO_Meta::get_value("metadesc"));
+            }
+            else if(get_field('dek')) {
+                $description = esc_attr(wp_strip_all_tags(get_field('dek')));
+            }
+        ?>
         <!-- FB tags -->
         <meta property="og:title" content="<?php the_title(); ?>" />
         <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
         <meta property="og:url" content="<?php the_permalink(); ?>" />
         <meta property="fb:app_id" content="1453391324923585" />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content="<?php if(get_field('dek')) the_field('dek'); ?>" />
+        <meta property="og:description" content='<?php echo $description; ?>' />
         <meta property="article:publisher" content="https://www.facebook.com/modernnotion" />
         <?php if(get_the_post_thumbnail()) : ?>
             <meta property="og:image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )[0]; ?>" />
@@ -67,6 +76,7 @@
             var isSingle = "<?php echo is_single(); ?>";
             var isFront  = "<?php echo is_front_page(); ?>";
             var isCategory = "<?php echo is_category(); ?>";
+            var isTag = "<?php echo is_tag(); ?>";
         </script>
 
         <script type='text/javascript'>

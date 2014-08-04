@@ -9,8 +9,9 @@
 				</div>
 				<div>
 					<?php
-						$category = get_the_category(); 
-						$cat_name = $category[0]->cat_name;
+						$category = get_queried_object(); 
+						//var_dump($category); 
+						$cat_name = $category->cat_name;
 					?>
 					<h1><?php echo $cat_name; ?></h1>
 				</div>
