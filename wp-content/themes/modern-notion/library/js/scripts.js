@@ -121,7 +121,7 @@ jQuery(document).ready(function($) {
   /* ------------------------------------------------
   Sticky Elements
   ------------------------------------------------ */
-  	var sticky_offest_top = 70;
+  	var sticky_offest_top = 63;
   	$(window).load(function() {
 		if(isSingle)  {      
       stick_share_and_sidebar();       
@@ -300,6 +300,9 @@ $(window).resize(function () {
    var footerHeight = jQuery('.article-footer').height() + jQuery('.suggested-posts').height(); 
    var end = article.offset().top + (article.height() - footerHeight);
    var isCalculating = false; 
+   var left = jQuery(".sidebar-sticky-wrappers").first().offset().left;
+   var animating = false; 
+   var isShowing = false; 
   }
   $(window).bind('mousewheel', function(e) {
     if(!isSingle) return;
@@ -318,11 +321,28 @@ $(window).resize(function () {
     }
 
     if(scroll > end) {
-      $(".yarpp-related > div").last().addClass("open");
+      //$(".yarpp-related > div").last().addClass("open");
+      if(!animating){
+        animating = true;
+        $("#slide-in").animate({
+          left: left
+        }, 'fast', function() {
+          isShowing = true; 
+          animating = false; 
+        });
+      }
     }
 
     else {
-      $(".yarpp-related > div").last().removeClass("open");
+      if(!animating && isShowing){
+        animating = true;
+        $("#slide-in").animate({
+          left: "100%"
+        }, 5, function() {
+          animating = false; 
+          isShowing = false; 
+        });
+      }    
     }
   });    
 

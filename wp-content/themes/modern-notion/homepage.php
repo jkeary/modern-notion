@@ -194,7 +194,7 @@
 
 <script id="entry-template" type="text/x-handlebars-template">
 	<article class="article-block cf">
-		<div class="img_wrapper">
+		<div class="img_wrapper col-md-3 col-sm-3">
 			<a href="{{ url }}">
 				<img src="{{ thumbnail_images.home-mini.url }}" />
 				<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">

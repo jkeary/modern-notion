@@ -131,10 +131,10 @@ some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
 .prose  {
-  font-size: 18px;
+  font-size: $font-size-base + 2;
   line-height: 1.66;
   @include respond(xs)  {
-    font-size: 14px;
+    font-size: 12px;
   }
   p, ul, ol  {
     margin-top: 22px;

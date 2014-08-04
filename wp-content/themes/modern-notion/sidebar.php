@@ -9,7 +9,10 @@
 	    <script>
 	        //(adsbygoogle = window.adsbygoogle || []).push({});
 	    </script>
-		<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block">
+
+	    <div class="cf">
+			<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block" style="width:100%">
+		</div>
 		
 		<div class="hidden-xs">
 			<?php $cat = get_the_category()[0]; ?>
