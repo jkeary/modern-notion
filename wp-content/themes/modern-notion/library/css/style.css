@@ -2457,24 +2457,24 @@ BOX SIZING
 
 @font-face {
   font-family: 'stratum2bold';
-  src: url("../fonts/stratum2-bold-webfont.eot");
-  src: url("../fonts/stratum2-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/stratum2-bold-webfont.woff") format("woff"), url("../fonts/stratum2-bold-webfont.ttf") format("truetype"), url("../fonts/stratum2-bold-webfont.svg#stratum2bold") format("svg");
+  src: url("../fonts/Stratum2Web/Stratum2Web_EOT/Stratum2WebBold.eot");
+  src: url("../fonts/Stratum2Web/Stratum2Web_EOT/Stratum2WebBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Stratum2Web/Stratum2Web_WOFF/Stratum2WebBold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'stratum2medium';
-  src: url("../fonts/stratum2-medium-webfont.eot");
-  src: url("../fonts/stratum2-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/stratum2-medium-webfont.woff") format("woff"), url("../fonts/stratum2-medium-webfont.ttf") format("truetype"), url("../fonts/stratum2-medium-webfont.svg#stratum2medium") format("svg");
+  src: url("../fonts/Stratum2Web/Stratum2Web_EOT/Stratum2WebMedium.eot");
+  src: url("../fonts/Stratum2Web/Stratum2Web_EOT/Stratum2WebBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Stratum2Web/Stratum2Web_WOFF/Stratum2WebBold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'stratum2_regularregular';
-  src: url("../fonts/stratum2-regular-webfont.eot");
-  src: url("../fonts/stratum2-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/stratum2-regular-webfont.woff") format("woff"), url("../fonts/stratum2-regular-webfont.ttf") format("truetype"), url("../fonts/stratum2-regular-webfont.svg#stratum2_regularregular") format("svg");
+  src: url("../fonts/Stratum2Web/Stratum2Web_EOT/Stratum2WebRegular.eot");
+  src: url("../fonts/Stratum2Web/Stratum2Web_EOT/Stratum2WebRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/Stratum2Web/Stratum2Web_WOFF/Stratum2WebRegular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -2488,14 +2488,6 @@ BOX SIZING
 }
 
 @font-face {
-  font-family: 'stratum1medium';
-  src: url("../fonts/stratum1-medium-webfont.eot");
-  src: url("../fonts/stratum1-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/stratum1-medium-webfont.woff") format("woff"), url("../fonts/stratum1-medium-webfont.ttf") format("truetype"), url("../fonts/stratum1-medium-webfont.svg#stratum1medium") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'stratum1_regularregular';
   src: url("../fonts/stratum1-regular-webfont.eot");
   src: url("../fonts/stratum1-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/stratum1-regular-webfont.woff") format("woff"), url("../fonts/stratum1-regular-webfont.ttf") format("truetype"), url("../fonts/stratum1-regular-webfont.svg#stratum1_regularregular") format("svg");
@@ -2503,7 +2495,7 @@ BOX SIZING
   font-style: normal;
 }
 
-/* line 108, ../scss/partials/_typography.scss */
+/* line 91, ../scss/partials/_typography.scss */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2515,7 +2507,7 @@ BOX SIZING
   border: 0;
 }
 
-/* line 112, ../scss/partials/_typography.scss */
+/* line 95, ../scss/partials/_typography.scss */
 body {
   background: #fff;
   font-family: 'Open Sans', sans-serif;
@@ -2525,13 +2517,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 121, ../scss/partials/_typography.scss */
+/* line 104, ../scss/partials/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
-/* line 125, ../scss/partials/_typography.scss */
+/* line 108, ../scss/partials/_typography.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none;
 }
@@ -2540,38 +2532,38 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
-/* line 133, ../scss/partials/_typography.scss */
+/* line 116, ../scss/partials/_typography.scss */
 .prose {
   font-size: 14px;
   line-height: 1.66;
 }
 @media (max-width: 525px) {
-  /* line 133, ../scss/partials/_typography.scss */
+  /* line 116, ../scss/partials/_typography.scss */
   .prose {
     font-size: 12px;
   }
 }
-/* line 139, ../scss/partials/_typography.scss */
+/* line 122, ../scss/partials/_typography.scss */
 .prose p, .prose ul, .prose ol {
   margin-top: 22px;
 }
-/* line 141, ../scss/partials/_typography.scss */
+/* line 124, ../scss/partials/_typography.scss */
 .prose p:first-child, .prose ul:first-child, .prose ol:first-child {
   margin-top: 0;
 }
-/* line 145, ../scss/partials/_typography.scss */
+/* line 128, ../scss/partials/_typography.scss */
 .prose ul, .prose ol {
   padding-left: 20px;
 }
-/* line 148, ../scss/partials/_typography.scss */
+/* line 131, ../scss/partials/_typography.scss */
 .prose ul {
   list-style: disc;
 }
-/* line 151, ../scss/partials/_typography.scss */
+/* line 134, ../scss/partials/_typography.scss */
 .prose ol {
   list-style: decimal;
 }
-/* line 154, ../scss/partials/_typography.scss */
+/* line 137, ../scss/partials/_typography.scss */
 .prose p {
   -ms-word-break: break-all;
   -ms-word-wrap: break-all;
@@ -2588,12 +2580,12 @@ more here: http://www.newnet-soft.com/blog/csstypography
   -o-font-feature-settings: "liga", "dlig";
 }
 
-/* line 179, ../scss/partials/_typography.scss */
+/* line 162, ../scss/partials/_typography.scss */
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
-/* line 184, ../scss/partials/_typography.scss */
+/* line 167, ../scss/partials/_typography.scss */
 .prose h1 + p, .prose h2 + p, .prose h3 + p, .prose h4 + p, .prose h5 + p, .prose h6 + p {
   margin-top: 0;
 }
@@ -3134,7 +3126,7 @@ body .site-header {
   font-size: 21px;
   text-decoration: none;
 }
-/* line 94, ../scss/partials/_typography.scss */
+/* line 77, ../scss/partials/_typography.scss */
 .site-nav a:hover {
   text-decoration: underline;
 }
@@ -3215,7 +3207,7 @@ input, textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'stratum1_regularregular';
+  font-family: 'stratum2_regularregular';
   padding: 5px 40px 5px 0;
   font-size: 40px;
   line-height: 1.2;
@@ -3623,7 +3615,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   font-weight: bold;
   text-decoration: none;
 }
-/* line 94, ../scss/partials/_typography.scss */
+/* line 77, ../scss/partials/_typography.scss */
 .category-prose a:hover {
   text-decoration: underline;
 }
@@ -3707,7 +3699,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 .footer-site-nav-wrapper a {
   text-decoration: none;
 }
-/* line 94, ../scss/partials/_typography.scss */
+/* line 77, ../scss/partials/_typography.scss */
 .footer-site-nav-wrapper a:hover {
   text-decoration: underline;
 }
@@ -3996,7 +3988,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 /* line 829, ../scss/partials/_custom.scss */
 .article-block .entry-title {
   font-size: 26px;
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
 }
 @media (max-width: 1079px) {
   /* line 829, ../scss/partials/_custom.scss */
@@ -4208,7 +4200,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   color: transparent;
   text-align: center;
   padding: 20px;
-  font-family: 'stratum1bold';
+  font-family: 'stratum2bold';
   font-size: 20px;
   position: relative;
   left: -12.5px;
@@ -4276,7 +4268,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 }
 /* line 1027, ../scss/partials/_custom.scss */
 .sidebar-small-post-list .entry-title {
-  font-family: 'stratum1bold';
+  font-family: 'stratum2bold';
   font-size: 19px;
   margin-bottom: 8px;
 }
@@ -4368,7 +4360,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 }
 /* line 1095, ../scss/partials/_custom.scss */
 .sidebar-large-post-list .entry-title {
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 22px;
   margin: 0 0 4px;
 }
@@ -4603,7 +4595,7 @@ a.menu-trigger:before {
   font-size: 15px;
   text-decoration: none;
 }
-/* line 94, ../scss/partials/_typography.scss */
+/* line 77, ../scss/partials/_typography.scss */
 .meta-block .top-tag:hover {
   text-decoration: underline;
 }
@@ -4615,7 +4607,7 @@ a.menu-trigger:before {
 .meta-block a {
   text-decoration: none;
 }
-/* line 94, ../scss/partials/_typography.scss */
+/* line 77, ../scss/partials/_typography.scss */
 .meta-block a:hover {
   text-decoration: underline;
 }
@@ -4675,7 +4667,7 @@ body.category .article-content-row .entry-title, body.category .article-content-
 }
 /* line 1314, ../scss/partials/_custom.scss */
 .article-content-row .entry-title {
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 36px;
   line-height: 1;
   margin-bottom: 15px;
@@ -4770,7 +4762,7 @@ body.category .article-content-row .entry-title, body.category .article-content-
 .share-panel h2 {
   background: #000;
   color: #fff;
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 16px;
   text-align: center;
   padding: 2px 0;
@@ -4811,7 +4803,7 @@ div.simplePullQuote {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 24px;
   line-height: 32px;
   padding-bottom: 10px;
@@ -4882,7 +4874,7 @@ button.comments-toggle {
 }
 /* line 1482, ../scss/partials/_custom.scss */
 .suggested-posts h2 {
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 18px;
 }
 @media (max-width: 1079px) {
@@ -5031,11 +5023,11 @@ body.home div.jPanelMenu-panel {
 .article-list-items h2 {
   margin-bottom: 27px;
   font-size: 24px;
-  font-family: 'stratum1_regularregular';
+  font-family: 'stratum2_regularregular';
 }
 /* line 1598, ../scss/partials/_custom.scss */
 .article-list-items h2 span.num {
-  font-family: 'stratum1bold';
+  font-family: 'stratum2bold';
 }
 /* line 1602, ../scss/partials/_custom.scss */
 .article-list-items .section-image {
@@ -5061,7 +5053,7 @@ body.home div.jPanelMenu-panel {
 }
 /* line 1618, ../scss/partials/_custom.scss */
 .centered-image-text-header h1 {
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 40px;
   margin-bottom: 3px;
 }
@@ -5160,7 +5152,7 @@ body.home div.jPanelMenu-panel {
 }
 /* line 1675, ../scss/partials/_custom.scss */
 .small-post h3 {
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 24px;
 }
 
@@ -5178,7 +5170,7 @@ body.home div.jPanelMenu-panel {
 
 /* line 1689, ../scss/partials/_custom.scss */
 .author-posts h2 {
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 32px;
 }
 
@@ -5344,14 +5336,14 @@ body.home div.jPanelMenu-panel {
 }
 /* line 1824, ../scss/partials/_custom.scss */
 .archive-post-tile .meta {
-  font-family: 'stratum1bold';
+  font-family: 'stratum2bold';
   font-size: 20px;
   padding-top: 10px;
 }
 
 /* line 1830, ../scss/partials/_custom.scss */
 .large-dek {
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 36px;
   margin-bottom: 30px;
 }

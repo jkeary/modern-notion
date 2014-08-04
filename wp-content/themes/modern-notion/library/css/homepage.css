@@ -307,7 +307,7 @@
 }
 #main-content article h2 {
 	font-size: 21px;
-	font-family: 'stratum1medium';
+	font-family: 'stratum2medium';
 	margin-bottom: 16px;
 
 }
@@ -352,7 +352,7 @@
 	text-align:center;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-family: 'stratum1bold';
+	font-family: 'stratum2bold';
 	font-size: 20px;
 }
 
