@@ -195,7 +195,7 @@
 						(adsbygoogle = window.adsbygoogle || []).push({});
 						</script>
 					<?php endif; ?>
-					<div id="recommended">
+					<div id="recommended" class="cf">
 						<h4>Recommended</h4>
 						<div class="headlining">
 							<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=3&post_type=post"); ?>
