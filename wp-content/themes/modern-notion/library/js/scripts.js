@@ -276,10 +276,12 @@ $(window).resize(function () {
           content.append(loading);
           gettingNext = false; 
           loading.css('opacity', '0');
-          // ga('send', 'pageview', {
-          //   'page': '/' + post.slug,
-          //   'title': 'Modern Notion ' + post.title
-          // });
+          if(!dev) {
+            ga('send', 'pageview', {
+              'page': '/' + post.slug,
+              'title': 'Modern Notion ' + post.title
+            });
+          }
           hasLoaded = true;
           hasSet = false;
           loadedArticle = put.find('article');
