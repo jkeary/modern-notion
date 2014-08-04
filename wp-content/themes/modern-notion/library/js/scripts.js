@@ -322,7 +322,7 @@ $(window).resize(function () {
       hasSet = true; 
     }
 
-    if(scroll > end) {
+    if(scroll > (end - 500)) {
       $(".yarpp-related > div").last().addClass("open");
     }
 
