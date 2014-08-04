@@ -1358,6 +1358,11 @@ a.menu-trigger  {
 		&.dek {
 			margin-bottom: 27px;
 		}
+
+		a {
+			font-weight: normal; 
+			color: $crowdskout-blue;			
+		}
 	}
 }
 .single-entry-content  {
