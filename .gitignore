@@ -42,6 +42,7 @@ wp-content/uploads/
 wp-content/cache/
 wp-config.php
 wp-content/w3tc-config
+nginx.conf
 
 
 
