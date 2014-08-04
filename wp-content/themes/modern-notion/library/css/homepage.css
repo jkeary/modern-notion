@@ -365,9 +365,10 @@
 	color: white;
 	font-size: 21px;
 	font-family: "Open Sans"; 
-	/*font-weight: bold;*/
+	font-weight: bold;
 	padding: 16px 0;
 	margin: 32px 0;
+	letter-spacing: 1px;
 }
 
 #recommended .headlining {
