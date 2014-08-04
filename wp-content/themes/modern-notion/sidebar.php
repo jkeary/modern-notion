@@ -17,10 +17,12 @@
 			<?php endif; ?>
 		</div>
 		
-		<div class="hidden-xs">
-			<?php $cat = get_the_category()[0]; ?>
-			<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=2&post_type=post&cat=".$cat->cat_ID); ?>
-		</div>	
+		<?php if(is_single()) : ?>
+			<div class="hidden-xs">
+				<?php $cat = get_the_category()[0]; ?>
+				<?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("limit=2&post_type=post&cat=".$cat->cat_ID); ?>
+			</div>	
+		<?php endif; ?>
 		
 		<div class="page-block newsletter-signup">
 			<h2><span class="icon-Logo_Icon"></span>Get Our Newsletter</h2>
