@@ -1342,6 +1342,11 @@ a.menu-trigger  {
 			+ .share-buttons  {
 				margin-bottom: 20px;
 			}
+
+			a {
+				font-weight: normal; 
+				color: $crowdskout-blue;
+			}
 		}
 		.ssba  {
 			display: none;
