@@ -229,6 +229,9 @@
 
 #two-stories .headline .meta a.category{
 	color: #fff;
+}
+
+#two-stories .headline .meta a {
 	text-decoration:none;
 }
 
