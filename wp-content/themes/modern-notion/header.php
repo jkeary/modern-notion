@@ -133,11 +133,12 @@
 			
             <div id="container">
                 <?php global $is_safari; $safari = $is_safari ? 'safari' : ''; ?>
-				<header class="header site-header <?php echo $safari; ?>" role="banner">
+                <?php $scroll = is_single() ? 'scroll' : ''; $sr = !is_single() ? 'sr-only' : ''; ?>
+				<header class="header site-header <?php echo $safari . ' ' . $scroll; ?>" role="banner">
 
 					<div id="inner-header" class="wrap cf container">
 
-						<a href="<?php echo home_url(); ?>" rel="nofollow" class="header-logo"><span class="icon-Full_Logo visible-lg"></span><span class="icon-logo_type hidden-lg"></span><span class="sr-only logo-text visible-lg">Modern Notion</span></a>
+						<a href="<?php echo home_url(); ?>" rel="nofollow" class="header-logo"><span class="icon-Full_Logo visible-lg"></span><span class="icon-logo_type hidden-lg"></span><span class="<?php echo $sr; ?> logo-text visible-lg">Modern Notion</span></a>
 
 						<div class="header-links-wrapper">
 							<nav role="navigation" class="site-nav">

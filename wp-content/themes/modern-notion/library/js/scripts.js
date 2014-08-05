@@ -353,11 +353,12 @@ $(window).resize(function () {
 	  //Window scroll event
     var lastScrollTop = 0;
     var isDownScroll = true;
-    var scrollUpStart = null;    
+    var scrollUpStart = null; 
+    var header = $(".site-header");  
     $(window).scroll(function(e) {
+        if(isSingle) return;
 
         //Nav bar animation
-        var header = $(".site-header");
         if(header.width() < 1104) {
             return; 
         }
