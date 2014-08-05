@@ -3,8 +3,6 @@
     src: url('../fonts/Stratum2Web/Stratum2Web_EOT/Stratum2WebBold.eot');
     src: url('../fonts/Stratum2Web/Stratum2Web_EOT/Stratum2WebBold.eot?#iefix') format('embedded-opentype'),
          url('../fonts/Stratum2Web/Stratum2Web_WOFF/Stratum2WebBold.woff') format('woff');
-         //url('../fonts/stratum2-bold-webfont.ttf') format('truetype'),
-         //url('../fonts/stratum2-bold-webfont.svg#stratum2bold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -24,28 +22,6 @@
          url('../fonts/Stratum2Web/Stratum2Web_WOFF/Stratum2WebRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
-    font-family: 'stratum1bold';
-    src: url('../fonts/stratum1-bold-webfont.eot');
-    src: url('../fonts/stratum1-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/stratum1-bold-webfont.woff') format('woff'),
-         url('../fonts/stratum1-bold-webfont.ttf') format('truetype'),
-         url('../fonts/stratum1-bold-webfont.svg#stratum1bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-    font-family: 'stratum1_regularregular';
-    src: url('../fonts/stratum1-regular-webfont.eot');
-    src: url('../fonts/stratum1-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/stratum1-regular-webfont.woff') format('woff'),
-         url('../fonts/stratum1-regular-webfont.ttf') format('truetype'),
-         url('../fonts/stratum1-regular-webfont.svg#stratum1_regularregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
 }
 @mixin h  {
   font-family: 'Homenaje', sans-serif;

@@ -93,7 +93,7 @@
 }
 
 #slide-in article h4 a{
-  font-family: 'stratum2bold';
+  @include s2b; 
   font-size: 18px; 
   font-weight: normal !important;
 }
@@ -137,13 +137,13 @@
   color: #9bdad0;
   text-transform: uppercase;
   font-weight: bold;  
-  font-family: 'stratum1medium';
+  @include s2m;
   font-size: 18px;
 }
 
 .mn-modal .modal-header .modal-title {
   font-weight: bold;  
-  font-family: 'stratum1medium';
+  @include s2m; 
   font-size:36px;
   line-height: 36px;
 }

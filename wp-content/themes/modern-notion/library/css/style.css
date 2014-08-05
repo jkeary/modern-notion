@@ -2473,23 +2473,7 @@ BOX SIZING
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'stratum1bold';
-  src: url("../fonts/stratum1-bold-webfont.eot");
-  src: url("../fonts/stratum1-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/stratum1-bold-webfont.woff") format("woff"), url("../fonts/stratum1-bold-webfont.ttf") format("truetype"), url("../fonts/stratum1-bold-webfont.svg#stratum1bold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'stratum1_regularregular';
-  src: url("../fonts/stratum1-regular-webfont.eot");
-  src: url("../fonts/stratum1-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/stratum1-regular-webfont.woff") format("woff"), url("../fonts/stratum1-regular-webfont.ttf") format("truetype"), url("../fonts/stratum1-regular-webfont.svg#stratum1_regularregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* line 91, ../scss/partials/_typography.scss */
+/* line 67, ../scss/partials/_typography.scss */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2501,7 +2485,7 @@ BOX SIZING
   border: 0;
 }
 
-/* line 95, ../scss/partials/_typography.scss */
+/* line 71, ../scss/partials/_typography.scss */
 body {
   background: #fff;
   font-family: 'Open Sans', sans-serif;
@@ -2511,13 +2495,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 104, ../scss/partials/_typography.scss */
+/* line 80, ../scss/partials/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
-/* line 108, ../scss/partials/_typography.scss */
+/* line 84, ../scss/partials/_typography.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none;
 }
@@ -2526,38 +2510,38 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
-/* line 116, ../scss/partials/_typography.scss */
+/* line 92, ../scss/partials/_typography.scss */
 .prose {
   font-size: 14px;
   line-height: 1.66;
 }
 @media (max-width: 499px) {
-  /* line 116, ../scss/partials/_typography.scss */
+  /* line 92, ../scss/partials/_typography.scss */
   .prose {
     font-size: 12px;
   }
 }
-/* line 122, ../scss/partials/_typography.scss */
+/* line 98, ../scss/partials/_typography.scss */
 .prose p, .prose ul, .prose ol {
   margin-top: 22px;
 }
-/* line 124, ../scss/partials/_typography.scss */
+/* line 100, ../scss/partials/_typography.scss */
 .prose p:first-child, .prose ul:first-child, .prose ol:first-child {
   margin-top: 0;
 }
-/* line 128, ../scss/partials/_typography.scss */
+/* line 104, ../scss/partials/_typography.scss */
 .prose ul, .prose ol {
   padding-left: 20px;
 }
-/* line 131, ../scss/partials/_typography.scss */
+/* line 107, ../scss/partials/_typography.scss */
 .prose ul {
   list-style: disc;
 }
-/* line 134, ../scss/partials/_typography.scss */
+/* line 110, ../scss/partials/_typography.scss */
 .prose ol {
   list-style: decimal;
 }
-/* line 137, ../scss/partials/_typography.scss */
+/* line 113, ../scss/partials/_typography.scss */
 .prose p {
   -ms-word-break: break-all;
   -ms-word-wrap: break-all;
@@ -2574,12 +2558,12 @@ more here: http://www.newnet-soft.com/blog/csstypography
   -o-font-feature-settings: "liga", "dlig";
 }
 
-/* line 162, ../scss/partials/_typography.scss */
+/* line 138, ../scss/partials/_typography.scss */
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
-/* line 167, ../scss/partials/_typography.scss */
+/* line 143, ../scss/partials/_typography.scss */
 .prose h1 + p, .prose h2 + p, .prose h3 + p, .prose h4 + p, .prose h5 + p, .prose h6 + p {
   margin-top: 0;
 }
@@ -3112,7 +3096,7 @@ body.single .site-header {
   font-size: 21px;
   text-decoration: none;
 }
-/* line 77, ../scss/partials/_typography.scss */
+/* line 53, ../scss/partials/_typography.scss */
 .site-nav a:hover {
   text-decoration: underline;
 }
@@ -3601,7 +3585,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
   font-weight: bold;
   text-decoration: none;
 }
-/* line 77, ../scss/partials/_typography.scss */
+/* line 53, ../scss/partials/_typography.scss */
 .category-prose a:hover {
   text-decoration: underline;
 }
@@ -3708,7 +3692,7 @@ article.category-life h1 a:hover, article.category-life h2 a:hover, article.cate
 .footer-site-nav-wrapper a {
   text-decoration: none;
 }
-/* line 77, ../scss/partials/_typography.scss */
+/* line 53, ../scss/partials/_typography.scss */
 .footer-site-nav-wrapper a:hover {
   text-decoration: underline;
 }
@@ -4615,7 +4599,7 @@ a.menu-trigger:before {
   font-size: 15px;
   text-decoration: none;
 }
-/* line 77, ../scss/partials/_typography.scss */
+/* line 53, ../scss/partials/_typography.scss */
 .meta-block .top-tag:hover {
   text-decoration: underline;
 }
@@ -4627,7 +4611,7 @@ a.menu-trigger:before {
 .meta-block a {
   text-decoration: none;
 }
-/* line 77, ../scss/partials/_typography.scss */
+/* line 53, ../scss/partials/_typography.scss */
 .meta-block a:hover {
   text-decoration: underline;
 }
@@ -6326,14 +6310,14 @@ body #mc_embed_signup div.mce_inline_error {
   color: #9bdad0;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 18px;
 }
 
 /* line 144, ../scss/partials/custom/_modals.scss */
 .mn-modal .modal-header .modal-title {
   font-weight: bold;
-  font-family: 'stratum1medium';
+  font-family: 'stratum2medium';
   font-size: 36px;
   line-height: 36px;
 }
