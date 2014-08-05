@@ -2,9 +2,9 @@
 	
 	<div class="sidebar-sticky-wrappers" data-id="<?php echo $post->ID; ?>">
 
-	    <div class="cf">
+	    <div class="cf google">
 	    	<?php if(WP_DEBUG) : ?>
-				<img src="http://placehold.it/317x247&text=Advertisement" alt="" class="page-block" style="width:100%">
+				<img src="http://placehold.it/317x247&text=Advertisement" alt="" style="width:100%">
 			<?php else : ?>
 				<!-- Article Sidebar -->
 				<ins class="adsbygoogle"
