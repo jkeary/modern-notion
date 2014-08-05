@@ -282,6 +282,7 @@ $(window).resize(function () {
               'title': 'Modern Notion ' + post.title
             });
           }
+          window.history.pushState(post.id, post.title, "/" + post.slug);
           hasLoaded = true;
           hasSet = false;
           loadedArticle = put.find('article');
