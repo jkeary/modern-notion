@@ -607,9 +607,17 @@ article.category-life  {
 .google {
 	margin-bottom: 16px;
 }
+.single .google-wrap {
+	margin-left: -98px;
+}
 .google-wrap-large {
 	width: 728px; 
 	margin: 0 auto; 
+}
+.photo-cite {
+	text-align: right;
+	font-size: 12px;
+	margin-top: 8px;
 }
 .site-footer  {
 	overflow: hidden;
