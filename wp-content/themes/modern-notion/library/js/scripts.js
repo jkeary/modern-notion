@@ -28,7 +28,6 @@ var waitForFinalEvent = (function () {
 // how long to wait before deciding the resize has stopped, in ms. Around 50-100 should work ok.
 var timeToWaitForLast = 100;
 
-
 /*
  * Here's an example so you can see how we're using the above function
  *
@@ -133,8 +132,6 @@ jQuery(document).ready(function($) {
     //   });
     // }
 	});
-  	
-
 	  
   /* ------------------------------------------------
   Bxslider
@@ -281,8 +278,18 @@ $(window).resize(function () {
               'page': '/' + post.slug,
               'title': 'Modern Notion ' + post.title
             });
-          }
-          window.history.pushState(post.id, post.title, "/" + post.slug);
+          }          
+          var article = put;
+          var title = post.title;
+          var path = "/"+post.slug; 
+          $(window).bind('mousewheel', function(e) {
+            var scroll = $(window).scrollTop();
+            if(scroll < (article.height() + article.offset().top - 150) && scroll > (article.offset().top - 150)) {
+              if(window.location.pathname !== path)
+                window.history.pushState(post.id, title, path);
+            }
+          });
+
           hasLoaded = true;
           hasSet = false;
           loadedArticle = put.find('article');
@@ -292,7 +299,18 @@ $(window).resize(function () {
         }); 
       });
       count++;  
-    }); 
+    });
+    var article = $("article");
+    var title = $('title').html();
+    var path = window.location.pathname; 
+    $(window).bind('mousewheel', function(e) {
+      if(!isSingle) return; 
+      var scroll = $(window).scrollTop();
+      if(scroll < (article.height() + article.offset().top) && scroll > 0) {
+        if(window.location.pathname !== path)
+          window.history.pushState(0, title, path);
+      }
+    });
 
    
   /* ------------------------------------------------
