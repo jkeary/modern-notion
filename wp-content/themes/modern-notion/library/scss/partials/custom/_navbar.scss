@@ -56,11 +56,11 @@
 .site-header.scroll .header-logo {
   /*font-size: 44px;*/
 }
-.site-header.scroll .header-logo .logo-text{
+.site-header .header-logo .logo-text{
   font-size: 16px;
   color: white;
   background-color: black;
-  opacity: 1;
+  opacity: 0;
   text-transform: uppercase;
   display: block;
   float: left;
@@ -70,6 +70,27 @@
   font-family: 'stratum2medium';
   font-weight: bold;
   margin-left: 13px; 
+
+  @include respond(md-only) {
+    opacity: 1; 
+    margin-left: 0;
+  }
+
+  @include respond(sm) {
+    opacity: 1; 
+    margin-left: 0;
+    padding: 9.5px 38px;
+  }
+
+  @include respond(xs) {
+    opacity: 1; 
+    margin-left: 0;
+    padding: 11px 38px;
+  }      
+}
+
+.site-header.scroll .header-logo .logo-text {
+  opacity: 1; 
 }
 .site-header.scroll .icon-Full_Logo{
   opacity: 0;
@@ -101,8 +122,22 @@
   height: 44px;
 }
 
+@include respond(md) {
+  .rss-feed-item a {
+    font-size: 28px;
+  }
+}
+
 /* Responsive */
-@media(max-width:1104px) {
+// @include respond(lg) {
+//   .site-header .facebook, 
+//   .site-header .twitter {
+//     background-size: 31px;
+//     width: 31px;
+//   }  
+// }
+
+@media(max-width:1080px) {
   .site-header .facebook, 
   .site-header .twitter {
     background-size: 24px;
@@ -113,10 +148,21 @@
   }  
 }
 
-@media(min-width:1104px) {
+@media(min-width:1079px) {
   .site-header .facebook, 
   .site-header .twitter {
     background-size: 31px;
     width: 31px;
+  }
+}
+
+@include respond(sm) {
+  .footer {
+    .site-action-links a {
+      background-size: 21px;
+      width: 21px; 
+      height: 21px;
+      font-size: 21px
+    }
   }
 }

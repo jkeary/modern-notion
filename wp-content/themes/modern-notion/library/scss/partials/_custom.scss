@@ -209,6 +209,10 @@ input, textarea  {
 }
 body  {
 	@include header_height_adjust(87px);
+
+	&.single {
+		@include header_height_adjust(44px);		
+	}
 	@include respond(md)  {
 		@include header_height_adjust($tablet_header_height);
 	}
@@ -273,10 +277,10 @@ $main_percent_w: 69%;
 	float: left;
 	@include respond(md)  {
 		font-size: 20px;
-		background: #000;
+		//background: #000;
 		color: #fff;
-		padding: 10px 10px 10px 0;
-		@include infinite-left-black-bg;
+		//padding: 10px 10px 10px 0;
+		//@include infinite-left-black-bg;
 		.icon-logo_type {
 			z-index: 2;
 			position: relative;
@@ -985,6 +989,9 @@ article.category-life  {
 		margin: 0;
 		padding: 0;
 		width: auto;
+	}
+	@include respond(md) {
+		width: $screen-md;
 	}
 	span  {
 		display: block;
@@ -1853,6 +1860,10 @@ $three_col_gutter: ($full_content_w - $desktop-1-3-col-px*3)/2;
 body.admin-bar {
     margin-top: -28px;
     padding-bottom: 28px;
+
+    @include respond(sm) {
+    	padding: 0;
+    }
 }
 #wpadminbar {
     top: auto !important;

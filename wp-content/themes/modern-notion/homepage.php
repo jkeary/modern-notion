@@ -17,7 +17,7 @@
 <div id="main">
 	<div id="content">
 		<div id="inner-content" class="wrap cf">
-			<div class="row visible-lg google">
+			<div class="row hidden-xs hidden-sm google">
 				<div class="google-wrap-large">
 				<?php if(WP_DEBUG) : ?>
 					<img src="http://placehold.it/728x90&text=Advertisement" alt="">
@@ -81,7 +81,7 @@
 							<?php endforeach; ?>
 						</div>
 					</div>
-					<div id="two-stories" class="cf">
+					<div id="two-stories" class="cf hidden-xs">
 						<?php 
 							$x=0;
 							foreach($middle as $post) : setup_postdata($post);  
@@ -119,7 +119,7 @@
 			</div>
 		</div>
 
-		<div id="mini-featured" class="hidden-sm">
+		<div id="mini-featured" class="hidden-sm hidden-xs">
 			<div class="wrap">
 				<div class="">
 					<?php  ?>
@@ -144,12 +144,12 @@
 
 		<div id="home-content" class="wrap">
 			<div class="row">
-				<div id="main-content" class="col-md-8 col-sm-8">
+				<div id="main-content" class="col-md-7 col-lg-8">
 					<div id="articles" class="articles">
 					<?php $recent = new WP_Query('posts_per_page=5'); ?>
 					<?php while($recent->have_posts()) : $recent->the_post(); $cat = get_the_category()[0]; ?>
 						<article class="article-block cf">
-							<div class="img_wrapper col-md-3 col-sm-3">
+							<div class="img_wrapper col-md-3">
 								<a href="<?php the_permalink();?>">
 									<?php the_post_thumbnail("home-mini"); ?>
 									<span class="category-and-format-icons post-icon-wrapper post-icon-wrapper-fifty">
@@ -167,7 +167,9 @@
 							</div>
 							<div class="article-content">
 								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p><?php if(get_field('dek')) the_field('dek'); ?></p>
+								<?php if(get_field('dek')) : ?>
+									<p><?php the_field('dek'); ?></p>
+								<?php endif; ?>
 								<p class="meta">
 									<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
 										<?php echo $cat->slug; ?>
@@ -184,9 +186,9 @@
 					</div>
 				</div>
 				
-				<div id="home-sidebar" class="col-md-3 col-sm-4">
+				<div id="home-sidebar" class="col-md-5 col-lg-3 hidden-sm hidden-xs">
 					<?php if(WP_DEBUG) : ?>
-						<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="visible-lg">
+						<img src="http://placehold.it/300x247&text=Advertisement" alt="" class="hidden-sm">
 					<?php else : ?>
 						<!-- Homepage Sidebar -->
 						<ins class="adsbygoogle"

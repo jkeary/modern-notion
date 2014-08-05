@@ -150,6 +150,9 @@ $(window).resize(function () {
 		if( viewport.width > 1080 ) {
 			jPM.close();
 		}
+    else {
+      $(".logo-text").removeClass("sr-only");
+    }
 		$(document.body).trigger("sticky_kit:recalc");
 	}, timeToWaitForLast, "resize-functions");
 });
@@ -359,7 +362,7 @@ $(window).resize(function () {
         if(isSingle) return;
 
         //Nav bar animation
-        if(header.width() < 1104) {
+        if(header.width() < 1080) {
             return; 
         }
         var height = header.height();
