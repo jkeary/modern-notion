@@ -605,7 +605,11 @@ article.category-life  {
 	}
 }
 .google {
-	margin-bottom: 25px;
+	margin-bottom: 16px;
+}
+.google-wrap-large {
+	width: 728px; 
+	margin: 0 auto; 
 }
 .site-footer  {
 	overflow: hidden;
@@ -1050,9 +1054,12 @@ article.category-life  {
 		margin: 15px auto;
 	}
 }
-.sidebar-large-post-list  {		
+.is_stuck {
+	z-index: 1000;
+}
+.sidebar-large-post-list  {
 	text-align: center;
-	margin-bottom: 25px;
+	margin-bottom: 16px;
 	&.side-square  {
 		img  {
 			float: none;
@@ -1077,7 +1084,7 @@ article.category-life  {
 		display: block;
 		text-align: left;
 		+ li  {
-			margin-top: 20px;
+			margin-top: 16px;
 			@include respond(md)  {
 				margin-top: $md-gutter;
 			}

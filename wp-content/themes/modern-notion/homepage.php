@@ -17,9 +17,10 @@
 <div id="main">
 	<div id="content">
 		<div id="inner-content" class="wrap cf">
-			<div class="row visible-lg">
+			<div class="row visible-lg google">
+				<div class="google-wrap-large">
 				<?php if(WP_DEBUG) : ?>
-					<img src="http://placehold.it/845x78&text=Advertisement" alt="" class="top-ad">
+					<img src="http://placehold.it/728x90&text=Advertisement" alt="">
 				<?php else : ?>
 					<!-- Homepage Top -->
 					<ins class="adsbygoogle"
@@ -30,6 +31,7 @@
 					(adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
 				<?php endif; ?>
+				</div>
 			</div>
 			<div class="default-layout">
 				<div id="main">
