@@ -49,12 +49,12 @@ the whole project.
 @import "partials/custom";
 
 // Custom
-@import "footer.css";
-@import "homepage.css";
-@import "modals.css";
-@import "navbar.css";
-@import "share-buttons.css";
-@import "sidebar.css";
+@import "partials/custom/footer";
+@import "partials/custom/homepage";
+@import "partials/custom/modals";
+@import "partials/custom/navbar";
+@import "partials/custom/share-buttons";
+@import "partials/custom/sidebar";
 
 
 /*********************
