@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?-4jpp2h');
-	src:url('../fonts/icomoon.eot?#iefix-4jpp2h') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?-4jpp2h') format('woff'),
-		url('../fonts/icomoon.ttf?-4jpp2h') format('truetype'),
-		url('../fonts/icomoon.svg?-4jpp2h#icomoon') format('svg');
+	src:url('../fonts/icomoon.eot?mh9a5x');
+	src:url('../fonts/icomoon.eot?#iefixmh9a5x') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?mh9a5x') format('woff'),
+		url('../fonts/icomoon.ttf?mh9a5x') format('truetype'),
+		url('../fonts/icomoon.svg?mh9a5x#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -25,75 +25,90 @@
 	@include icon-font;
 }
 
-.icon-Podcasts:before {
-	content: "\e612";
-}
-.icon-Slideshow_Arrow_Right:before {
-	content: "\e613";
-}
-.icon-Slideshow_Arrow_Left:before {
-	content: "\e615";
-}
-.icon-logo_type:before {
-	content: "\e614";
-}
 .icon-History:before {
-	content: "\e600";
-}
-.icon-Innovation:before {
-	content: "\e601";
-}
-.icon-Life:before {
-	content: "\e602";
-}
-.icon-Video:before {
-	content: "\e604";
-}
-.icon-Lists:before {
-	content: "\e605";
-}
-.icon-Stories:before {
-	content: "\e606";
-}
-.icon-Slideshow:before {
 	content: "\e607";
 }
-.icon-Share:before {
+.icon-Innovation:before {
 	content: "\e608";
 }
-.icon-Email:before {
+.icon-Life:before {
 	content: "\e609";
 }
-.icon-Search:before {
+.icon-play:before {
 	content: "\e60a";
 }
-.icon-Full_Logo:before {
+.icon-Video:before {
 	content: "\e60b";
 }
-.icon-Logo_Icon:before {
+.icon-Lists:before {
 	content: "\e60c";
 }
-.icon-Science:before {
+.icon-uniE60D:before {
 	content: "\e60d";
 }
-.icon-linkedin:before {
+.icon-Camera:before {
 	content: "\e60e";
 }
-.icon-facebook:before {
+.icon-Share:before {
 	content: "\e60f";
 }
-.icon-twitter:before {
+.icon-Email:before {
 	content: "\e610";
 }
-.icon-feed:before {
+.icon-Search:before {
 	content: "\e611";
 }
-.icon-play:before {
-	content: "\e603";
+.icon-Full_Logo:before {
+	content: "\e612";
 }
-.icon-pause:before {
+.icon-Logo_Icon:before {
+	content: "\e613";
+}
+.icon-Science:before {
+	content: "\e614";
+}
+.icon-linkedin:before {
+	content: "\e615";
+}
+.icon-facebook:before {
 	content: "\e616";
 }
-.icon-stop:before {
+.icon-twitter:before {
 	content: "\e617";
+}
+.icon-feed:before {
+	content: "\e618";
+}
+.icon-headphones:before {
+	content: "\e619";
+}
+.icon-Logo_Text:before {
+	content: "\e61b";
+}
+.icon-pause:before {
+	content: "\e61d";
+}
+.icon-facebook-c:before {
+	content: "\e600";
+}
+.icon-instagram-c:before {
+	content: "\e601";
+}
+.icon-linkedin-c:before {
+	content: "\e602";
+}
+.icon-pinterest-c:before {
+	content: "\e603";
+}
+.icon-rss:before {
+	content: "\e604";
+}
+.icon-twitter-c:before {
+	content: "\e605";
+}
+.icon-vine-c:before {
+	content: "\e606";
+}
+.icon-tumblr-c:before {
+	content: "\e61a";
 }
