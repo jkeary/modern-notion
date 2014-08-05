@@ -4598,7 +4598,7 @@ a.menu-trigger:before {
   }
 
   /* line 1275, ../scss/partials/_custom.scss */
-  html body.logged-in .jPanelMenu-panel {
+  html body .jPanelMenu-panel {
     padding-top: 46px;
   }
 }
