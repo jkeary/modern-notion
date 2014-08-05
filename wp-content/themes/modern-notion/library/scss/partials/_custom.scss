@@ -1272,7 +1272,7 @@ a.menu-trigger  {
 	html.js  {
 		margin-top: 0 !important;
 	}
-	html body .jPanelMenu-panel  {
+	html body.logged-in .jPanelMenu-panel  {
 		padding-top: 46px;
 	}
 }

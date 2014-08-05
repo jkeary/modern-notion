@@ -93,6 +93,10 @@
 
 	@include respond(xs) {
 		#container {
+			padding-top: 22px;
+		}
+
+		&.logged-in #container {
 			padding-top: 4px; 
 		}
 
