@@ -429,7 +429,8 @@ $(window).resize(function () {
     }
 
     function formatPostDate(wrapper, post){
-      var date = new Date(post.date); 
+      var split = post.date.split(' ');
+      var date = new Date(split[0]);
       var result = date.format("dddd, mmmm dd, yyyy, h:MM TT");
       $(wrapper).find("time").last().html(result);
     }   
