@@ -99,7 +99,7 @@
             'http://cdn.taboola.com/libtrc/modernnotion/loader.js');
         </script>
         
-        <?php if(WP_DEBUG) : ?>
+        <?php if(!WP_DEBUG) : ?>
             <!-- Google ads -->
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
