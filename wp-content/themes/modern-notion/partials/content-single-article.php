@@ -51,7 +51,13 @@
                     <?php the_field('video_embed_code'); ?>
                 </div> 
             <?php else: ?>
-        	       <?php the_post_thumbnail('large'); ?>
+                <?php if(is_category()) :  ?>
+                    <a href="<?php the_permalink(); ?>">
+                <?php endif; ?>
+        	           <?php the_post_thumbnail('large'); ?>
+                <?php if(is_category()) :  ?>
+                    </a>
+                <?php endif; ?>                       
                <?php
                     $link = get_post_meta(get_post_thumbnail_id(), 'mn_photographer_url', true);
                     $author = get_post_meta(get_post_thumbnail_id(), 'mn_photographer', true);
