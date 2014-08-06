@@ -38,7 +38,7 @@
 					<div class="cf">
 						<div class="top headlining visible-lg">
 							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
-								<article>
+								<article class="top-article">
 									<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 									<p class="meta">
 										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']?>">

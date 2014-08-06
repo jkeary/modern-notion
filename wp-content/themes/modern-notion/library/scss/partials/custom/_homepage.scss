@@ -113,7 +113,13 @@
 	padding-top: 16px;
 
 	&.top {
-		margin: 0 4%; 
+		margin: 0 4%;
+		height: 440px; 
+
+		.top-article {
+			display:inline-block;
+			height: 33%;
+		}
 	}
 
 	.sep {
