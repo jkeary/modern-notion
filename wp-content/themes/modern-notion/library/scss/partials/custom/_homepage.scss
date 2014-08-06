@@ -152,8 +152,11 @@
 
 	article:last-child .sep {
 		border: 0; 
-		margin: 0; 
-		display:none;
+
+		.top & {
+			margin: 0; 
+			display:none;
+		}
 	}
 }
 
