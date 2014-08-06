@@ -2537,7 +2537,7 @@ more here: http://www.newnet-soft.com/blog/csstypography
 */
 /* line 92, ../scss/partials/_typography.scss */
 .prose {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.66;
 }
 @media (max-width: 499px) {
@@ -5509,7 +5509,7 @@ body #mc_embed_signup div.mce_inline_error {
 }
 /* line 79, ../scss/partials/custom/_homepage.scss */
 .page-template-homepage-php .headlining {
-  width: 18%;
+  width: 20%;
 }
 @media (max-width: 1079px) {
   /* line 85, ../scss/partials/custom/_homepage.scss */
@@ -5545,7 +5545,7 @@ body #mc_embed_signup div.mce_inline_error {
 }
 /* line 115, ../scss/partials/custom/_homepage.scss */
 .headlining.top {
-  margin: 0 43px;
+  margin: 0 4%;
 }
 /* line 119, ../scss/partials/custom/_homepage.scss */
 .headlining .sep {
