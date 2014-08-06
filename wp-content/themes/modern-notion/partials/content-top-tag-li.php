@@ -20,6 +20,6 @@ if(!empty($tags_objects))  {
 	}
 ?>
 <li>
-	<a href="<?php home_url(); ?>/tag/<?php echo $top_tag_object->slug; ?>" class="top-tag" style="color: <?php echo $color;?>;"><?php echo $top_tag_object->name; ?></a>
+	<a href="<?php home_url(); ?>/tag/<?php echo $top_tag_object->slug; ?>" class="top-tag"><?php echo $top_tag_object->name; ?></a>
 </li>	
 <?php } ?>

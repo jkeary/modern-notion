@@ -506,33 +506,78 @@ a.post-icon  {
 		}
 	}
 }
+.category-innovation,
 article.category-innovation  {
 	h1, h2, h3  {
 		a:hover  {
 			color: $purple;	
 		}	
 	}
+
+	.category-innovation & {
+		h1, h2, h3  {
+			a:hover  {
+				color: $purple;	
+			}	
+		}		
+	}
+	.top-tag {
+		color: $purple;
+	}	
 }
+.category-science,
 article.category-science  {
 	h1, h2, h3  {
 		a:hover  {
 			color: $orange;
 		}	
 	}
+	.category-science & {
+		h1, h2, h3  {
+			a:hover  {
+				color: $orange;	
+			}	
+		}		
+	}
+	.top-tag {
+		color: $orange;
+	}	
 }
+.category-history,
 article.category-history  {
 	h1, h2, h3  {
 		a:hover  {
 			color: $yellow;
 		}	
 	}
+	.category-history & {
+		h1, h2, h3  {
+			a:hover  {
+				color: $yellow;	
+			}	
+		}		
+	}
+	.top-tag {
+		color: $yellow;
+	}		
 }
-article.category-life  {
+.category-life,
+article.category-life {
 	h1, h2, h3  {
 		a:hover  {
 			color: $green;
 		}	
 	}
+	.category-life & {
+		h1, h2, h3  {
+			a:hover  {
+				color: $green;	
+			}	
+		}		
+	}
+	.top-tag {
+		color: $green;
+	}	
 }
 .innovation-colored  {
 	color: $purple;

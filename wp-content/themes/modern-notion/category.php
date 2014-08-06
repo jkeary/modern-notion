@@ -40,7 +40,7 @@
 <!-- Infinte template -->
 <script id="entry-template" type="text/x-handlebars-template">
 <div class="with-short-hr-dividers">
-	<article id="post-{{ id }}" class="post-{{ id }} post type-post status-publish format-standard has-post-thumbnail hentry category-life category-science tag-children tag-lgbt tag-marriage tag-study single-article" role="article" itemscope="" itemtype="http://schema.org/BlogPosting">								
+	<article id="post-{{ id }}" class="post-{{ id }} post type-post status-publish format-standard has-post-thumbnail hentry tag-children tag-lgbt tag-marriage tag-study single-article" role="article" itemscope="" itemtype="http://schema.org/BlogPosting">								
     	<header class="article-header">
     		<div class="article-content-row top">
                 <h2 class="entry-title single-title" itemprop="headline"><a href="{{ url }}">{{{ title }}}</a></h2>
