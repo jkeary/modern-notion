@@ -34,7 +34,9 @@
 .icon-Life:before {
 	content: "\e609";
 }
-.icon-play:before {
+.icon-Slideshow:before,
+.icon-Slideshow_Arrow_Right:before,
+.icon-Slideshow_Arrow_Left:before, {
 	content: "\e60a";
 }
 .icon-Video:before {
@@ -43,10 +45,10 @@
 .icon-Lists:before {
 	content: "\e60c";
 }
-.icon-uniE60D:before {
+.icon-Stories:before {
 	content: "\e60d";
 }
-.icon-Camera:before {
+.icon-Podcasts:before {
 	content: "\e60e";
 }
 .icon-Share:before {
