@@ -3570,81 +3570,81 @@ a.post-icon:hover {
 }
 
 /* line 512, ../scss/partials/_custom.scss */
-.category-innovation h1 a:hover, .category-innovation h2 a:hover, .category-innovation h3 a:hover,
+body.archive.category-innovation h1 a:hover, body.archive.category-innovation h2 a:hover, body.archive.category-innovation h3 a:hover,
 article.category-innovation h1 a:hover,
 article.category-innovation h2 a:hover,
 article.category-innovation h3 a:hover {
   color: #7d8ac1;
 }
 /* line 519, ../scss/partials/_custom.scss */
-.category-innovation .category-innovation h1 a:hover, .category-innovation .category-innovation h2 a:hover, .category-innovation .category-innovation h3 a:hover, .category-innovation
+.category-innovation body.archive.category-innovation h1 a:hover, .category-innovation body.archive.category-innovation h2 a:hover, .category-innovation body.archive.category-innovation h3 a:hover, .category-innovation
 article.category-innovation h1 a:hover, .category-innovation
 article.category-innovation h2 a:hover, .category-innovation
 article.category-innovation h3 a:hover {
   color: #7d8ac1;
 }
 /* line 524, ../scss/partials/_custom.scss */
-.category-innovation .top-tag,
+body.archive.category-innovation .top-tag,
 article.category-innovation .top-tag {
   color: #7d8ac1;
 }
 
 /* line 531, ../scss/partials/_custom.scss */
-.category-science h1 a:hover, .category-science h2 a:hover, .category-science h3 a:hover,
+body.archive.category-science h1 a:hover, body.archive.category-science h2 a:hover, body.archive.category-science h3 a:hover,
 article.category-science h1 a:hover,
 article.category-science h2 a:hover,
 article.category-science h3 a:hover {
   color: #e58530;
 }
 /* line 537, ../scss/partials/_custom.scss */
-.category-science .category-science h1 a:hover, .category-science .category-science h2 a:hover, .category-science .category-science h3 a:hover, .category-science
+.category-science body.archive.category-science h1 a:hover, .category-science body.archive.category-science h2 a:hover, .category-science body.archive.category-science h3 a:hover, .category-science
 article.category-science h1 a:hover, .category-science
 article.category-science h2 a:hover, .category-science
 article.category-science h3 a:hover {
   color: #e58530;
 }
 /* line 542, ../scss/partials/_custom.scss */
-.category-science .top-tag,
+body.archive.category-science .top-tag,
 article.category-science .top-tag {
   color: #e58530;
 }
 
 /* line 549, ../scss/partials/_custom.scss */
-.category-history h1 a:hover, .category-history h2 a:hover, .category-history h3 a:hover,
+body.archive.category-history h1 a:hover, body.archive.category-history h2 a:hover, body.archive.category-history h3 a:hover,
 article.category-history h1 a:hover,
 article.category-history h2 a:hover,
 article.category-history h3 a:hover {
   color: #f5d454;
 }
 /* line 555, ../scss/partials/_custom.scss */
-.category-history .category-history h1 a:hover, .category-history .category-history h2 a:hover, .category-history .category-history h3 a:hover, .category-history
+.category-history body.archive.category-history h1 a:hover, .category-history body.archive.category-history h2 a:hover, .category-history body.archive.category-history h3 a:hover, .category-history
 article.category-history h1 a:hover, .category-history
 article.category-history h2 a:hover, .category-history
 article.category-history h3 a:hover {
   color: #f5d454;
 }
 /* line 560, ../scss/partials/_custom.scss */
-.category-history .top-tag,
+body.archive.category-history .top-tag,
 article.category-history .top-tag {
   color: #f5d454;
 }
 
 /* line 567, ../scss/partials/_custom.scss */
-.category-life h1 a:hover, .category-life h2 a:hover, .category-life h3 a:hover,
+body.archive.category-life h1 a:hover, body.archive.category-life h2 a:hover, body.archive.category-life h3 a:hover,
 article.category-life h1 a:hover,
 article.category-life h2 a:hover,
 article.category-life h3 a:hover {
   color: #9daa39;
 }
 /* line 573, ../scss/partials/_custom.scss */
-.category-life .category-life h1 a:hover, .category-life .category-life h2 a:hover, .category-life .category-life h3 a:hover, .category-life
+.category-life body.archive.category-life h1 a:hover, .category-life body.archive.category-life h2 a:hover, .category-life body.archive.category-life h3 a:hover, .category-life
 article.category-life h1 a:hover, .category-life
 article.category-life h2 a:hover, .category-life
 article.category-life h3 a:hover {
   color: #9daa39;
 }
 /* line 578, ../scss/partials/_custom.scss */
-.category-life .top-tag,
+body.archive.category-life .top-tag,
 article.category-life .top-tag {
   color: #9daa39;
 }
