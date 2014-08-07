@@ -85,13 +85,23 @@
     </script>   
     
     <?php if (!WP_DEBUG) : ?>
-    <!-- Crowdskout -->
-    <script>
-        (function(l,o,v,e) {
-        l.ownerid = 6
-        ;a=o.getElementsByTagName(v)[0];b=o.createElement(v);b.src=e;a.parentNode.insertBefore(b,a);
-        })(window, document, 'script', 'https://api.crowdskout.com/analytics.js');
-    </script>    
+        <!-- GA -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-48164405-5', 'auto');
+            ga('send', 'pageview');
+        </script>         
+        <!-- Crowdskout -->
+        <script>
+            (function(l,o,v,e) {
+            l.ownerid = 6
+            ;a=o.getElementsByTagName(v)[0];b=o.createElement(v);b.src=e;a.parentNode.insertBefore(b,a);
+            })(window, document, 'script', 'https://api.crowdskout.com/analytics.js');
+        </script>    
     <?php else : ?>
     <script src="//localhost:1337/livereload.js"></script>
     <?php endif; ?>      
