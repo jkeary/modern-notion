@@ -6191,10 +6191,11 @@ body #mc_embed_signup div.mce_inline_error {
   /* line 657, ../scss/partials/custom/_homepage.scss */
   #home-sidebar {
     float: right;
+    margin-right: 0px;
   }
 }
 
-/* line 670, ../scss/partials/custom/_homepage.scss */
+/* line 671, ../scss/partials/custom/_homepage.scss */
 #recommended h4 {
   background-color: black;
   text-align: center;
@@ -6208,35 +6209,35 @@ body #mc_embed_signup div.mce_inline_error {
   letter-spacing: 1px;
 }
 @media (max-width: 1079px) {
-  /* line 670, ../scss/partials/custom/_homepage.scss */
+  /* line 671, ../scss/partials/custom/_homepage.scss */
   #recommended h4 {
     font-size: 17px;
   }
 }
-/* line 687, ../scss/partials/custom/_homepage.scss */
+/* line 688, ../scss/partials/custom/_homepage.scss */
 #recommended .headlining {
   width: 100%;
   padding: 0 16px;
 }
-/* line 691, ../scss/partials/custom/_homepage.scss */
+/* line 692, ../scss/partials/custom/_homepage.scss */
 #recommended .headlining .sep {
   border-width: 4px;
   width: 60%;
   margin: 32px auto;
 }
 @media (max-width: 1079px) {
-  /* line 698, ../scss/partials/custom/_homepage.scss */
+  /* line 699, ../scss/partials/custom/_homepage.scss */
   #recommended .headlining h2 {
     font-size: 18px;
   }
-  /* line 702, ../scss/partials/custom/_homepage.scss */
+  /* line 703, ../scss/partials/custom/_homepage.scss */
   #recommended .headlining .meta {
     font-size: 8px;
   }
 }
 
 @media (max-width: 737px) {
-  /* line 711, ../scss/partials/custom/_homepage.scss */
+  /* line 712, ../scss/partials/custom/_homepage.scss */
   #inner-footer .header-nav-in-footer a,
   #inner-footer .footer-only-nav a {
     font-size: 10px;
