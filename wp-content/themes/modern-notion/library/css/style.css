@@ -6184,6 +6184,8 @@ body #mc_embed_signup div.mce_inline_error {
   width: 300px;
   padding: 0;
   margin-left: 12.5px;
+  margin-right: 12.5px;
+  float: right;
 }
 @media (max-width: 1079px) {
   /* line 657, ../scss/partials/custom/_homepage.scss */
@@ -6192,7 +6194,7 @@ body #mc_embed_signup div.mce_inline_error {
   }
 }
 
-/* line 668, ../scss/partials/custom/_homepage.scss */
+/* line 670, ../scss/partials/custom/_homepage.scss */
 #recommended h4 {
   background-color: black;
   text-align: center;
@@ -6206,35 +6208,35 @@ body #mc_embed_signup div.mce_inline_error {
   letter-spacing: 1px;
 }
 @media (max-width: 1079px) {
-  /* line 668, ../scss/partials/custom/_homepage.scss */
+  /* line 670, ../scss/partials/custom/_homepage.scss */
   #recommended h4 {
     font-size: 17px;
   }
 }
-/* line 685, ../scss/partials/custom/_homepage.scss */
+/* line 687, ../scss/partials/custom/_homepage.scss */
 #recommended .headlining {
   width: 100%;
   padding: 0 16px;
 }
-/* line 689, ../scss/partials/custom/_homepage.scss */
+/* line 691, ../scss/partials/custom/_homepage.scss */
 #recommended .headlining .sep {
   border-width: 4px;
   width: 60%;
   margin: 32px auto;
 }
 @media (max-width: 1079px) {
-  /* line 696, ../scss/partials/custom/_homepage.scss */
+  /* line 698, ../scss/partials/custom/_homepage.scss */
   #recommended .headlining h2 {
     font-size: 18px;
   }
-  /* line 700, ../scss/partials/custom/_homepage.scss */
+  /* line 702, ../scss/partials/custom/_homepage.scss */
   #recommended .headlining .meta {
     font-size: 8px;
   }
 }
 
 @media (max-width: 737px) {
-  /* line 709, ../scss/partials/custom/_homepage.scss */
+  /* line 711, ../scss/partials/custom/_homepage.scss */
   #inner-footer .header-nav-in-footer a,
   #inner-footer .footer-only-nav a {
     font-size: 10px;
