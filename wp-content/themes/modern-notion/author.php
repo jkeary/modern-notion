@@ -27,7 +27,7 @@ $author_ref = 'user_'. $author_id;
 							</li>
 							<li>
 								<?php if(get_the_author_meta('user_email', $author_id)): ?>	
-									<a href="mailto:<?php the_author_meta('user_email', $author_id); ?>" target="_blank"><?php the_author_meta('user_email', $author_id); ?></a>
+									<a href="mailto:<?php the_author_meta('user_email', $author_id); ?>" target="_top"><?php the_author_meta('user_email', $author_id); ?></a>
 								<?php endif; ?>
 							</li>						
 						</ul>
