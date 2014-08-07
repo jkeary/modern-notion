@@ -16,6 +16,7 @@ function mn_twitter_handle_fields( $user ) { ?>
 		</tr>
 
 	</table>
+
 <?php }
 
 add_action( 'personal_options_update', 'mn_save_twitter_handle' );
