@@ -413,7 +413,7 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
   ?>
         <li>
           <article <?php post_class('', $popular_id);?>>
-            <a href="<?php the_permalink($popular_id);?>"><?php echo $custom_thumbnail; ?></a>
+            <a href="<?php echo get_permalink($popular_id);?>"><?php echo $custom_thumbnail; ?></a>
             <div class="post-icon-wrapper post-icon-wrapper-medium-large">
               <div class="text-wrapper">
                 <?php get_template_part('partials/content', 'article-block-title-and-meta'); ?>
