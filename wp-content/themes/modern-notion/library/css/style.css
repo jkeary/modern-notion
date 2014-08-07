@@ -2572,8 +2572,8 @@ more here: http://www.newnet-soft.com/blog/csstypography
 }
 /* line 113, ../scss/partials/_typography.scss */
 .prose p {
-  -ms-word-break: break-all;
-  -ms-word-wrap: break-all;
+  -ms-word-break: break-word;
+  -ms-word-wrap: break-word;
   word-break: break-word;
   word-break: break-word;
   -webkit-hyphens: auto;
