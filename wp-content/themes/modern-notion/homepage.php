@@ -37,17 +37,22 @@
 				<div id="main">
 					<div class="cf">
 						<div class="top headlining visible-lg">
+							<table>
 							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
+								<tr><td>
 								<article class="top-article">
 									<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 									<p class="meta">
 										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']?>">
 											<?php echo $cat->slug; ?>
-										</a> 
+										</a>
 										By <?php the_author_posts_link(); ?>
+									</p>
 									<div class="sep"></div>
 								</article>
-							<?php endforeach; ?>											
+								</td></tr>
+							<?php endforeach; ?>	
+							</table>										
 						</div>												
 						<div id="hero">
 							<?php foreach($hero as $post) : setup_postdata($post); $cat = get_the_category(); $cat = $cat[0]; ?>					

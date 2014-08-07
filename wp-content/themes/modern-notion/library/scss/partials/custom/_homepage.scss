@@ -117,8 +117,16 @@
 		height: 396px; 
 
 		.top-article {
-			display:inline-block;
-			//height: 33%;
+			vertical-align: middle;
+			width: 100%;
+		}
+
+		table {
+			height: 364px;
+		}
+
+		tr:last-child article .sep {
+			display:none; 
 		}
 	}
 
@@ -150,13 +158,8 @@
 		}
 	}
 
-	article:last-child .sep {
-		border: 0; 
-
-		.top & {
-			margin: 0; 
-			display:none;
-		}
+	#recommended & article:last-child .sep {
+		border: 0;
 	}
 }
 
