@@ -29,7 +29,7 @@ Author: JP
 			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h4>
 		<p class="meta">
-			<?php get_template_part("partials/content", "author-full-name-link"); ?> | 
+			<?php the_author_posts_link(); ?> | 
 			<?php the_date(); ?>
 		</p>
 	</article>
