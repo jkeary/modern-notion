@@ -445,13 +445,14 @@
 	}
 
 	article {
-		width: 23.7%;
+		width: 23.8%;
 		float: left;
 		margin-bottom: 0;
 		margin-right: 16px;	
 	
 		&:last-child {
 			margin-right: 0; 
+			float:right;
 		}
 
 		@include respond(md) { 

@@ -4,16 +4,16 @@
 <li>
 	<a target="_blank" href="https://facebook.com/modernnotion" class="icon-facebook-c"><span class="sr-only">Facebook</span></a>
 </li>
-<li>
+<li class="instagram-item">
 	<a target="_blank" href="http://instagram.com/modernnotion" class="icon-instagram-c"><span class="sr-only">Instagram</span></a>
 </li>
-<li>
+<li class="pinterest-item">
 	<a target="_blank" href="http://www.pinterest.com/modernnotion/" class="icon-pinterest-c"><span class="sr-only">Pinterest</span></a>
 </li>
-<li>
+<li class="vine-item">
 	<a target="_blank" href="https://vine.co/u/1085710024015339520" class="icon-vine-c"><span class="sr-only">Vine</span></a>
 </li>
-<li>
+<li class="tumblr-item">
 	<a target="_blank" href="http://modernnotion.tumblr.com" class="icon-tumblr-c"><span class="sr-only">Vine</span></a>
 </li>						
 <li class="rss-feed-item">
