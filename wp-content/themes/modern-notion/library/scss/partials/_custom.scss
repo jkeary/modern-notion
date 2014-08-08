@@ -1398,8 +1398,10 @@ a.menu-trigger  {
 .entry-content  {
 	.article-top-panel  {
 		margin-bottom: 40px;
+
 		img  {
 			display: block;
+			height: 446px; 
 		}		
 	}
 	.prose  {
@@ -1436,8 +1438,19 @@ a.menu-trigger  {
 	}
 }
 .single-entry-content  {
-	margin-bottom: 50px;
+	//margin-bottom: 50px;
 }
+#main .load {
+
+	article {
+		margin-top: 50px;
+	}
+}
+
+#sidebar1 .sidebar-sticky-wrappers article {
+	margin-top: 0; 
+}
+
 .article-text-wrapper  {
 	.author  {
 		text-decoration: none;

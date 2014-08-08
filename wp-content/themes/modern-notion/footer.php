@@ -103,8 +103,10 @@
             })(window, document, 'script', 'https://api.crowdskout.com/analytics.js');
         </script>    
     <?php else : ?>
-    <script src="//localhost:1337/livereload.js"></script>
-    <?php endif; ?>      
+        <script src="//localhost:1337/livereload.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/plugins/modern.stick.js"></script>
 
+    <?php endif; ?>      
+    
 </body>
 </html> <!-- end of site. what a ride! -->

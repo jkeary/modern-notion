@@ -37,7 +37,7 @@
 		<?php endif; ?>	
 
 	    <div id="related">
-	        <?php //related_posts(); ?>
+	        <?php related_posts(); ?>
 	    </div>						
 	</div>	
 </div>

@@ -41,7 +41,18 @@
 							<?php foreach($top as $post) : setup_postdata($post); $cat = get_the_category()[0]; ?>
 								<tr><td>
 								<article class="top-article">
-									<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+									<h2>
+										<a href="<?php the_permalink(); ?>">
+											<?php 
+												if(get_field("short_headline")) {
+													the_field("short_headline"); 
+												}
+												else {
+													the_title(); 
+												}
+											?>
+										</a>
+									</h2>
 									<p class="meta">
 										<a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']?>">
 											<?php echo $cat->slug; ?>

@@ -70,8 +70,9 @@
 }
 
 #slide-in {
-  position: relative;
-  right: -200%;
+  position: fixed;
+  right: -100%;
+  z-index: 1000;
 }
 
 #slide-in.open {
