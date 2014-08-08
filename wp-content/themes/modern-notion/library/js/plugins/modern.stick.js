@@ -73,9 +73,9 @@
     });
 
     //Calculate the flying start and stop
-    var articleContent = select.parent.find('.prose').first();
-    select.flyinStart = articleContent.height() + articleContent.offset().top - $(window).height();
-    select.flyinStop = select.flyinStart + 500;   
+    var articleContent = select.parent.find('.main').first();
+    select.flyinStart = articleContent.height() + articleContent.offset().top - ($(window).height() + 1000);
+    select.flyinStop = select.flyinStart + 1000;   
   },
 
   //Caclulate the values and watch the scroll
