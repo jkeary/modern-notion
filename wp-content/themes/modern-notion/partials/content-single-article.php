@@ -203,7 +203,7 @@
     </section> <?php // end article section ?>
     </div>
     <?php 
-        if(is_single()){
+        if(is_single()) {
             get_sidebar(); 
         }
     ?>
