@@ -114,3 +114,22 @@
 .icon-tumblr-c:before {
 	content: "\e61a";
 }
+
+//Share button alignment
+.share-buttons.inline-color-style a {
+	span {
+		vertical-align: middle; 
+
+		&.icon-facebook {
+			vertical-align: -1px; 
+		}
+
+		&.icon-linkedin {
+			vertical-align: 0px; 
+		}
+
+		&.icon-twitter {
+			vertical-align: -2px;
+		}
+	}
+}
