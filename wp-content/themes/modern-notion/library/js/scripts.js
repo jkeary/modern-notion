@@ -307,7 +307,7 @@ jQuery(document).ready(function($) {
     $(window).bind('mousewheel', function(e) {
       if(!isSingle) return; 
       var scroll = $(window).scrollTop();
-      if(scroll < (article.height() + article.offset().top) && scroll > 0) {
+      if(scroll < (article.height() + article.offset().top - 150) && scroll > 0) {
         if(window.location.pathname !== path)
           window.history.pushState(0, title, path);
       }
