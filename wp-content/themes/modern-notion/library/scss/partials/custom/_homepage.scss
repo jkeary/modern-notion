@@ -76,10 +76,6 @@
 		}
 	}
 
-	.headlining {
-		width: 20%;
-	}
-
 	@include respond(md) {
 
 		#inner-content {
@@ -115,18 +111,29 @@
 	&.top {
 		margin: 0 4%;
 		height: 396px; 
+		width: 19%;
 
 		.top-article {
 			vertical-align: middle;
 			width: 100%;
 		}
 
-		table {
+		.table {
+			display: table; 
 			height: 364px;
-		}
+			width: 100%; 
 
-		tr:last-child article .sep {
-			display:none; 
+			.table-row {
+				display: table-row; 
+				
+				&:last-child article .sep {
+					display:none; 
+				}
+
+				.table-cell {
+					display: table-cell;
+				}
+			}
 		}
 	}
 
@@ -717,304 +724,3 @@
 		font-size: 10px;
 	}
 }
-
-/* Responsive */
-// @media all and (min-width:501px) and (max-width: 738px){
-// 	.page-template-homepage-php .wrap {
-// 		width: 100%;
-// 	}
-
-// 	.page-template-homepage-php .row {
-// 		margin: 0;
-// 	}
-
-// 	.page-template-homepage-php #inner-content {
-// 		padding: 0;
-// 	}
-
-// 	#hero {
-// 		width: 100%;
-// 	}
-
-// 	#two-stories .headline h2 {
-// 		font-size: 17px;
-// 		padding: 8px;
-// 	}
-
-// 	#two-stories .left {
-// 		width: 60%;
-// 	}
-
-// 	#two-stories .right {
-// 		width: 37%;
-// 		float:right;
-// 	}
-
-// 	#two-stories .headline p.meta {
-// 		font-size: 8px;
-// 		padding: 8px;
-// 	}
-	
-// 	#mini-featured article {
-// 		width: 22.9%;
-// 	}
-// 	#mini-featured h2 {
-// 		font-size: 15px;
-// 		width: 75%;
-// 		top: 30%;
-// 		padding: 8px;
-// 	}
-	
-// 	.page-template-homepage-php .article-block .share-tab span,
-// 	.page-template-homepage-php .article-block .share-buttons span {
-// 		font-size: 18px;
-// 	}
-	
-// 	.page-template-homepage-php .article-block .share-buttons .icon-Email {
-// 		font-size: 16px;
-// 	}
-
-// 	.page-template-homepage-php .article-block .share-tab .icon-Share {
-// 		right: -22px;
-// 		bottom: -23px;
-// 	}
-
-// 	#main-content article h3 {
-// 		font-size: 15px;
-// 	}
-
-// 	#main-content article p {
-// 		font-size: 12px;
-// 		line-height: 18px;
-// 	}
-
-// 	#main-content article p.meta {
-// 		font-size: 8px;
-// 	}
-
-// 	#recommended h4 {
-// 		font-size: 16px;
-// 	}
-
-// 	#recommended h1 {
-// 		margin-bottom: 8px;
-// 	}
-
-// 	#recommended .headlining {
-// 		padding: 0 8px;
-// 	}
-
-// 	#recommended .headlining .sep {
-// 		margin: 24px auto;
-// 		border-width: 3px;
-// 	}
-
-// 	#home-sidebar .headlining article h1 {
-// 		font-size: 18px;
-// 	}
-
-// 	#home-sidebar .newsletter-signup h2 {
-// 		font-size: 15px;
-// 	}
-
-// 	.page-template-homepage-php .post-icon-wrapper.post-icon-wrapper-fifty .post-icon {
-// 		width: 34px;
-// 		height: 34px;
-// 		font-size: 18px;
-// 	}
-// }
-
-// /* 500px width */
-// @media all and (max-width: 500px) {
-// 	.page-template-homepage-php .wrap {
-// 		width: 100%;
-// 	}
-
-// 	#hero {
-// 		height: 266px;
-// 		width: 100%;
-// 	}
-
-// 	#hero h1 {
-// 		font-size: 25px;
-// 		line-height: 29px;
-// 	}
-	
-// 	#hero .headline {
-// 		width: 45%;
-// 		height: 100%;
-// 		margin-bottom: 16px;
-// 		padding:16px;
-// 	}
-
-// 	#hero img {
-// 		height: 266px;
-// 		width: auto;
-// 	}
-
-// 	#hero .article-block {
-// 		width: 100%;
-// 	}
-
-// 	#two-stories article {
-// 		width:48.2%;
-// 	}
-
-// 	#two-stories .right {
-// 		float:right;
-// 	}
-
-// 	#two-stories .headline h2 {
-// 		font-size: 14px;
-// 		padding: 8px;
-// 	}
-
-// 	#two-stories .headline p.meta {
-// 		padding: 8px;
-// 		font-size: 7px;
-// 	}
-
-// 	#two-stories .headline {
-// 		bottom: 8px;	
-// 	}
-
-// 	#two-stories img {
-// 		width: 241px;
-// 		height: 225px;
-// 	}
-
-// 	.page-template-homepage-php .post-icon-wrapper.post-icon-wrapper-fifty .post-icon {
-// 		width: 34px;
-// 		height: 34px;
-// 		font-size: 18px;
-// 	}
-
-// 	#main-content {
-// 		padding: 0;
-// 	}	
-
-// 	#main-content .img_wrapper {
-// 		padding: 0;
-// 		width: 30%;
-// 	}
-
-// 	#main-content article {
-// 		padding-bottom: 16px;
-// 	}
-
-// 	#main-content article .article-content {
-// 		width: 66%;
-// 	}
-// 	#main-content article h3 {
-// 		font-size: 15px;
-// 	}
-
-// 	#main-content article p {
-// 		font-size: 12px;
-// 		line-height: 18px;
-// 	}
-
-// 	#main-content article p.meta {
-// 		font-size: 8px;
-// 	}
-
-// 	#mini-featured,
-// 	#home-sidebar {
-// 		display:none;
-// 	}
-
-// 	#inner-footer .header-nav-in-footer a,
-// 	#inner-footer .footer-only-nav a{
-// 		font-size:10px;
-// 	}	
-
-// 	body.admin-bar.home {
-// 		padding-bottom: 0;
-// 		margin: 0;
-// 	}	
-// }
-
-// @media all and (max-width: 400px) {
-// 	#related, 
-// 	#slidein-social,
-// 	#two-stories,
-// 	.loading {
-// 		display:none;
-// 	}
-	
-// 	.page-template-homepage-php #inner-content {
-// 		padding: 0px;
-// 	}
-
-// 	.page-template-homepage-php #inner-header {
-// 		padding-left: 12.5px;
-// 		padding-right: 12.5px;
-// 	}
-
-// 	.page-template-homepage-php #content {
-// 		margin: 0;
-// 	}
-
-// 	.page-template-homepage-php html body.logged-in .jPanelMenu-panel {
-// 		padding-top: 38px;
-// 	}
-
-// 	#hero .headline {
-// 		width: 100%;
-// 		top: 246px;
-// 		height: auto;
-// 	}
-
-// 	#hero .arrow {
-// 		display:none;
-// 	}
-
-// 	#hero .headline .arrow-up {
-// 		position:absolute;
-// 		border-left: 25px solid transparent;
-// 		border-right: 25px solid transparent;
-// 		border-top: 0;
-// 		left: 45%;
-// 		top: -10%;
-// 	}
-
-// 	/* line 570, ../scss/partials/_custom.scss */
-// 	#hero .headline .arrow-up.innovation-colored {
-// 	  	border-bottom: 25px solid #7d8ac1;
-// 	}
-
-// 	/* line 573, ../scss/partials/_custom.scss */
-// 	#hero .headline .arrow-up.science-colored {
-// 	  	border-bottom: 25px solid #e58530;
-// 	}
-
-// 	/* line 576, ../scss/partials/_custom.scss */
-// 	#hero .headline .arrow-up.history-colored {
-// 	  	border-bottom: 25px solid #f5d454;
-// 	}
-
-// 	/* line 579, ../scss/partials/_custom.scss */
-// 	#hero .headline .arrow-up.life-colored {
-// 	  	border-bottom: 25px solid #9daa39;
-// 	}
-	
-
-// 	#home-content {
-// 		margin-top: 160px;
-// 	}
-	
-// 	#main-content .article-content {
-// 		padding-right: 8px;
-// 	}
-	
-// 	#inner-footer .header-nav-in-footer a,
-// 	#inner-footer .footer-only-nav a{
-// 		font-size:10px;
-// 	}
-// }
-
-// @media all and (max-width: 400px) {
-// 	#main-content article .article-content {
-// 		width: 60%;
-// 	}
-// }
