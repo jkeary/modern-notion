@@ -73,7 +73,7 @@
     });
 
     //Calculate the flying start and stop
-    var articleContent = select.parent.find('.prose').first();
+    var articleContent = select.parent.find('.content-wrapper').first();
     select.flyinStart = articleContent.height() + articleContent.offset().top - $(window).height();
     select.flyinStop = select.flyinStart + 500;   
   },

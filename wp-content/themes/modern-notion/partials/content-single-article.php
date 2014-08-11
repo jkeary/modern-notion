@@ -90,6 +90,7 @@
                     </div>
                 </div>
                 <div class="main">
+                    <div class="content-wrapper">
                     <?php if ( has_post_format( 'aside' )): ?>
                         <?php if(get_field('dek')): ?>
                             <div class="prose dek category-prose <?php echo top_category_slug(); ?>-styled">
@@ -109,8 +110,19 @@
                                 <li>
                                     <h2><span class="num"><?php echo $list_num; ?>.</span> <?php echo $value['title']; ?></h2>
                                     <?php $image = $value['image']; // only for image info outputted as an object 
-                                    if($image):  ?>                                
-                                        <img src="<?php echo $image['sizes']['article-main']; ?>" class="section-image" alt="<?php echo $image['alt']; ?>" />
+                                    if($image):  ?> 
+                                        <div class="list-image-wrapper">
+                                            <img src="<?php echo $image['sizes']['article-main']; ?>" class="section-image" alt="<?php echo $image['alt']; ?>" />
+                                            <?php 
+                                                $link = get_post_meta($image['id'], 'mn_photographer_url', true);
+                                                $author = get_post_meta($image['id'], 'mn_photographer', true);
+                                                if($link): 
+                                            ?>
+                                                <p class="photo-cite">
+                                                    <a href="<?php echo $link; ?>" target="_blank"><?php echo $author; ?></a>
+                                                </p>
+                                            <?php endif; ?>
+                                        </div>
                                     <?php endif; ?>
                                     <div class="prose">
                                         <?php echo $value['content']; ?>
@@ -150,6 +162,7 @@
                             <?php get_template_part( 'partials/content', 'share-buttons'); ?>
                         </div>
                     <?php //endif; ?>
+                    </div><!-- end content-wrapper -->
                     <div class="article-footer-container">
                         <div class="article-footer">
                             <?php the_tags( '<div class="article-tags">', ' ', '</div>' ); ?>

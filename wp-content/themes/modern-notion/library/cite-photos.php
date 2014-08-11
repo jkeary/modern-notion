@@ -35,7 +35,7 @@ update_post_meta( $post['ID'], 'mn_photographer_url', esc_url( $attachment['mn-p
 add_filter( 'attachment_fields_to_save', 'mn_photographer_fields_save', 10, 2 );
 
 //Cite photo shortcode 
-add_shortcode('credit', 'credit_photo'); 
+//add_shortcode('credit', 'credit_photo'); 
 function credit_photo($attrs, $content) {
 	$attrs = shortcode_atts( array(
 	  'author' => '',
@@ -57,8 +57,8 @@ class Shortcode_Tinymce
 {
     public function __construct()
     {
-        add_action('admin_init', array($this, 'pu_shortcode_button'));
-        add_action('admin_footer', array($this, 'pu_get_shortcodes'));
+        //add_action('admin_init', array($this, 'pu_shortcode_button'));
+        //add_action('admin_footer', array($this, 'pu_get_shortcodes'));
     }
 
     /**

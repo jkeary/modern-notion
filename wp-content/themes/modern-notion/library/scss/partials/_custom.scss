@@ -1690,9 +1690,18 @@ div.ssba img  {
 			@include s1b;
 		}
 	}
+	.list-image-wrapper {
+		margin-bottom: 36px;
+
+		.photo-cite {
+			a {
+				font-weight: normal;
+			}
+		}
+	}
 	.section-image  {
 		display: block;
-		margin-bottom: 36px;
+		margin-bottom: 0px;
 	}
 }
 .centered-image-text-header  {
