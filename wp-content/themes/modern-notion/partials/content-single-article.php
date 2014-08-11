@@ -136,6 +136,15 @@
                     <?php //if(get_the_content()): ?>
                         <div class="prose standard-content category-prose <?php echo top_category_slug(); ?>-styled">
                             <?php the_content(); ?>
+                            <?php 
+                                $text = get_post_meta($post->ID, 'hp_cite_text', true);
+                                $link = get_post_meta($post->ID, 'hp_cite_link', true);
+                                if($text && $link) : 
+                            ?>
+                                <p>Homepage Image: <a href="<?php echo $link; ?>" target="_blank"><?php echo $text; ?></a></p>
+                            <?php 
+                                endif; 
+                            ?>
                         </div>
                         <div class="share-buttons inline-color-style">
                             <?php get_template_part( 'partials/content', 'share-buttons'); ?>

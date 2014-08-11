@@ -11,6 +11,7 @@ sidebars, comments, ect.
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 require_once( 'library/cite-featured.php' );
+require_once( 'library/cite-homepage-image.php' );
 require_once( 'library/cite-photos.php' );
 require_once( 'library/homepage-slots.php' );
 require_once( 'library/author-twitter-handle.php' );
