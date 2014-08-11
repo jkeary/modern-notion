@@ -73,8 +73,11 @@ var timeToWaitForLast = 100;
 */
 jQuery(document).ready(function($) {
 
-  //Stick the first article
-  $("#infinite-scroll-wrapper article").first().mnStick(); 
+  /* ------------------------------------------------
+  Sticky
+  ------------------------------------------------ */
+  $("#infinite-scroll-wrapper article").first().mnStick();
+
 
   /* ------------------------------------------------
   Common Variables
@@ -107,6 +110,14 @@ jQuery(document).ready(function($) {
 		nextText: '',
 		prevText: ''
 	});
+
+  /* ------------------------------------------------
+  Newsletter modal
+  ------------------------------------------------ */  
+  $("#mc-embedded-subscribe-modal").click(function(e) {
+    console.log('submitting form');
+    $("#mc-embedded-subscribe-form-modal").submit();
+  });
 
   /* ------------------------------------------------
   Resize Events

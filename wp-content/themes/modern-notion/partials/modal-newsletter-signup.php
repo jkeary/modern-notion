@@ -15,8 +15,8 @@
       	<p id="newsletter-modal-intro"></p>
 
       	<!-- Signup form -->
-		<div id="mc_embed_signup">
-			<form action="//modernnotion.us6.list-manage.com/subscribe/post?u=c825ea2e83&amp;id=005bfbdc33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>		
+		<div id="mc_embed_signup-modal">
+			<form action="//modernnotion.us6.list-manage.com/subscribe/post?u=c825ea2e83&amp;id=005bfbdc33" method="post" id="mc-embedded-subscribe-form-modal" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>		
 			<div class="mc-field-group">
 				<input type="email" value="" placeholder="Email" name="EMAIL" class="required email full-col" id="mce-EMAIL">
 			</div>
@@ -31,13 +31,13 @@
 		<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
 		<script type='text/javascript'>
 		(function($) {
-			window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';
+			window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';
 			}(jQuery));
 			var $mcj = jQuery.noConflict(true);
 		</script>
       </div>
       <div class="modal-footer">
-      	<input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="btn blue">
+      	<input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe-modal" class="btn blue">
       	<div class="social">
 	    	<a class="facebook" href="#" target="_blank">
 	    		<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/icons/fb-white.png" alt="">
