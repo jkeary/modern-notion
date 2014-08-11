@@ -115,7 +115,6 @@ jQuery(document).ready(function($) {
   Newsletter modal
   ------------------------------------------------ */  
   $("#mc-embedded-subscribe-modal").click(function(e) {
-    console.log('submitting form');
     $("#mc-embedded-subscribe-form-modal").submit();
   });
 
