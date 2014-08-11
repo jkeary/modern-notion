@@ -445,7 +445,7 @@ function homepage_sidebar($mostpopular, $instance) {
         <a href="<?php echo get_category_link($cat->cat_ID);?>" style="color: <?php echo $category_meta[$cat->cat_ID]['color']; ?>;">
           <?php echo $cat->slug; ?>
         </a> 
-        By <?php the_author_posts_link(); ?>
+        By <a href="<?php echo get_author_posts_url($popular->uid);?>"><?php echo get_the_author_meta('display_name', $popular->uid);?></a>
       <div class="sep"></div>
     </article>
 
