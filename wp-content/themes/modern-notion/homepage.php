@@ -71,7 +71,7 @@
 							<?php foreach($hero as $post) : setup_postdata($post); $cat = get_the_category(); $cat = $cat[0]; ?>					
 								<article class="article-block">
 									<div class="headline" style="background-color: <?php echo $category_meta[$cat->cat_ID]['color'];?>">
-										<span><?php echo $cat->slug?></span>
+										<a href="<?php echo get_category_link($cat->cat_ID); ?>"><span><?php echo $cat->slug?></span></a>
 										<h1>
 											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 											<span class="arrow" style="border-left: 25px solid <?php echo $category_meta[$cat->cat_ID]['color'];?>"></span>
