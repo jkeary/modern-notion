@@ -87,8 +87,16 @@ jQuery(document).ready(function($) {
   /* ------------------------------------------------
   Clear search form and focus
   ------------------------------------------------ */
+  var searchForm = $("#search-form-wrapper");
+  var searchField = $("#s");
+  //Focus input field when shown 
+  searchForm.on("shown.bs.collapse", function() {
+    searchField.focus();
+  });
+  //Clear field and close
 	$(".clear-field").click(function(evt){
 	  $(this).prev().val("").focus();
+    searchForm.collapse("hide");
 	  return false;
 	});
 
