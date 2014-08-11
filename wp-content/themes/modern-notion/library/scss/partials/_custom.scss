@@ -1535,6 +1535,7 @@ div.simplePullQuote  {
 		text-decoration: none;
 		@include s2m;
 		font-size: 14px;
+		margin-bottom: 4px; 
 		&:hover  {
 			@include opacity(0.7);
 		}
