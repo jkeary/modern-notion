@@ -212,13 +212,16 @@ body  {
 
 	&.single {
 		@include header_height_adjust(44px);		
+		@include respond(xs)  {
+			@include header_height_adjust($mobile_header_height);
+		}		
 	}
 	@include respond(md)  {
 		@include header_height_adjust($tablet_header_height);
 	}
 	@include respond(sm)  {
 		@include header_height_adjust($mobile_header_height);
-	}
+	}	
 }
 .site-header  {
 	position: fixed;

@@ -56,7 +56,7 @@
 .site-header.scroll .header-logo {
   /*font-size: 44px;*/
 }
-.site-header .header-logo .logo-text{
+.site-header .header-logo .logo-text {
   font-size: 16px;
   color: white;
   background-color: black;
@@ -85,7 +85,11 @@
   @include respond(xs) {
     opacity: 1; 
     margin-left: 0;
-    padding: 14px 16px;
+    padding: 11px 16px;
+
+    .home & {
+      //padding: 11px 16px;
+    }
   }      
 }
 
