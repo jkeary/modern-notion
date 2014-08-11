@@ -92,7 +92,7 @@
                 <div class="main">
                     <div class="content-wrapper">
                     <?php if ( has_post_format( 'aside' )): ?>
-                        <?php if(get_field('dek')): ?>
+                        <?php if(false): //if(get_field('dek')): ?>
                             <div class="prose dek category-prose <?php echo top_category_slug(); ?>-styled">
                                 <?php the_field('dek'); ?>
                             </div>
