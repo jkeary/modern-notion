@@ -76,7 +76,9 @@ jQuery(document).ready(function($) {
   /* ------------------------------------------------
   Sticky
   ------------------------------------------------ */
-  $("#infinite-scroll-wrapper article").first().mnStick();
+  if(isSingle) {
+    $("#infinite-scroll-wrapper article").first().mnStick();
+  }
 
 
   /* ------------------------------------------------
