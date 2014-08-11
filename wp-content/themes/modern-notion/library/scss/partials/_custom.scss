@@ -333,6 +333,13 @@ input, textarea  {
 	@include o;
 	font-size: 14px;	
 }
+#s {
+	&::-ms-clear {
+    	display: none;
+    	width: 0; 
+    	height: 0; 
+	}
+}
 .site-action-links {		
 	li  {
 		float: left;

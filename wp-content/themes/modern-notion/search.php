@@ -9,7 +9,7 @@
 					</div>
 				</div>
 				<div>
-					<h1>Search Results: <?php echo $_GET['s']; ?></h1>
+					<h1>Search Results: <?php echo stripslashes_deep($_GET['s']); ?></h1>
 				</div>
 			</div>
 			<div class="row default-layout">
