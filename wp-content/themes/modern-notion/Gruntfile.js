@@ -22,6 +22,13 @@ module.exports = function(grunt) {
         options: {
           livereload: 1337
         }
+      },
+      plugins: {
+        files: ["./library/js/plugins/modern.stick.js"],
+        tasks: ["uglify"],
+        options: {
+          livereload: 1337
+        }
       }
     }
   });
