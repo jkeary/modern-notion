@@ -18,8 +18,7 @@
     elm.css("top", options.offsetTop);
     elm.css("bottom", "auto");
     elm.css("width", width || elm.parent().width());
-    elm.css("height", height);
-    //elm.css("z-index", "9");   
+    elm.css("height", height);  
   },
 
   //Unfixes the element
