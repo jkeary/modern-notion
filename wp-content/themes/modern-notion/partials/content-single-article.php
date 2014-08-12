@@ -211,7 +211,7 @@
                         <?php endif; ?>
                         <div class="google-wrap">
                             <?php if(WP_DEBUG) : ?>
-                                <img src="http://placehold.it/728x90&text=Advertisement" alt="" style="max-width:200%;" class="visible-lg">
+                                <img src="http://placehold.it/728x90&text=Advertisement" alt="" style="max-width:200%;z-index:-1;" class="visible-lg">
                             <?php else : ?>
                                 <!-- Article Below Story -->
                                 <ins class="adsbygoogle"
