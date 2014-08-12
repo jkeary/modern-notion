@@ -678,6 +678,10 @@ article.category-life {
 	text-align: right;
 	font-size: 12px;
 	margin-top: 8px;
+
+	a {
+		color: $crowdskout-blue;
+	}
 }
 .site-footer  {
 	overflow: hidden;
@@ -1703,6 +1707,8 @@ div.ssba img  {
 		.photo-cite {
 			a {
 				font-weight: normal;
+				text-decoration: none; 
+				color: $crowdskout-blue;
 			}
 		}
 	}
