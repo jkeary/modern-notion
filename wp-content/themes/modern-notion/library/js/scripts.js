@@ -112,6 +112,7 @@ jQuery(document).ready(function($) {
 		duration: 300
 	});
 	jPM.on();
+  $(".menu-trigger").click(function(){});
 	  
   /* ------------------------------------------------
   Bxslider
