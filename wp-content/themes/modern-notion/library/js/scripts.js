@@ -68,18 +68,21 @@ var timeToWaitForLast = 100;
  *
 */
 
+jQuery(window).load(function() {
+  
+  /* ------------------------------------------------
+  Sticky
+  ------------------------------------------------ */  
+  if(isSingle) {
+    jQuery("#infinite-scroll-wrapper article").first().mnStick();
+  }
+
+});
+
 /*
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
-
-  /* ------------------------------------------------
-  Sticky
-  ------------------------------------------------ */
-  if(isSingle) {
-    $("#infinite-scroll-wrapper article").first().mnStick();
-  }
-
 
   /* ------------------------------------------------
   Common Variables
