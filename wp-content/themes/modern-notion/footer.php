@@ -104,7 +104,7 @@
         </script>    
     <?php else : ?>
         <script src="//localhost:1337/livereload.js"></script>
-        <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/plugins/modern.stick.js"></script>
+        <!-- <script src="<?php //echo get_stylesheet_directory_uri(); ?>/library/js/plugins/modern.stick.js"></script> -->
     <?php endif; ?>      
     
 </body>
