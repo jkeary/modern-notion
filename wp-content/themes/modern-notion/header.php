@@ -48,6 +48,9 @@
         </script>
     <?php endif; ?>
 
+    <!-- Pinterest -->
+    <meta name="p:domain_verify" content="501d2989d4e3768e001dfbde7cf3bb59"/>    
+
 	<?php // mobile meta (hooray!) ?>
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
