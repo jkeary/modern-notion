@@ -6,6 +6,7 @@
   bottomWindow,
   lastTopWindow, 
   lastBottomWindow,
+  startedFlyInCount = false, 
 
   options = {
     offsetTop: 50
@@ -18,7 +19,7 @@
     elm.css("bottom", "auto");
     elm.css("width", width || elm.parent().width());
     elm.css("height", height);
-    elm.css("z-index", "9");   
+    //elm.css("z-index", "9");   
   },
 
   //Unfixes the element
@@ -39,7 +40,7 @@
     elm.css("position", "fixed"); 
     elm.css("bottom", "0px");
     elm.css("right", "0px");
-    elm.css("z-index", "99999");
+    elm.css("z-index", "999999");
 
     if($("body").hasClass("logged-in")) {
       elm.css("bottom", "32px");
@@ -131,13 +132,24 @@
 
     //Setup flyin
     if(topWindow >= select.flyinStart && topWindow < select.flyinStop) {
-      flyin(select.flyin); 
+      flyin(select.flyin);
+      if(!startedFlyInCount) {
+        setTimeout(function() {
+          flyout(select.flyin);
+          startedFlyInCount = false; 
+        }, 3000); 
+        startedFlyInCount = true; 
+      }
     }
     else if(topWindow > select.flyinStop) {
-      flyout(select.flyin);
+      if(!startedFlyInCount){
+        flyout(select.flyin);
+      }
     }
     else {
-      flyout(select.flyin); 
+      if(!startedFlyInCount) {
+        flyout(select.flyin); 
+      }
     }
   };
   
