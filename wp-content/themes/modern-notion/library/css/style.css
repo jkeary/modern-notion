@@ -6721,29 +6721,35 @@ body #mc_embed_signup div.mce_inline_error {
 .site-header.scroll.safari .header-logo .logo-text {
   height: 44px;
 }
+@media (max-width: 499px) {
+  /* line 125, ../scss/partials/custom/_navbar.scss */
+  .site-header.scroll.safari .header-logo .logo-text {
+    height: auto;
+  }
+}
 
 @media (max-width: 1079px) {
-  /* line 130, ../scss/partials/custom/_navbar.scss */
+  /* line 134, ../scss/partials/custom/_navbar.scss */
   .rss-feed-item a {
     font-size: 28px;
   }
 }
 /* Responsive */
 @media (max-width: 1080px) {
-  /* line 146, ../scss/partials/custom/_navbar.scss */
+  /* line 150, ../scss/partials/custom/_navbar.scss */
   .site-header .facebook,
   .site-header .twitter {
     background-size: 24px;
     width: 24px;
   }
 
-  /* line 150, ../scss/partials/custom/_navbar.scss */
+  /* line 154, ../scss/partials/custom/_navbar.scss */
   .footer .site-action-links a {
     font-size: 34px;
   }
 }
 @media (min-width: 1079px) {
-  /* line 157, ../scss/partials/custom/_navbar.scss */
+  /* line 161, ../scss/partials/custom/_navbar.scss */
   .site-header .facebook,
   .site-header .twitter {
     background-size: 31px;
@@ -6751,7 +6757,7 @@ body #mc_embed_signup div.mce_inline_error {
   }
 }
 @media (max-width: 737px) {
-  /* line 165, ../scss/partials/custom/_navbar.scss */
+  /* line 169, ../scss/partials/custom/_navbar.scss */
   .footer .site-action-links a {
     background-size: 21px;
     width: 21px;
@@ -6759,7 +6765,7 @@ body #mc_embed_signup div.mce_inline_error {
     font-size: 21px;
   }
 }
-/* line 178, ../scss/partials/custom/_navbar.scss */
+/* line 182, ../scss/partials/custom/_navbar.scss */
 .header .site-action-links .instagram-item,
 .header .site-action-links .pinterest-item,
 .header .site-action-links .vine-item,

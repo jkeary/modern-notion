@@ -124,6 +124,10 @@
 
 .site-header.scroll.safari .header-logo .logo-text {
   height: 44px;
+
+  @include respond(xs) {
+    height: auto;
+  }
 }
 
 @include respond(md) {
