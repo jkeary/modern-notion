@@ -668,6 +668,7 @@ article.category-life {
 }
 .single .google-wrap {
 	margin-left: -98px;
+	position: absolute;
 }
 .google-wrap-large {
 	width: 728px; 
@@ -854,6 +855,10 @@ article.category-life {
 		font-size: $font-size-h4;
 	}	
 }
+.single .single-article {
+	margin-bottom: 116px;
+}
+
 .article-block  {
 	position: relative;
 	margin-bottom: $grid-gutter-width;
