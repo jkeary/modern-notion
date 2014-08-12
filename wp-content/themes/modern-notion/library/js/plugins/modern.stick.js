@@ -12,11 +12,12 @@
   },
 
   //Affixes an element to the offset
-  affix = function(elm, width) {
+  affix = function(elm, width, height) {
     elm.css("position", "fixed"); 
     elm.css("top", options.offsetTop);
     elm.css("bottom", "auto");
     elm.css("width", width || elm.parent().width());
+    elm.css("height", height);
     elm.css("z-index", "9");   
   },
 
@@ -61,8 +62,9 @@
     };
 
     select.children.forEach(function(stickyElement, index) {
+      var border = parseInt(stickyElement.css("border-width").replace("px", ""));
       select['stick-' + index] = {
-        height: stickyElement.height(), 
+        height: stickyElement.height() + border*2, 
         width: stickyElement.width(),
         offsetTop: Math.ceil(stickyElement.offset().top),
         parent: {
@@ -117,7 +119,7 @@
       var stop  = start + data.height;
 
       if(topWindow >= start && topWindow <= bottomOfElement - (options.offsetTop + data.height)) {
-        affix(stickyElement);
+        affix(stickyElement, null, data.height);
       }
       else if(topWindow < start) {
         unfixTop(stickyElement);    
