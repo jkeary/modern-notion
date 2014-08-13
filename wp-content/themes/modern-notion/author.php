@@ -20,16 +20,16 @@ $author_ref = 'user_'. $author_id;
 						<?php endif; ?>
 						<h1><?php get_template_part('partials/content', 'author-full-name'); ?></h1>
 						<ul class="meta-block children-with-dividers">
-							<li>
-								<?php if(get_the_author_meta('twitter', $author_id)): ?>	
+							<?php if(get_the_author_meta('twitter', $author_id)): ?>	
+								<li>								
 									<a href="https://twitter.com/<?php the_author_meta('twitter', $author_id); ?>" target="_blank">@<?php the_author_meta('twitter', $author_id); ?></a>
-								<?php endif; ?>
-							</li>
-							<li>
-								<?php if(get_the_author_meta('user_email', $author_id)): ?>	
+								</li>
+							<?php endif; ?>
+							<?php if(get_the_author_meta('user_email', $author_id)): ?>	
+								<li>
 									<a href="mailto:<?php the_author_meta('user_email', $author_id); ?>" target="_top"><?php the_author_meta('user_email', $author_id); ?></a>
-								<?php endif; ?>
-							</li>						
+								</li>
+							<?php endif; ?>					
 						</ul>
 					</div>
 				</div>
