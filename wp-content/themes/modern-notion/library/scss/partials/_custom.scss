@@ -354,16 +354,17 @@ input, textarea  {
 		color: #000;
 		text-decoration: none;
 		font-size: 28px;
+		
+		&.icon-facebook2 {
+			font-size: 30px;
+		}		
+		
 		@include respond(md)  {
 			font-size: 18px;
 
 			&.icon-facebook2 {
 				font-size: 20px; 
 			}
-		}
-
-		&.icon-facebook2 {
-			font-size: 30px;
 		}
 	}
 	iframe  {
