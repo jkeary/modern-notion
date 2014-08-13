@@ -67,7 +67,6 @@ var timeToWaitForLast = 100;
  * Keep it light and always make sure the larger viewports are doing the heavy lifting.
  *
 */
-
 jQuery(window).load(function() {
   
   /* ------------------------------------------------
@@ -76,7 +75,6 @@ jQuery(window).load(function() {
   if(isSingle) {
     jQuery("#infinite-scroll-wrapper article").first().mnStick();
   }
-
 });
 
 /*
@@ -112,9 +110,13 @@ jQuery(document).ready(function($) {
 		menu: '#menu-site-header',
 		trigger: '.menu-trigger',
 		direction: 'right',
-		duration: 300
+		duration: 300,
 	});
 	jPM.on();
+  jPM.getMenu().css({
+    "display":"none", 
+    "z-index": "-1"
+  }); 
 	  
   /* ------------------------------------------------
   Bxslider
