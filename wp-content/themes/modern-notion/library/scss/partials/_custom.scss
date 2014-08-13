@@ -356,6 +356,10 @@ input, textarea  {
 		font-size: 28px;
 		@include respond(md)  {
 			font-size: 18px;
+
+			&.icon-facebook2 {
+				font-size: 20px; 
+			}
 		}
 
 		&.icon-facebook2 {
