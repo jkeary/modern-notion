@@ -115,6 +115,10 @@
 .site-header.scroll .site-action-links button {
   vertical-align: middle; 
   font-size: 18px;
+
+  &.icon-facebook2 {
+    font-size: 20px;
+  }
 }
 .site-header.scroll .facebook, 
 .site-header.scroll .twitter {

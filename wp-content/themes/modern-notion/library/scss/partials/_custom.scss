@@ -357,6 +357,10 @@ input, textarea  {
 		@include respond(md)  {
 			font-size: 18px;
 		}
+
+		&.icon-facebook2 {
+			font-size: 30px;
+		}
 	}
 	iframe  {
 		display: block;
